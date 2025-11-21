@@ -83,6 +83,16 @@ Or start them individually:
 
 3. Access the application at http://localhost:3000
 
-## License
 
-[License information will be added here]
+## 👩‍💻 Author
+
+**Samiksha Walia**
+[GitHub](https://github.com/Samiksha-Walia) • [LinkedIn](https://linkedin.com/in/samiksha-walia)
+
+
+
+## ⭐️ Show Your Support
+
+If this project helped you or inspired your learning, please give it a ⭐️ on GitHub!
+
+> 📝 *Real-time communication meets file transfer – built with modern web stack and a focus on user experience.*
