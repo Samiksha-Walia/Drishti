@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Drishti - Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Drishti</h3>
+                <p>AI-Powered Awareness</p>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+                <li><a href="incidents.html"><i class="bi bi-exclamation-triangle-fill"></i> Incidents</a></li>
+                <li class="active"><a href="analytics.html"><i class="bi bi-graph-up"></i> Analytics</a></li>
+                <li><a href="cameras.html"><i class="bi bi-camera-video-fill"></i> Cameras</a></li>
+                <li><a href="settings.html"><i class="bi bi-gear-fill"></i> Settings</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#"><i class="bi bi-question-circle-fill"></i> Help</a>
+                <a href="#" id="logout-link"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+                <div class="search-bar">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search analytics...">
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-outline-primary"><i class="bi bi-plus-lg"></i> New Alert</button>
+                    <div class="notification-icon">
+                        <i class="bi bi-bell-fill"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/40" alt="User">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Content -->
+            <div class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Analytics Dashboard</h1>
+                        <p class="text-muted">Deep dive into real-time intelligence</p>
+                    </div>
+                    <button class="btn btn-primary"><i class="bi bi-download"></i> Export Report</button>
+                </div>
+
+                <div class="content-section">
+                    <h2 class="section-title">Analytics Overview</h2>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="status-card">
+                                <div class="status-icon bg-primary">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <div class="status-info">
+                                    <h3>2,547</h3>
+                                    <p>Total Visitors</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="status-card">
+                                <div class="status-icon bg-success">
+                                    <i class="bi bi-camera-video-fill"></i>
+                                </div>
+                                <div class="status-info">
+                                    <h3>24</h3>
+                                    <p>Active Cameras</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="status-card">
+                                <div class="status-icon bg-warning">
+                                    <i class="bi bi-exclamation-triangle-fill"></i>
+                                </div>
+                                <div class="status-info">
+                                    <h3>18</h3>
+                                    <p>Incidents Today</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-3">
+                            <div class="status-card">
+                                <div class="status-icon bg-info">
+                                    <i class="bi bi-clock-history"></i>
+                                </div>
+                                <div class="status-info">
+                                    <h3>98.2%</h3>
+                                    <p>System Uptime</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <div class="card mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Crowd Density Trends</h5>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary">Day</button>
+                                        <button class="btn btn-sm btn-primary">Week</button>
+                                        <button class="btn btn-sm btn-outline-secondary">Month</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Chart placeholder -->
+                                    <div style="height: 300px; background: linear-gradient(to right, #1e3c72, #2a5298); border-radius: 8px; position: relative;">
+                                        <!-- Simulated chart lines -->
+                                        <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
+                                            <path d="M0,250 Q50,180 100,200 T200,150 T300,180 T400,120 T500,150 T600,100 T700,150" 
+                                                  fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"></path>
+                                            <path d="M0,280 Q50,250 100,260 T200,240 T300,260 T400,220 T500,240 T600,200 T700,220" 
+                                                  fill="none" stroke="rgba(46,204,113,0.8)" stroke-width="2"></path>
+                                        </svg>
+                                        <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-size: 12px;">
+                                            Mon | Tue | Wed | Thu | Fri | Sat | Sun
+                                        </div>
+                                        <div style="position: absolute; top: 10px; right: 10px; background-color: rgba(0,0,0,0.3); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">
+                                            <span style="color: rgba(255,255,255,0.5);">●</span> Main Entrance
+                                            <span style="color: rgba(46,204,113,0.8); margin-left: 10px;">●</span> Food Court
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Incident Distribution</h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Pie chart placeholder -->
+                                    <div style="height: 300px; position: relative; display: flex; align-items: center; justify-content: center;">
+                                        <div style="width: 200px; height: 200px; border-radius: 50%; background: conic-gradient(#dc3545 0% 25%, #ffc107 25% 55%, #17a2b8 55% 70%, #28a745 70% 100%);"></div>
+                                        <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; background-color: #343a40; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+                                        <div style="position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-around;">
+                                            <div><span style="color: #dc3545;">●</span> Fire (25%)</div>
+                                            <div><span style="color: #ffc107;">●</span> Crowd (30%)</div>
+                                            <div><span style="color: #17a2b8;">●</span> Missing (15%)</div>
+                                            <div><span style="color: #28a745;">●</span> Other (30%)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Hotspot Analysis</h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Heatmap placeholder -->
+                                    <div style="height: 250px; background-color: #2c3e50; border-radius: 8px; position: relative; overflow: hidden;">
+                                        <!-- Simulated heatmap spots -->
+                                        <div style="position: absolute; top: 30%; left: 20%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(255,0,0,0.7) 0%, rgba(255,0,0,0) 70%);"></div>
+                                        <div style="position: absolute; top: 50%; left: 60%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(255,0,0,0.8) 0%, rgba(255,0,0,0) 70%);"></div>
+                                        <div style="position: absolute; top: 70%; left: 40%; width: 60px; height: 60px; background: radial-gradient(circle, rgba(255,165,0,0.7) 0%, rgba(255,165,0,0) 70%);"></div>
+                                        <div style="position: absolute; bottom: 10px; right: 10px; background-color: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Venue Heatmap</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">AI Insights</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ai-insight-item">
+                                        <div class="insight-icon bg-warning">
+                                            <i class="bi bi-lightbulb-fill"></i>
+                                        </div>
+                                        <div class="insight-content">
+                                            <h6>Crowd Bottleneck Prediction</h6>
+                                            <p>High probability of crowd bottleneck at Gate 2 between 2-4 PM based on historical patterns.</p>
+                                        </div>
+                                    </div>
+                                    <div class="ai-insight-item">
+                                        <div class="insight-icon bg-info">
+                                            <i class="bi bi-graph-up"></i>
+                                        </div>
+                                        <div class="insight-content">
+                                            <h6>Incident Correlation</h6>
+                                            <p>85% of fire incidents occurred in areas with poor ventilation. Recommend increased monitoring.</p>
+                                        </div>
+                                    </div>
+                                    <div class="ai-insight-item">
+                                        <div class="insight-icon bg-success">
+                                            <i class="bi bi-check-circle-fill"></i>
+                                        </div>
+                                        <div class="insight-content">
+                                            <h6>Response Time Improvement</h6>
+                                            <p>Average response time reduced by 23% this month due to optimized responder positioning.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('drishti_logged_in')) {
+                window.location.href = 'login.html';
+            } else {
+                // Display username
+                const username = localStorage.getItem('drishti_username');
+                if (username) {
+                    document.getElementById('username-display').textContent = username;
+                    
+                    // Set avatar text
+                    const avatarEl = document.querySelector('.avatar');
+                    if (avatarEl) {
+                        avatarEl.textContent = username.substring(0, 2).toUpperCase();
+                    }
+                }
+            }
+        });
+        
+        // Logout functionality
+        document.getElementById('logout-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('drishti_logged_in');
+            localStorage.removeItem('drishti_username');
+            window.location.href = 'login.html';
+        });
+    </script>
+
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
