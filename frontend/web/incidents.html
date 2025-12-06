@@ -35,13 +35,23 @@
             <div class="top-nav">
                 <div class="search-bar">
                     <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search incidents...">
+                    <input id="incident-search" type="text" placeholder="Search incidents...">
                 </div>
                 <div class="nav-actions">
-                    <button class="btn btn-outline-primary"><i class="bi bi-plus-lg"></i> New Incident</button>
+                    <button id="incidents-new-btn" class="btn btn-outline-primary" data-action="incident-create"><i class="bi bi-plus-lg"></i> New Incident</button>
                     <div class="notification-icon">
                         <i class="bi bi-bell-fill"></i>
                         <span class="badge">2</span>
+                    </div>
+                    <div class="role-selector text-start">
+                        <label for="role-selector" class="form-label text-muted small mb-1">Role</label>
+                        <select id="role-selector" class="form-select form-select-sm">
+                            <option value="viewer">Viewer</option>
+                            <option value="responder">Responder</option>
+                            <option value="dispatcher">Dispatcher</option>
+                            <option value="analyst">Analyst</option>
+                            <option value="admin">Admin</option>
+                        </select>
                     </div>
                     <div class="user-profile">
                         <img src="https://via.placeholder.com/40" alt="User">
@@ -58,8 +68,8 @@
                         <p class="text-muted">Monitor, triage, and resolve active incidents</p>
                     </div>
                     <div class="d-flex gap-2">
-                        <button class="btn btn-outline-secondary"><i class="bi bi-filter"></i> Filter</button>
-                        <button class="btn btn-primary"><i class="bi bi-plus"></i> New Incident</button>
+                        <button class="btn btn-outline-secondary" id="incident-filter-btn"><i class="bi bi-filter"></i> Filter</button>
+                        <button class="btn btn-primary" data-action="incident-create"><i class="bi bi-plus"></i> New Incident</button>
                     </div>
                 </div>
 
@@ -73,7 +83,7 @@
                                     <i class="bi bi-fire"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>12</h3>
+                                    <h3 data-incident-stat="fire">0</h3>
                                     <p>Fire Incidents</p>
                                 </div>
                             </div>
@@ -84,7 +94,7 @@
                                     <i class="bi bi-people-fill"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>8</h3>
+                                    <h3 data-incident-stat="crowd">0</h3>
                                     <p>Crowd Surges</p>
                                 </div>
                             </div>
@@ -95,7 +105,7 @@
                                     <i class="bi bi-person-x-fill"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>3</h3>
+                                    <h3 data-incident-stat="missing">0</h3>
                                     <p>Missing Persons</p>
                                 </div>
                             </div>
@@ -106,7 +116,7 @@
                                     <i class="bi bi-check-circle-fill"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>18</h3>
+                                    <h3 data-incident-stat="resolved">0</h3>
                                     <p>Resolved</p>
                                 </div>
                             </div>
@@ -116,12 +126,10 @@
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Active Incidents</h5>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-2">
-                                    <i class="bi bi-filter"></i> Filter
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-plus"></i> New Incident
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary" id="incidents-refresh">
+                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    <span class="label"><i class="bi bi-arrow-repeat me-1"></i>Refresh</span>
                                 </button>
                             </div>
                         </div>
@@ -139,53 +147,11 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="incidents-table-body">
                                         <tr>
-                                            <td>INC-2023-001</td>
-                                            <td><span class="badge bg-danger">Fire</span></td>
-                                            <td>Gate 3, East Wing</td>
-                                            <td>10:23 AM</td>
-                                            <td>
-                                                <div class="progress" style="height: 6px;">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 90%"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge bg-warning">In Progress</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-success"><i class="bi bi-check2"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>INC-2023-002</td>
-                                            <td><span class="badge bg-warning">Crowd</span></td>
-                                            <td>Main Entrance</td>
-                                            <td>11:05 AM</td>
-                                            <td>
-                                                <div class="progress" style="height: 6px;">
-                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 70%"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge bg-warning">In Progress</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-success"><i class="bi bi-check2"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>INC-2023-003</td>
-                                            <td><span class="badge bg-info">Missing</span></td>
-                                            <td>Food Court</td>
-                                            <td>11:42 AM</td>
-                                            <td>
-                                                <div class="progress" style="height: 6px;">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge bg-primary">Assigned</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-success"><i class="bi bi-check2"></i></button>
+                                            <td colspan="7" class="text-center text-muted py-4">
+                                                <div class="spinner-border text-primary me-2" role="status"></div>
+                                                Fetching incidents...
                                             </td>
                                         </tr>
                                     </tbody>
@@ -202,10 +168,133 @@
                             <div class="incident-map">
                                 <!-- Placeholder for map -->
                                 <div style="background-color: #2c3e50; height: 300px; border-radius: 8px; position: relative; overflow: hidden;">
-                                    <div style="position: absolute; top: 20%; left: 30%; width: 20px; height: 20px; background-color: red; border-radius: 50%; animation: pulse 1.5s infinite;"></div>
-                                    <div style="position: absolute; top: 40%; left: 60%; width: 20px; height: 20px; background-color: orange; border-radius: 50%; animation: pulse 1.5s infinite; animation-delay: 0.5s;"></div>
-                                    <div style="position: absolute; top: 70%; left: 45%; width: 20px; height: 20px; background-color: blue; border-radius: 50%; animation: pulse 1.5s infinite; animation-delay: 1s;"></div>
-                                    <div style="position: absolute; bottom: 10px; right: 10px; background-color: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Venue Map</div>
+                                    <div id="incident-map-markers" class="position-absolute top-0 start-0 w-100 h-100 p-3" style="pointer-events: none; overflow-y: auto;"></div>
+                                    <div style="position: absolute; bottom: 10px; right: 10px; background-color: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">Live Incident Map</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section mt-4">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="card h-100">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="mb-0">Lost &amp; Found Cases</h5>
+                                            <small class="text-muted">Synced with Project Drishti AI command center</small>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" id="lost-found-refresh">
+                                            <i class="bi bi-arrow-repeat me-1"></i>Refresh
+                                        </button>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div id="lost-found-list" class="list-group list-group-flush">
+                                            <div class="p-4 text-muted">Loading lost &amp; found records...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Report Lost / Found</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="lost-found-form" class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" name="name" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="form-label">Age</label>
+                                                <input type="number" name="age" class="form-control" min="0" max="120">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="form-label">Relation</label>
+                                                <select name="relation" class="form-select">
+                                                    <option value="child">Child</option>
+                                                    <option value="elderly">Elderly</option>
+                                                    <option value="adult">Adult</option>
+                                                    <option value="staff">Staff</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Description</label>
+                                                <textarea name="description" class="form-control" rows="2" placeholder="Clothing, identifiers, assistance needs" required></textarea>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Last Seen Zone</label>
+                                                <input type="text" name="zone" class="form-control" placeholder="e.g., Zone B - Food Court" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Contact Number</label>
+                                                <input type="tel" name="contact" class="form-control" placeholder="+91-90000-00000" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Notes</label>
+                                                <textarea name="notes" class="form-control" rows="2" placeholder="Medical info, known companions"></textarea>
+                                            </div>
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-upload me-1"></i>Submit Report
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Evacuation Plan Generator</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="evacuation-form" class="mb-3">
+                                            <div class="mb-3">
+                                                <label class="form-label">Hazard Type</label>
+                                                <select name="hazard" class="form-select">
+                                                    <option value="crowd">Crowd Surge</option>
+                                                    <option value="fire">Fire / Smoke</option>
+                                                    <option value="medical">Medical Emergency</option>
+                                                    <option value="security">Security Threat</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Origin Zone</label>
+                                                <input type="text" name="origin" class="form-control" placeholder="e.g., Gate 3" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Available Exits (comma separated)</label>
+                                                <input type="text" name="exits" class="form-control" placeholder="Gate 1, Gate 2, Gate 3">
+                                            </div>
+                                            <div class="d-grid">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    <i class="bi bi-lightning me-1"></i>Generate Plan
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div id="evacuation-plan-result" class="border rounded p-3 bg-light text-muted">
+                                            Submit details to receive AI-assisted evacuation guidance.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card mt-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h5 class="mb-0">Recent Evacuation Plans</h5>
+                                            <small class="text-muted">Latest AI-generated routes</small>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" id="evacuation-history-refresh">
+                                            <i class="bi bi-arrow-repeat"></i>
+                                        </button>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div id="evacuation-plans-list" class="list-group list-group-flush">
+                                            <div class="p-4 text-muted">No plans generated yet.</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -249,8 +338,33 @@
                 }
             </style>
         `);
+
+        const hydrateIncidentButtons = () => {
+            const buttons = document.querySelectorAll('[data-action="incident-create"]');
+            if (!buttons.length) {
+                return;
+            }
+            buttons.forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (typeof window.openIncidentCreateModal === 'function') {
+                        window.openIncidentCreateModal();
+                    } else {
+                        alert('Incident creation module is still loading. Please try again in a moment.');
+                    }
+                }, { once: false });
+            });
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hydrateIncidentButtons, { once: true });
+        } else {
+            hydrateIncidentButtons();
+        }
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="firebase-config.js"></script>
     <script src="app.js"></script>
 </body>

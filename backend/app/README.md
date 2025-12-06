@@ -24,11 +24,11 @@ This module provides AI-powered detection of people, fire, and smoke in video st
 pip install -r requirements.txt
 ```
 
-2. Ensure the YOLOv8 model files are available at the specified paths in `crowd_analysis.py`:
-   - Crowd detection model: `D:/Projects/opencv/cctv/runs/detect/drishti_crowd_yolov8s2/weights/best.pt`
-   - Fire/smoke detection model: `D:/Projects/Major_project/backend/FireSmoke/best.pt`
+2. Place your trained YOLOv8 weight files in the `models` directory alongside this README:
+   - `backend/app/models/crowd_detection.pt`
+   - `backend/app/models/fire_smoke_detection.pt`
 
-   You may need to update these paths based on your actual model locations.
+   The `bothCSF.py` helper automatically loads models from this directory and only falls back to the legacy absolute paths if the files are missing. Keeping the weights here makes the project portable.
 
 ## Usage
 
@@ -44,32 +44,24 @@ The server will start on `http://localhost:5000`.
 
 ### API Endpoints
 
-#### POST /api/analyze
+| Method | Path                | Description                                      |
+|--------|---------------------|--------------------------------------------------|
+| GET    | `/api/health`       | Basic health probe for orchestrators/monitors.  |
+| POST   | `/api/analyze-image`| Analyze a single image frame and return people/fire/smoke detections plus the annotated frame as base64. |
+| POST   | `/api/analyze-video/` (alias `/api/analyze`) | Analyze a video upload by sampling frames, counting people, aggregating fire/smoke detections, and returning sample annotated frames. |
 
-Analyzes a video file for crowd, fire, and smoke detection.
+All upload endpoints expect `multipart/form-data` with a `file` field.
 
-**Request:**
-- Content-Type: `multipart/form-data`
-- Body: Form data with a `file` field containing the video file
+#### Sample video response
 
-**Response:**
 ```json
 {
-  "average_people": 15,
+  "average_people": 18,
   "fire_smoke_predictions": [
-    {
-      "bbox": [x1, y1, x2, y2],
-      "class": "fire",
-      "confidence": 0.85
-    },
-    {
-      "bbox": [x1, y1, x2, y2],
-      "class": "smoke",
-      "confidence": 0.75
-    }
+    { "bbox": [100, 120, 220, 360], "class": "fire", "confidence": 0.87 }
   ],
-  "sample_frames": ["base64_encoded_image1", "base64_encoded_image2"],
-  "message": "Analysis completed successfully using trained models for smoke, fire, and crowd detection."
+  "sample_frames": ["base64_encoded_jpeg"],
+  "message": "Analysis completed on 6 sampled frames."
 }
 ```
 

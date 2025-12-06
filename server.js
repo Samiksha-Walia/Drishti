@@ -2,35 +2,45 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
 
 const PORT = 3000;
 const FRONTEND_DIR = path.join(__dirname, 'frontend', 'web');
-const FASTAPI_URL = 'http://localhost:8000';
+const FLASK_URL = 'http://localhost:5000';
 
-// Start FastAPI server
-const startFastAPIServer = () => {
-  console.log('Starting FastAPI server...');
-  const fastAPIProcess = exec('cd backend/app && python -m uvicorn fastapi_app:app --host 0.0.0.0 --port 8000', (error, stdout, stderr) => {
-    if (error) {
-      console.error(`FastAPI server error: ${error}`);
-      return;
-    }
-    console.log(`FastAPI server output: ${stdout}`);
-    if (stderr) console.error(`FastAPI server stderr: ${stderr}`);
+const BACKEND_APP_DIR = path.join(__dirname, 'backend', 'app');
+
+// Start Flask server
+const startFlaskServer = () => {
+  console.log('Starting Flask detection API...');
+  const flaskProcess = spawn('python', ['api.py'], {
+    cwd: BACKEND_APP_DIR,
+    stdio: 'inherit',
+    shell: false
   });
-  
-  fastAPIProcess.on('exit', (code) => {
-    console.log(`FastAPI server exited with code ${code}`);
+
+  flaskProcess.on('error', (error) => {
+    console.error('Failed to launch Flask API:', error);
+    console.log('Tip: start it manually with "cd backend/app && python api.py"');
+  });
+
+  flaskProcess.on('exit', (code) => {
+    console.log(`Flask API exited with code ${code}`);
+  });
+
+  // Ensure the Flask subprocess is closed when Node stops
+  process.on('exit', () => flaskProcess.kill());
+  process.on('SIGINT', () => {
+    flaskProcess.kill('SIGINT');
+    process.exit();
   });
 };
 
-// Try to start FastAPI server
 try {
-  startFastAPIServer();
+  startFlaskServer();
 } catch (err) {
-  console.error('Failed to start FastAPI server:', err);
-  console.log('Please start the FastAPI server manually: cd backend/app && python -m uvicorn fastapi_app:app --host 0.0.0.0 --port 8000');
+  console.error('Failed to start Flask API server:', err);
+  console.log('Please start the Flask server manually: cd backend/app && python api.py');
 }
 
 // MIME types for different file extensions
@@ -50,15 +60,15 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
   
-  // Handle API requests (proxy to FastAPI backend)
+  // Handle API requests (proxy to Flask backend)
   if (req.url.startsWith('/api/')) {
     // This is a very basic proxy implementation
     // In a production environment, use a proper proxy like http-proxy
-    console.log(`Proxying API request to FastAPI: ${req.url}`);
+    console.log(`Proxying API request to Flask: ${req.url}`);
     
     // Extract the endpoint from the URL (remove /api/ prefix)
     const endpoint = req.url.replace('/api/', '');
-    const apiUrl = `${FASTAPI_URL}/${endpoint}`;
+    const apiUrl = `${FLASK_URL}/${endpoint}`;
     
     // Forward the request to FastAPI
     const options = {

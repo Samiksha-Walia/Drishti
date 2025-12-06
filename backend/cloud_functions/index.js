@@ -1,7 +1,10 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const vision = require('@google-cloud/vision');
-const {VertexAI} = require('@google-cloud/aiplatform');
+const vertex = require('@google-cloud/aiplatform');
+const {VertexAI} = vertex;
+const {helpers} = vertex;
+const {PredictionServiceClient} = vertex.v1;
 const {GoogleMapsClient} = require('@google/maps');
 const cors = require('cors')({origin: true});
 const axios = require('axios');
@@ -9,6 +12,19 @@ const axios = require('axios');
 admin.initializeApp();
 const db = admin.firestore();
 const storage = admin.storage();
+
+const PROJECT_ID = process.env.PROJECT_ID || process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT;
+const VERTEX_LOCATION = process.env.VERTEX_LOCATION || 'us-central1';
+const VERTEX_FORECAST_ENDPOINT_ID = process.env.VERTEX_FORECAST_ENDPOINT_ID;
+const vertexForecastEndpointPath = PROJECT_ID && VERTEX_FORECAST_ENDPOINT_ID
+  ? `projects/${PROJECT_ID}/locations/${VERTEX_LOCATION}/endpoints/${VERTEX_FORECAST_ENDPOINT_ID}`
+  : null;
+const CROWD_HISTORY_LIMIT = parseInt(process.env.CROWD_HISTORY_LIMIT || '240', 10);
+const DEFAULT_BOTTLENECK_THRESHOLD = Number(process.env.CROWD_BOTTLENECK_THRESHOLD || 0.7);
+
+const predictionServiceClient = new PredictionServiceClient({
+  apiEndpoint: `${VERTEX_LOCATION}-aiplatform.googleapis.com`
+});
 
 // Initialize Vertex AI
 const vertexAI = new VertexAI({project: process.env.PROJECT_ID, location: 'us-central1'});
@@ -82,7 +98,12 @@ exports.predictCrowdBottlenecks = functions.https.onCall(async (data, context) =
     throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
   }
 
-  const {venueId, currentCrowdData} = data;
+  const {venueId, currentCrowdData = {}, horizonMinutes} = data;
+  if (!venueId) {
+    throw new functions.https.HttpsError('invalid-argument', 'venueId is required');
+  }
+
+  const forecastHorizon = Math.min(Math.max(horizonMinutes || 20, 5), 60);
   
   try {
     // Get venue information
@@ -92,23 +113,30 @@ exports.predictCrowdBottlenecks = functions.https.onCall(async (data, context) =
     }
     
     const venue = venueDoc.data();
+    if (!Array.isArray(venue.zones) || venue.zones.length === 0) {
+      throw new functions.https.HttpsError('failed-precondition', 'Venue must define zones for forecasting');
+    }
+
+    await persistCrowdSnapshot(venueId, currentCrowdData);
+
+    const zoneHistory = await getZoneCrowdHistory(venueId, venue.zones.map(z => z.id));
+    const vertexForecast = await runVertexCrowdForecast({
+      venueId,
+      currentCrowdData,
+      zoneHistory,
+      horizonMinutes: forecastHorizon
+    });
     
-    // Call Vertex AI Forecasting API
-    // This is a placeholder for the actual implementation
-    console.log(`Predicting crowd bottlenecks for venue ${venueId}`);
-    
-    // Mock prediction results for demonstration
-    const predictions = venue.zones.map(zone => ({
-      zoneId: zone.id,
-      zoneName: zone.name,
-      currentDensity: currentCrowdData[zone.id] || Math.random() * 0.5,
-      predictedDensity: Math.random() * 0.8,
-      bottleneckRisk: Math.random(),
-      timeToBottleneck: Math.floor(Math.random() * 20) + 5 // 5-25 minutes
-    }));
+    const predictions = buildCrowdPredictionOutput({
+      venue,
+      currentCrowdData,
+      zoneHistory,
+      vertexForecast,
+      horizonMinutes: forecastHorizon
+    });
     
     // Filter to high-risk zones
-    const highRiskZones = predictions.filter(p => p.bottleneckRisk > 0.7);
+    const highRiskZones = predictions.filter(p => p.bottleneckRisk > DEFAULT_BOTTLENECK_THRESHOLD);
     
     // Create alerts for high-risk zones
     for (const zone of highRiskZones) {
@@ -131,6 +159,10 @@ exports.predictCrowdBottlenecks = functions.https.onCall(async (data, context) =
     }
     
     // Store analytics data
+    const confidenceScore = predictions.length
+      ? Math.max(...predictions.map(p => p.bottleneckRisk))
+      : 0;
+
     await db.collection('analytics').add({
       id: `crowd-analytics-${Date.now()}`,
       type: 'crowd_density_forecast',
@@ -144,10 +176,22 @@ exports.predictCrowdBottlenecks = functions.https.onCall(async (data, context) =
         risk: z.bottleneckRisk,
         timeToEvent: z.timeToBottleneck
       })),
-      confidenceScore: Math.max(...predictions.map(p => p.bottleneckRisk))
+      forecastConfig: {
+        horizonMinutes: forecastHorizon,
+        vertexUsed: Boolean(vertexForecast && vertexForecast.length),
+        vertexEndpoint: vertexForecastEndpointPath
+      },
+      confidenceScore,
+      snapshot: currentCrowdData,
+      vertexRaw: vertexForecast
     });
     
-    return {success: true, predictions, highRiskZones};
+    return {
+      success: true,
+      predictions,
+      highRiskZones,
+      vertexUsed: Boolean(vertexForecast && vertexForecast.length)
+    };
   } catch (error) {
     console.error('Error predicting crowd bottlenecks:', error);
     throw new functions.https.HttpsError('internal', 'Error predicting crowd bottlenecks', error);
@@ -472,9 +516,59 @@ exports.api = functions.https.onRequest((req, res) => {
       }
       
       res.status(404).send({error: 'Not found'});
-    } catch (error) {
-      console.error('API error:', error);
-      res.status(500).send({error: 'Internal server error'});
     }
-  });
-});
+
+    if (typeof vertexData.timeToBottleneckMinutes === 'number') {
+      timeToBottleneckMinutes = vertexData.timeToBottleneckMinutes;
+    } else if (typeof vertexData.horizonMinutes === 'number') {
+      timeToBottleneckMinutes = vertexData.horizonMinutes;
+    }
+  } else {
+    const trend = getZoneTrend(history);
+    predictedDensity = clampDensity(currentDensity + trend * 0.15);
+    if (predictedDensity > DEFAULT_BOTTLENECK_THRESHOLD) {
+      timeToBottleneckMinutes = Math.max(5, Math.min(horizonMinutes, 20));
+    }
+  }
+
+  const bottleneckRisk = deriveBottleneckRisk(predictedDensity);
+
+  return {
+    zoneId,
+    zoneName: zone.name || zone.label || zoneId,
+    currentDensity,
+    predictedDensity,
+    bottleneckRisk,
+    timeToBottleneck: Math.round(timeToBottleneckMinutes),
+    predictionSource
+  };
+}
+
+function getZoneTrend(history = []) {
+  if (!history.length) {
+    return 0;
+  }
+  if (history.length === 1) {
+    return history[0].density;
+  }
+  const earliest = history[0].density;
+  const latest = history[history.length - 1].density;
+  return clampDensity(latest - earliest);
+}
+
+function deriveBottleneckRisk(predictedDensity) {
+  const density = clampDensity(predictedDensity);
+  if (density <= DEFAULT_BOTTLENECK_THRESHOLD) {
+    return Math.max(0, density / DEFAULT_BOTTLENECK_THRESHOLD * 0.7);
+  }
+  const overshoot = density - DEFAULT_BOTTLENECK_THRESHOLD;
+  return Math.min(1, 0.7 + (overshoot / Math.max(0.001, 1 - DEFAULT_BOTTLENECK_THRESHOLD)) * 0.3);
+}
+
+function clampDensity(value) {
+  const num = typeof value === 'number' ? value : Number(value);
+  if (Number.isNaN(num)) {
+    return 0;
+  }
+  return Math.max(0, Math.min(1.5, num));
+}

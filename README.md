@@ -45,43 +45,49 @@ project-drishti/
 - Python 3.8+ (for the crowd and fire/smoke detection)
 - YOLOv8 model files (see backend/app/models/README.md)
 
-### Installation
+### Installation & Bootstrapping
 
-1. Install Node.js dependencies:
-   ```
-   npm install
-   ```
-
-2. Install Python dependencies for crowd and fire/smoke detection:
-   ```
-   cd backend/app
-   pip install -r requirements.txt
+1. **Create a Python virtual environment (recommended):**
+   ```bash
+   python -m venv .venv
+   .venv\\Scripts\\activate
    ```
 
-3. Place YOLOv8 model files in the `backend/app/models` directory (see README in that directory)
+2. **Install Python dependencies for the Flask detection API:**
+   ```bash
+   pip install -r backend/app/requirements.txt
+   ```
+
+3. **Download YOLOv8 weights** for your trained crowd and fire/smoke models and place them in `backend/app/models/` using these filenames:
+   - `crowd_detection.pt`
+   - `fire_smoke_detection.pt`
+
+   The detection code automatically falls back to the repo defaults, but storing the weights in the `models` directory keeps the project portable.
+
+4. **Install Node.js dependencies** (only if you add npm packages; the current static dashboard does not require a build step but Node 18+ is still required to run the proxy server).
 
 ### Running the Application
 
-You can start both servers (Node.js and Flask) using the provided batch file:
+You can start both servers (Flask API + Node proxy) with the helper script:
 
-```
+```bash
 start_servers.bat
 ```
 
-Or start them individually:
+Or run them manually in separate terminals:
 
-1. Start the Flask API server:
-   ```
+1. **Flask detection API (port 5000):**
+   ```bash
    cd backend/app
    python api.py
    ```
 
-2. Start the Node.js web server:
-   ```
+2. **Node static server + proxy (port 3000):**
+   ```bash
    node server.js
    ```
 
-3. Access the application at http://localhost:3000
+3. Open http://localhost:3000 to access the dashboard. The Node server proxies all `/api/*` calls to the Flask backend running on port 5000.
 
 
 ## 👩‍💻 Author

@@ -1,0 +1,100 @@
+{
+  "alerts": [
+    {
+      "id": "5cc9b6d4-4340-4df3-8892-c9c2c382bd8c",
+      "type": "crowd_bottleneck",
+      "severity": "high",
+      "title": "Crowd surge near Gate 3",
+      "description": "Vertex AI predicts density > 90% in 12 minutes. Deploy barriers and redirect flow.",
+      "location": {
+        "zone": "Gate 3",
+        "lat": 28.6139,
+        "lng": 77.209
+      },
+      "status": "active",
+      "aiConfidence": 0.92,
+      "createdAt": "2025-12-06T14:54:14.995198Z",
+      "reportedBy": "Vertex AI Forecast"
+    },
+    {
+      "id": "1b69e2e2-2397-47f9-ae97-2c01fd918156",
+      "type": "fire",
+      "severity": "medium",
+      "title": "Smoke detected at Food Court",
+      "description": "Thermal camera flagged abnormal heat signature. Send fire marshal.",
+      "location": {
+        "zone": "Food Court",
+        "lat": 28.6149,
+        "lng": 77.208
+      },
+      "status": "acknowledged",
+      "aiConfidence": 0.81,
+      "createdAt": "2025-12-06T14:54:14.995198Z",
+      "reportedBy": "Camera CAM-015"
+    }
+  ],
+  "analytics": [
+    {
+      "id": "27baaed0-f344-40b7-af05-a50ae792e788",
+      "location": {
+        "venue": "demo-venue-001"
+      },
+      "timestamp": "2025-12-06T14:54:14.995198Z",
+      "snapshot": {
+        "cam-001": 0.72,
+        "cam-008": 0.35,
+        "cam-023": 1.1
+      },
+      "data": [
+        {
+          "zoneName": "Main Entrance",
+          "predictedDensity": 0.82,
+          "bottleneckRisk": 0.76,
+          "timeToBottleneck": 14,
+          "predictionSource": "vertex_ai"
+        },
+        {
+          "zoneName": "VIP Pavilion",
+          "predictedDensity": 0.54,
+          "bottleneckRisk": 0.33,
+          "timeToBottleneck": 25,
+          "predictionSource": "heuristic"
+        }
+      ]
+    }
+  ],
+  "lost_found": [
+    {
+      "id": "4de2d6d9-16da-4b93-bb7d-bffb10eec730",
+      "name": "Aarav Kumar",
+      "age": 9,
+      "relation": "child",
+      "description": "Blue t-shirt with white stripes, denim shorts, 4ft3in.",
+      "lastSeen": {
+        "zone": "Zone C - Food Court",
+        "time": "2025-12-06T14:54:14.995198Z"
+      },
+      "reportedAt": "2025-12-06T14:54:14.995198Z",
+      "status": "open",
+      "contact": "+91-90000-00001",
+      "notes": "Responds to nickname \"Avi\".",
+      "photoUrl": "https://placehold.co/200x200?text=A"
+    },
+    {
+      "id": "7155a865-63de-48f4-9fae-faa71b99b726",
+      "name": "Meera Shah",
+      "age": 67,
+      "relation": "elderly",
+      "description": "Pink saree, grey hair bun, walking cane.",
+      "lastSeen": {
+        "zone": "Zone A - Main Stage",
+        "time": "2025-12-06T14:54:14.995198Z"
+      },
+      "reportedAt": "2025-12-06T14:54:14.995198Z",
+      "status": "investigating",
+      "contact": "+91-90000-00002",
+      "notes": "Medical condition: diabetes.",
+      "photoUrl": "https://placehold.co/200x200?text=M"
+    }
+  ]
+}

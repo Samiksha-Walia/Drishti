@@ -16,7 +16,7 @@
 </script>
 
 </head>
-<body>
+<body data-default-venue="demo-venue-001">
   <div class="app-container">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -222,12 +222,21 @@
         <div class="ai-insights">
           <h2>AI-Powered Insights</h2>
           <div class="insights-container">
-            <div class="insight-card">
-              <h3>Crowd Density Forecast</h3>
-              <div class="chart-container">
-                <img src="https://via.placeholder.com/400x200" alt="Crowd Density Chart" class="placeholder-chart">
+            <div class="insight-card" id="crowd-forecast-card">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <h3 class="mb-0">Crowd Density Forecast</h3>
+                <span class="badge bg-light text-dark" id="forecast-venue-label">Venue: demo-venue-001</span>
               </div>
-              <p>Potential bottleneck in East Entrance in 15-20 minutes. Consider opening additional entry points.</p>
+              <p class="text-muted small mb-2" id="crowd-forecast-updated">Waiting for latest Vertex AI forecast...</p>
+              <div class="forecast-list" id="crowd-forecast-list">
+                <p class="text-muted small mb-0">No predictions available yet.</p>
+              </div>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-sm btn-primary" data-action="refresh-forecast">
+                  <i class="bi bi-arrow-repeat me-1"></i>Run Forecast
+                </button>
+                <small class="text-muted ms-auto">Powered by Vertex AI Forecasting</small>
+              </div>
             </div>
             
             <div class="insight-card">
@@ -364,6 +373,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-functions-compat.js"></script>
   
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -372,25 +382,34 @@
   <script src="firebase-config.js"></script>
   <script src="app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof L !== 'undefined' && document.getElementById('map')) {
-        const leafletMap = L.map('map').setView([28.6139, 77.2090], 13);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(leafletMap);
-
-        const markers = [
-          { coords: [28.6139, 77.2090], title: 'Security Team Alpha' },
-          { coords: [28.6155, 77.2105], title: 'Medical Station' },
-          { coords: [28.6125, 77.2080], title: 'Crowd Bottleneck Alert' }
-        ];
-
-        markers.forEach(marker => {
-          L.marker(marker.coords).addTo(leafletMap).bindPopup(`<b>${marker.title}</b>`);
-        });
+    document.addEventListener('DOMContentLoaded', function () {
+      const mapElement = document.getElementById('map');
+      if (typeof L === 'undefined' || !mapElement) {
+        return;
       }
+
+      const seatingMapUrl = 'images/concert-arena-map.jpg';
+      const bounds = [[0, 0], [1000, 1800]]; // adjust to match the image aspect ratio
+
+      const map = L.map('map', {
+        crs: L.CRS.Simple,
+        minZoom: -1,
+        maxZoom: 2,
+        zoomControl: false
+      });
+
+      L.imageOverlay(seatingMapUrl, bounds).addTo(map);
+      map.fitBounds(bounds);
+
+      const markers = [
+        { coords: [450, 300], title: 'Security Team Alpha' },
+        { coords: [700, 900], title: 'Medical Station' },
+        { coords: [520, 1400], title: 'Crowd Bottleneck Alert' }
+      ];
+
+      markers.forEach(marker => {
+        L.marker(marker.coords).addTo(map).bindPopup(`<b>${marker.title}</b>`);
+      });
     });
   </script>
   <script>
