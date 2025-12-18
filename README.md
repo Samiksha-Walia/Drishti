@@ -101,4 +101,3 @@ Or run them manually in separate terminals:
 
 If this project helped you or inspired your learning, please give it a ⭐️ on GitHub!
 
-> 📝 *Real-time communication meets file transfer – built with modern web stack and a focus on user experience.*

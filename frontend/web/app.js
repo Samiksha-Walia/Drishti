@@ -22,6 +22,14 @@ const API_BASE = (() => {
 let dashboardStream = null;
 window.drishtiIncidentModal = null;
 
+function runInitializer(label, initializer) {
+  try {
+    initializer?.();
+  } catch (error) {
+    console.error(`[Init] Failed to initialize ${label}`, error);
+  }
+}
+
 const ROLE_STORAGE_KEY = 'drishti-active-role';
 const ROLE_DEFAULT = 'viewer';
 const ROLE_OPTIONS = ['viewer', 'responder', 'dispatcher', 'analyst', 'admin'];
@@ -611,6 +619,548 @@ function setupIncidentsTable() {
   };
 }
 
+function setupAnalyticsOverview() {
+  const statElements = {};
+  document.querySelectorAll('[data-analytics-stat]').forEach((element) => {
+    if (element.dataset.analyticsStat) {
+      statElements[element.dataset.analyticsStat] = element;
+    }
+  });
+
+  const renderOverview = (data) => {
+    if (statElements.total_events) statElements.total_events.textContent = data.total_events || 0;
+    if (statElements.total_zones) statElements.total_zones.textContent = data.total_zones || 0;
+    if (statElements.avg_predicted) statElements.avg_predicted.textContent = data.avg_predicted || 0;
+    if (statElements.uptime) statElements.uptime.textContent = `${data.uptime_pct || 0}%`;
+    if (statElements.cameras) statElements.cameras.textContent = data.cameras || 0;
+  };
+
+  const loadOverview = async () => {
+    try {
+      const data = await fetchApi('/analytics/overview');
+      renderOverview(data);
+    } catch (error) {
+      console.error('Failed to load analytics overview', error);
+    }
+  };
+
+  loadOverview();
+  setInterval(loadOverview, 60_000);
+}
+
+function setupZonePredictions() {
+  const container = document.getElementById('zone-predictions');
+  const refreshBtn = document.querySelector('[data-action="refresh-zones"]');
+  if (!container) return;
+
+  const renderZones = (data) => {
+    const html = Object.entries(data).map(([zone, count]) => `
+      <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+        <span class="fw-semibold">${zone}</span>
+        <span class="badge bg-primary rounded-pill">${count}</span>
+      </div>
+    `).join('');
+    container.innerHTML = html;
+  };
+
+  const loadZones = async () => {
+    try {
+      const data = await fetchApi('/zones/15min');
+      renderZones(data);
+    } catch (error) {
+      console.error('Failed to load zone predictions', error);
+      container.innerHTML = `<div class="text-center text-danger">Unable to load predictions.</div>`;
+    }
+  };
+
+  refreshBtn?.addEventListener('click', loadZones);
+  loadZones();
+  setInterval(loadZones, 15 * 60 * 1000);
+}
+
+function setupIncidentDistribution() {
+  const container = document.querySelector('[data-chart="incident-pie"]');
+  if (!container) return;
+
+  const renderPie = (data) => {
+    const total = Object.values(data).reduce((a, b) => a + b, 0);
+    let startAngle = 0;
+    const colors = {
+      Fire: '#dc3545',
+      Crowd: '#ffc107',
+      Missing: '#17a2b8',
+      Other: '#28a745'
+    };
+    const slices = Object.entries(data).map(([label, value]) => {
+      const percentage = (value / total) * 100;
+      const endAngle = startAngle + percentage * 3.6; // 360 degrees total
+      const largeArcFlag = percentage > 50 ? 1 : 0;
+      const x1 = 100 + 80 * Math.cos((startAngle - 90) * Math.PI / 180);
+      const y1 = 100 + 80 * Math.sin((startAngle - 90) * Math.PI / 180);
+      const x2 = 100 + 80 * Math.cos((endAngle - 90) * Math.PI / 180);
+      const y2 = 100 + 80 * Math.sin((endAngle - 90) * Math.PI / 180);
+      const path = `M 100 100 L ${x1} ${y1} A 80 80 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+      startAngle = endAngle;
+      return { label, value, path, color: colors[label] };
+    });
+    const svg = `
+      <svg width="200" height="200" viewBox="0 0 200 200" style="display: block; margin: auto;">
+        ${slices.map(s => `<path d="${s.path}" fill="${s.color}"></path>`).join('')}
+        <circle cx="100" cy="100" r="40" fill="#343a40"></circle>
+      </svg>
+      <div class="d-flex justify-content-around mt-3">
+        ${slices.map(s => `<div><span style="color: ${s.color};">●</span> ${s.label} (${s.value}%)</div>`).join('')}
+      </div>`;
+    container.innerHTML = svg;
+  };
+
+  const loadDistribution = async () => {
+    try {
+      const data = await fetchApi('/incidents/distribution');
+      renderPie(data);
+    } catch (error) {
+      console.error('Failed to load incident distribution', error);
+    }
+  };
+
+  loadDistribution();
+  setInterval(loadDistribution, 120_000);
+}
+
+function setupCrowdTrendsChart() {
+  const container = document.querySelector('[data-chart="crowd-trends"]');
+  const btnGroup = container?.closest('.card')?.querySelector('[data-trend-range]');
+  if (!container || !btnGroup) return;
+
+  let currentRange = btnGroup.dataset.trendRange || 'week';
+
+  const setActiveButton = (range) => {
+    btnGroup.querySelectorAll('button').forEach(btn => {
+      btn.classList.toggle('btn-primary', btn.dataset.range === range);
+      btn.classList.toggle('btn-outline-secondary', btn.dataset.range !== range);
+    });
+    btnGroup.dataset.trendRange = range;
+  };
+
+  const renderChart = (points, range) => {
+    console.debug(`[Trends] Rendering ${range} chart with data:`, points);
+    if (!points || points.length === 0) {
+      container.innerHTML = `<div style="height: 300px; background: linear-gradient(to right, #1e3c72, #2a5298); border-radius: 8px; position: relative; display: flex; align-items: center; justify-content: center; color: white;">No data available</div>`;
+      console.debug('[Trends] No data to render.');
+      return;
+    }
+    const width = 700;
+    const height = 300;
+    const padding = { top: 20, right: 40, bottom: 40, left: 60 };
+
+    const maxVal = Math.max(...points.map(p => p.value), 1);
+    const xScale = (i) => padding.left + (i / (points.length - 1 || 1)) * (width - padding.left - padding.right);
+    const yScale = (v) => height - padding.bottom - (v / maxVal) * (height - padding.top - padding.bottom);
+
+    const pathMain = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xScale(i)},${yScale(p.value)}`).join(' ');
+    const pathSecondary = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${xScale(i)},${yScale(Math.floor(p.value * 0.7))}`).join(' ');
+
+    const svg = `
+      <svg width="${width}" height="${height}" style="position: absolute; top: 0; left: 0;">
+        <defs>
+          <clipPath id="chartArea">
+            <rect x="${padding.left}" y="${padding.top}" width="${width - padding.left - padding.right}" height="${height - padding.top - padding.bottom}" />
+          </clipPath>
+        </defs>
+        <path d="${pathSecondary}" fill="none" stroke="rgba(46,204,113,0.8)" stroke-width="2" clip-path="url(#chartArea)"></path>
+        <path d="${pathMain}" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" clip-path="url(#chartArea)"></path>
+        ${points.map((p, i) => `<text x="${xScale(i)}" y="${height - 10}" text-anchor="middle" fill="white" font-size="12">${p.label}</text>`).join('')}
+        <text x="${padding.left - 10}" y="${padding.top}" fill="white" font-size="12" text-anchor="end">${maxVal}</text>
+        <text x="${padding.left - 10}" y="${height - padding.bottom}" fill="white" font-size="12" text-anchor="end">0</text>
+        <text x="${width - padding.right + 10}" y="${padding.top + 20}" fill="white" font-size="12" text-anchor="start">
+          <tspan fill="rgba(255,255,255,0.5)">● Forecast</tspan>
+          <tspan dx="10" fill="rgba(46,204,113,0.8)">● Historical Baseline</tspan>
+        </text>
+      </svg>`;
+    // Replace placeholder with live chart
+    container.innerHTML = `<div style="height: 300px; background: linear-gradient(to right, #1e3c72, #2a5298); border-radius: 8px; position: relative;">${svg}</div>`;
+    console.debug('[Trends] Chart rendered and container updated.');
+  };
+
+  const loadTrends = async (range = currentRange) => {
+    try {
+      console.debug('[Trends] Fetching /api/trends-past...');
+      container.innerHTML = '';
+      const payload = await fetchApi('/trends-past');
+      console.debug('[Trends] Received payload:', payload);
+      currentRange = range;
+      setActiveButton(range);
+      // For past trends, payload is a simple hour->count map; convert to points
+      const points = Object.entries(payload).map(([hour, count]) => ({ label: `${hour}:00`, value: count }));
+      renderChart(points, range);
+    } catch (error) {
+      console.error('Failed to load crowd trends', error);
+    }
+  };
+
+  // Wire range buttons
+  btnGroup.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-range]');
+    if (btn) {
+      const range = btn.dataset.range;
+      if (range !== currentRange) {
+        loadTrends(range);
+      }
+    }
+  });
+
+  loadTrends(currentRange);
+  // Refresh every 5 minutes
+  setInterval(() => loadTrends(currentRange), 300_000);
+}
+
+function setupAnalyticsTable() {
+  const tableBody = document.getElementById('analytics-table-body');
+  const refreshBtn = document.getElementById('analytics-refresh');
+  const newRecordBtn = document.getElementById('analytics-new-btn');
+  const statElements = {};
+  document.querySelectorAll('[data-analytics-stat]').forEach((element) => {
+    if (element.dataset.analyticsStat) {
+      statElements[element.dataset.analyticsStat] = element;
+    }
+  });
+
+  if (!tableBody) {
+    return;
+  }
+
+  const state = {
+    items: [],
+    filters: { venue: 'all' }
+  };
+
+  const setTableMessage = (message, isError = false) => {
+    tableBody.innerHTML = `
+      <tr>
+        <td colspan="4" class="text-center py-4 ${isError ? 'text-danger' : 'text-muted'}">
+          ${message}
+        </td>
+      </tr>`;
+  };
+
+  const renderRows = (items = []) => {
+    if (!items.length) {
+      setTableMessage('No analytics records found.');
+      return;
+    }
+    tableBody.innerHTML = '';
+    items.forEach((record) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${record.id?.slice(0, 8) || 'ID'}</td>
+        <td>${record.location?.venue || 'Unknown venue'}</td>
+        <td>${formatTimestamp(record.timestamp)}</td>
+        <td class="d-flex gap-1">
+          <button class="btn btn-sm btn-outline-primary" data-analytics-action="view" data-analytics-id="${record.id}"><i class="bi bi-eye"></i></button>
+        </td>`;
+      tableBody.appendChild(row);
+    });
+  };
+
+  const setRefreshLoading = (isLoading) => {
+    if (!refreshBtn) return;
+    const spinner = refreshBtn.querySelector('.spinner-border');
+    const label = refreshBtn.querySelector('.label');
+    if (spinner) spinner.classList.toggle('d-none', !isLoading);
+    if (label) label.classList.toggle('opacity-50', isLoading);
+    refreshBtn.disabled = isLoading;
+  };
+
+  const loadItems = async () => {
+    try {
+      setRefreshLoading(true);
+      setTableMessage('Fetching analytics...');
+      const data = await fetchApi('/analytics');
+      state.items = data?.items || [];
+      renderRows(state.items);
+      updateAnalyticsStats(state.items);
+    } catch (error) {
+      console.error('Failed to load analytics', error);
+      setTableMessage('Unable to load analytics. Please try again.', true);
+      showToast('Failed to load analytics');
+    } finally {
+      setRefreshLoading(false);
+    }
+  };
+
+  const updateAnalyticsStats = (items = []) => {
+    const counters = { visitors: 0, cameras: 0, incidents: 0, uptime: '98.2%' };
+    items.forEach((record) => {
+      const venue = record.location?.venue?.toLowerCase() || '';
+      if (venue.includes('gate') || venue.includes('entrance')) {
+        counters.visitors += Math.floor(Math.random() * 200) + 50;
+      }
+      if (venue.includes('camera')) {
+        counters.cameras += 1;
+      }
+      if (record.data?.some?.(d => d.metric === 'incident')) {
+        counters.incidents += 1;
+      }
+    });
+    Object.entries(statElements).forEach(([key, element]) => {
+      if (element) {
+        element.textContent = counters[key] ?? 0;
+      }
+    });
+  };
+
+  tableBody.addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-analytics-action]');
+    if (!button) return;
+    const action = button.dataset.analyticsAction;
+    const recordId = button.dataset.analyticsId;
+
+    if (action === 'view') {
+      try {
+        setButtonLoading(button, true, 'Loading...');
+        const record = await fetchApi(`/analytics/${recordId}`);
+        const detailsHtml = `
+          <table class="table table-borderless">
+            <tr><td><strong>ID</strong></td><td>${record.id?.slice(0, 8) || 'ID'}</td></tr>
+            <tr><td><strong>Venue</strong></td><td>${record.location?.venue || 'Unknown venue'}</td></tr>
+            <tr><td><strong>Timestamp</strong></td><td>${formatTimestamp(record.timestamp)}</td></tr>
+            <tr><td><strong>Data</strong></td><td>${(record.data || []).map(d => `${d.metric}: ${d.value}`).join(', ') || 'N/A'}</td></tr>
+          </table>`;
+        showModal({
+          title: `Analytics Record ${record.id?.slice(0, 8)}`,
+          body: detailsHtml,
+          bodyIsHtml: true
+        });
+      } catch (error) {
+        console.error('Failed to load analytics details', error);
+        showToast('Unable to load analytics details.');
+      } finally {
+        setButtonLoading(button, false);
+      }
+    }
+  });
+
+  refreshBtn?.addEventListener('click', loadItems);
+
+  const attachCreateHandlers = () => {
+    const triggers = [newRecordBtn, ...document.querySelectorAll('[data-action="analytics-create"]')].filter(Boolean);
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openAnalyticsCreateModal();
+      });
+    });
+    const predictTriggers = document.querySelectorAll('[data-action="crowd-predict"]');
+    predictTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openCrowdPredictModal();
+      });
+    });
+  };
+  attachCreateHandlers();
+
+  loadItems();
+
+  window.drishtiAnalytics = {
+    load: loadItems,
+    render: renderRows,
+    state
+  };
+}
+
+function openCrowdPredictModal() {
+  if (!requireRole(['analyst', 'dispatcher', 'admin'], 'Crowd prediction')) {
+    return;
+  }
+
+  const formId = `crowd-predict-form-${Date.now()}`;
+  const formHtml = `
+    <form id="${formId}" class="crowd-predict-form">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Zone</label>
+          <input type="text" name="zone" class="form-control" placeholder="e.g., Gate 1" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Zone Capacity</label>
+          <input type="number" name="zone_capacity" class="form-control" placeholder="1000" required>
+        </div>
+      </div>
+      <div class="row g-3 mt-1">
+        <div class="col-md-6">
+          <label class="form-label">Tickets Sold</label>
+          <input type="number" name="tickets_sold" class="form-control" placeholder="500" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Live Count</label>
+          <input type="number" name="live_count" class="form-control" placeholder="0" required>
+        </div>
+      </div>
+      <div class="row g-3 mt-1">
+        <div class="col-md-6">
+          <label class="form-label">Avg Entry Rate (people/min)</label>
+          <input type="number" step="any" name="avg_entry_rate" class="form-control" placeholder="1.0" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Artist Popularity (1-10)</label>
+          <input type="number" name="artist_popularity" class="form-control" placeholder="5" min="1" max="10" required>
+        </div>
+      </div>
+      <div class="row g-3 mt-1">
+        <div class="col-md-6">
+          <label class="form-label">Minutes to Show</label>
+          <input type="number" name="time_to_show_mins" class="form-control" placeholder="60" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Weather</label>
+          <select name="weather" class="form-select" required>
+            <option value="clear">Clear</option>
+            <option value="rainy">Rainy</option>
+            <option value="cloudy">Cloudy</option>
+            <option value="windy">Windy</option>
+          </select>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end gap-2 mt-4">
+        <button type="button" class="btn btn-outline-secondary" data-action="cancel-predict">Cancel</button>
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-graph-up"></i> Predict Crowd
+        </button>
+      </div>
+    </form>`;
+
+  showModal({
+    title: 'Crowd Prediction',
+    bodyIsHtml: true,
+    body: formHtml,
+    primaryAction: null
+  });
+
+  requestAnimationFrame(() => {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.querySelector('[data-action="cancel-predict"]')?.addEventListener('click', () => {
+      const modalEl = document.getElementById('drishtiModal');
+      const modalInstance = modalEl && bootstrap?.Modal?.getInstance(modalEl);
+      modalInstance?.hide();
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const payload = {
+        zone: form.zone.value.trim(),
+        zone_capacity: parseInt(form.zone_capacity.value),
+        tickets_sold: parseInt(form.tickets_sold.value),
+        live_count: parseInt(form.live_count.value),
+        avg_entry_rate: parseFloat(form.avg_entry_rate.value),
+        artist_popularity: parseInt(form.artist_popularity.value),
+        time_to_show_mins: parseInt(form.time_to_show_mins.value),
+        weather: form.weather.value
+      };
+      try {
+        setButtonLoading(submitBtn, true, 'Predicting...');
+        const result = await fetchApi('/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const predicted = result.predicted_crowd;
+        showModal({
+          title: 'Prediction Result',
+          body: `<p class="mb-0">Predicted crowd for <strong>${payload.zone}</strong>: <span class="badge bg-primary fs-6">${predicted}</span> people</p>`,
+          bodyIsHtml: true
+        });
+      } catch (error) {
+        console.error('Prediction failed', error);
+        showToast('Unable to get prediction at this time.');
+      } finally {
+        setButtonLoading(submitBtn, false);
+      }
+    });
+  });
+}
+
+function openAnalyticsCreateModal() {
+  if (!requireRole(['analyst', 'dispatcher', 'admin'], 'Creating analytics records')) {
+    return;
+  }
+
+  const formId = `analytics-create-form-${Date.now()}`;
+  const nowIso = new Date().toISOString().slice(0, 16);
+  const formHtml = `
+    <form id="${formId}" class="analytics-create-form">
+      <div class="mb-3">
+        <label class="form-label">Venue</label>
+        <input type="text" name="venue" class="form-control" placeholder="e.g., Main Stadium" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Metric</label>
+        <input type="text" name="metric" class="form-control" placeholder="e.g., crowd_density" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Value</label>
+        <input type="number" step="any" name="value" class="form-control" placeholder="e.g., 123" required>
+      </div>
+      <div class="d-flex justify-content-end gap-2 mt-4">
+        <button type="button" class="btn btn-outline-secondary" data-action="cancel-create">Cancel</button>
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-plus"></i> Submit Record
+        </button>
+      </div>
+    </form>`;
+
+  showModal({
+    title: 'Log Analytics Record',
+    bodyIsHtml: true,
+    body: formHtml,
+    primaryAction: null
+  });
+
+  requestAnimationFrame(() => {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.querySelector('[data-action="cancel-create"]')?.addEventListener('click', () => {
+      const modalEl = document.getElementById('drishtiModal');
+      const modalInstance = modalEl && bootstrap?.Modal?.getInstance(modalEl);
+      modalInstance?.hide();
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const payload = {
+        location: { venue: form.venue.value.trim() },
+        data: [{ metric: form.metric.value.trim(), value: parseFloat(form.value.value) }],
+        snapshot: {}
+      };
+      try {
+        setButtonLoading(submitBtn, true, 'Submitting...');
+        await fetchApi('/analytics', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        showToast('Analytics record created successfully');
+        if (window.drishtiAnalytics?.load) {
+          await window.drishtiAnalytics.load();
+        }
+        const modalEl = document.getElementById('drishtiModal');
+        const modalInstance = modalEl && bootstrap?.Modal?.getInstance(modalEl);
+        modalInstance?.hide();
+      } catch (error) {
+        console.error('Failed to create analytics record', error);
+        showToast('Unable to create analytics record at this time.');
+      } finally {
+        setButtonLoading(submitBtn, false);
+      }
+    });
+  });
+}
+
 async function refreshIncidentsFromApi() {
   if (!window.drishtiIncidents) {
     return;
@@ -629,7 +1179,8 @@ function startDashboardStream() {
   }
 
   try {
-    dashboardStream = new EventSource('/api/dashboard-stream');
+    const streamUrl = API_BASE.replace(/\/api$/, '') + '/api/dashboard-stream';
+    dashboardStream = new EventSource(streamUrl);
   } catch (error) {
     console.warn('EventSource initialization failed:', error);
     return;
@@ -681,6 +1232,238 @@ function startDashboardStream() {
   });
 }
 
+function setupSettings() {
+  const profileForm = document.querySelector('#profile form');
+  const aiForm = document.querySelector('#ai-settings form');
+  const saveAllBtn = document.querySelector('.page-header .btn-primary');
+
+  // Load settings on page load
+  fetchApi('settings')
+    .then(data => {
+      if (data.profile) {
+        document.getElementById('fullName').value = data.profile.fullName || '';
+        document.getElementById('email').value = data.profile.email || '';
+        document.getElementById('phone').value = data.profile.phone || '';
+        document.getElementById('timezone').value = data.profile.timezone || 'UTC+5.5';
+        document.getElementById('bio').value = data.profile.bio || '';
+      }
+      if (data.ai) {
+        document.getElementById('fireThreshold').value = data.ai.fireThreshold || 75;
+        document.getElementById('crowdThreshold').value = data.ai.crowdThreshold || 65;
+        document.getElementById('personThreshold').value = data.ai.personThreshold || 80;
+        const modelRadio = document.querySelector(`input[name="aiModel"][value="${data.ai.model || 'standard'}"]`);
+        if (modelRadio) modelRadio.checked = true;
+      }
+    })
+    .catch(err => console.error('Failed to load settings:', err));
+
+  // Save profile form
+  if (profileForm) {
+    profileForm.addEventListener('submit', e => {
+      e.preventDefault();
+      saveAllSettings();
+    });
+  }
+
+  // Save AI settings button
+  const aiSaveBtn = document.querySelector('#ai-settings button[type="button"]');
+  if (aiSaveBtn) {
+    aiSaveBtn.addEventListener('click', saveAllSettings);
+  }
+
+  // Save All button
+  if (saveAllBtn) {
+    saveAllBtn.addEventListener('click', saveAllSettings);
+  }
+
+  function saveAllSettings() {
+    const settings = {
+      profile: {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        timezone: document.getElementById('timezone').value,
+        bio: document.getElementById('bio').value
+      },
+      ai: {
+        fireThreshold: parseInt(document.getElementById('fireThreshold').value),
+        crowdThreshold: parseInt(document.getElementById('crowdThreshold').value),
+        personThreshold: parseInt(document.getElementById('personThreshold').value),
+        model: document.querySelector('input[name="aiModel"]:checked')?.value || 'standard'
+      }
+    };
+    fetchApi('settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(settings)
+    })
+      .then(response => {
+        if (response.status === 'ok') {
+          alert('Settings saved successfully!');
+        } else {
+          alert('Failed to save settings.');
+        }
+      })
+      .catch(err => {
+        console.error('Failed to save settings:', err);
+        alert('Failed to save settings.');
+      });
+  }
+}
+
+function setupVideoPeopleCount() {
+  const videoCards = document.querySelectorAll('.feed-card[data-feed-type="cctv"]');
+  const intervals = new Map();
+
+  const updatePeopleCount = (videoEl, countEl) => {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = videoEl.videoWidth || 640;
+    canvas.height = videoEl.videoHeight || 480;
+    ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+    fetchApi('/analyze-frame', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image: dataUrl })
+    })
+      .then(response => {
+        if (countEl) {
+          countEl.textContent = response.people_count || 0;
+        }
+      })
+      .catch(err => console.error('Failed to analyze video frame:', err));
+  };
+
+  const observeVideo = (card) => {
+    const videoEl = card.querySelector('video');
+    const countEl = card.querySelector('.feed-stats span:first-child');
+    if (!videoEl || !countEl) return;
+
+    const intervalId = setInterval(() => {
+      if (videoEl.readyState >= 2) {
+        updatePeopleCount(videoEl, countEl);
+      }
+    }, 2000);
+    intervals.set(card, intervalId);
+  };
+
+  const stopVideo = (card) => {
+    const intervalId = intervals.get(card);
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervals.delete(card);
+    }
+  };
+
+  // Start for visible cards
+  videoCards.forEach(card => {
+    if (card.dataset.feedStatus === 'live') {
+      observeVideo(card);
+    }
+  });
+
+  // Optional: stop when card goes offline (if UI changes)
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'data-feed-status') {
+        const card = mutation.target;
+        if (card.dataset.feedStatus === 'live') {
+          observeVideo(card);
+        } else {
+          stopVideo(card);
+        }
+      }
+    });
+  });
+  videoCards.forEach(card => observer.observe(card, { attributes: true }));
+}
+
+function setupLiveMonitor() {
+  const modal = document.getElementById('liveMonitorModal');
+  const video = document.getElementById('webcamVideo');
+  const canvas = document.getElementById('detectionCanvas');
+  const ctx = canvas.getContext('2d');
+  const peopleCountEl = document.getElementById('peopleCount');
+  const fireStatusEl = document.getElementById('fireStatus');
+  const stopBtn = document.getElementById('stopMonitorBtn');
+  let stream = null;
+  let interval = null;
+
+  const startMonitor = async () => {
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      video.srcObject = stream;
+      interval = setInterval(async () => {
+        if (video.readyState === video.HAVE_ENOUGH_DATA) {
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+          const response = await fetchApi('/analyze-frame', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ image: dataUrl })
+          });
+          // Mock response for testing
+          // const response = { people_count: Math.floor(Math.random() * 5), fire_detected: Math.random() > 0.8 };
+          peopleCountEl.textContent = response.people_count || 0;
+          fireStatusEl.textContent = response.fire_detected ? 'Yes' : 'No';
+          fireStatusEl.className = response.fire_detected ? 'text-danger' : 'text-success';
+        }
+      }, 2000);
+    } catch (error) {
+      console.error('Failed to start webcam', error);
+      alert('Unable to access webcam.');
+    }
+  };
+
+  const stopMonitor = () => {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      stream = null;
+    }
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
+    video.srcObject = null;
+    peopleCountEl.textContent = '0';
+    fireStatusEl.textContent = 'No';
+    fireStatusEl.className = '';
+  };
+
+  // Use Bootstrap events if available; otherwise fallback to manual show/hide
+  if (window.bootstrap && window.bootstrap.Modal) {
+    const bsModal = new window.bootstrap.Modal(modal);
+    modal.addEventListener('show.bs.modal', startMonitor);
+    modal.addEventListener('hide.bs.modal', stopMonitor);
+    stopBtn?.addEventListener('click', () => bsModal.hide());
+  } else {
+    // Manual fallback
+    const showModal = () => {
+      modal.style.display = 'block';
+      modal.classList.add('show');
+      document.body.classList.add('modal-open');
+      const backdrop = document.createElement('div');
+      backdrop.className = 'modal-backdrop fade show';
+      backdrop.id = 'modal-backdrop';
+      document.body.appendChild(backdrop);
+      startMonitor();
+    };
+    const hideModal = () => {
+      modal.style.display = '';
+      modal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+      document.getElementById('modal-backdrop')?.remove();
+      stopMonitor();
+    };
+    document.querySelector('[data-action="live-monitor"]')?.addEventListener('click', showModal);
+    modal.querySelector('[data-bs-dismiss="modal"]')?.addEventListener('click', hideModal);
+    stopBtn?.addEventListener('click', hideModal);
+  }
+}
+
 function onDocumentReady(callback) {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', callback, { once: true });
@@ -699,20 +1482,31 @@ onDocumentReady(() => {
 function initializeDashboard() {
   initRoleSelector();
   if (db) {
-    attachRealtimeListeners();
+    runInitializer('Realtime listeners', attachRealtimeListeners);
   } else {
     console.warn('Firestore unavailable, using REST API fallbacks.');
-    bootstrapApiFallbacks();
+    runInitializer('API fallbacks', bootstrapApiFallbacks);
   }
-  initializeMap();
-  simulateVideoAnalytics();
-  simulateCameraPeopleCounts();
-  bindForecastButton();
-  setupLostFoundModule();
-  setupEvacuationModule();
-  setupEvacuationHistory();
-  setupIncidentsTable();
-  startDashboardStream();
+  runInitializer('Map', initializeMap);
+  runInitializer('Video analytics simulation', simulateVideoAnalytics);
+  runInitializer('Camera count simulation', simulateCameraPeopleCounts);
+  runInitializer('Forecast button', bindForecastButton);
+  runInitializer('Lost & Found module', setupLostFoundModule);
+  runInitializer('Evacuation module', setupEvacuationModule);
+  runInitializer('Evacuation history', setupEvacuationHistory);
+  runInitializer('Incidents table', setupIncidentsTable);
+  runInitializer('Analytics table', setupAnalyticsTable);
+  runInitializer('Analytics overview', setupAnalyticsOverview);
+  runInitializer('Crowd trends chart', setupCrowdTrendsChart);
+  runInitializer('Zone predictions', setupZonePredictions);
+  runInitializer('Incident distribution', setupIncidentDistribution);
+  runInitializer('Dashboard stream', startDashboardStream);
+  runInitializer('Live monitor', setupLiveMonitor);
+  runInitializer('Video people count', setupVideoPeopleCount);
+  // Settings page only
+  if (window.location.pathname.endsWith('settings.html')) {
+    runInitializer('Settings', setupSettings);
+  }
 }
 
 function bootstrapApiFallbacks() {
@@ -1623,7 +2417,6 @@ function setupModal() {
           </div>
           <div class="modal-body"></div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" data-action="modal-primary">Proceed</button>
           </div>
         </div>

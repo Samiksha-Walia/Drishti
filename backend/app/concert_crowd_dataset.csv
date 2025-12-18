@@ -1,0 +1,1001 @@
+timestamp,event_name,zone,zone_capacity,tickets_sold,live_count,avg_entry_rate,weather,artist_popularity,day_of_week,time_to_show_mins,predicted_count,congestion_level
+2025-02-10 17:00,PPop Live,Fan Zone Right,2500,2400,144,25,cloudy,7,Wednesday,120,279,0
+2025-02-10 17:01,PPop Live,Level 1,7000,6800,560,43,cloudy,7,Wednesday,119,646,0
+2025-02-10 17:02,PPop Live,West Block,4000,3500,381,17,cloudy,10,Monday,118,411,0
+2025-02-10 17:03,PPop Live,West Block,4000,3500,456,53,rainy,10,Tuesday,117,556,0
+2025-02-10 17:04,PPop Live,Level 3,9000,7900,1126,74,clear,7,Saturday,116,1196,0
+2025-02-10 17:05,PPop Live,HSBC Starstruck Pit,800,800,148,60,cloudy,7,Monday,115,280,0
+2025-02-10 17:06,PPop Live,Level 1,7000,6800,430,58,clear,10,Friday,114,601,0
+2025-02-10 17:07,PPop Live,VIP,1500,1500,79,39,clear,8,Tuesday,113,154,0
+2025-02-10 17:08,PPop Live,East Block 1,3000,2900,340,29,cloudy,9,Monday,112,485,0
+2025-02-10 17:09,PPop Live,Level 3,9000,7900,890,66,rainy,7,Wednesday,111,997,0
+2025-02-10 17:10,PPop Live,HSBC Starstruck Pit,800,800,142,6,clear,8,Friday,110,241,0
+2025-02-10 17:11,PPop Live,West Block 1,3000,2900,787,59,clear,10,Tuesday,109,817,0
+2025-02-10 17:12,PPop Live,VIP Tables,200,180,37,53,cloudy,8,Thursday,108,200,3
+2025-02-10 17:13,PPop Live,East Block,4000,3600,278,51,cloudy,9,Sunday,107,360,0
+2025-02-10 17:14,PPop Live,West Block,4000,3500,852,49,rainy,7,Saturday,106,910,0
+2025-02-10 17:15,PPop Live,VIP,1500,1500,3,45,rainy,10,Wednesday,105,117,0
+2025-02-10 17:16,PPop Live,Fan Zone Right,2500,2400,609,57,cloudy,9,Wednesday,104,734,0
+2025-02-10 17:17,PPop Live,HSBC Starstruck Pit,800,800,204,32,cloudy,7,Tuesday,103,362,1
+2025-02-10 17:18,PPop Live,Level 3,9000,7900,682,84,cloudy,7,Tuesday,102,826,0
+2025-02-10 17:19,PPop Live,Level 1,7000,6800,2119,89,clear,9,Friday,101,2268,0
+2025-02-10 17:20,PPop Live,Level 3,9000,7900,1753,18,rainy,10,Sunday,100,1813,0
+2025-02-10 17:21,PPop Live,West Block,4000,3500,258,42,clear,9,Tuesday,99,415,0
+2025-02-10 17:22,PPop Live,West Block 1,3000,2900,517,65,rainy,9,Tuesday,98,707,0
+2025-02-10 17:23,PPop Live,West Block 1,3000,2900,631,61,rainy,10,Sunday,97,712,0
+2025-02-10 17:24,PPop Live,East Block 1,3000,2900,188,77,clear,9,Monday,96,238,0
+2025-02-10 17:25,PPop Live,Level 1,7000,6800,532,60,cloudy,10,Wednesday,95,720,0
+2025-02-10 17:26,PPop Live,Level 2,8000,7200,1935,39,clear,8,Friday,94,2120,0
+2025-02-10 17:27,PPop Live,VIP Tables,200,180,66,36,rainy,8,Saturday,93,200,3
+2025-02-10 17:28,PPop Live,Fan Zone Left,2500,2400,335,75,rainy,8,Friday,92,368,0
+2025-02-10 17:29,PPop Live,Terrace B,2000,1800,137,41,rainy,10,Tuesday,91,179,0
+2025-02-10 17:30,PPop Live,Fan Zone Left,2500,2400,689,45,cloudy,10,Wednesday,90,863,0
+2025-02-10 17:31,PPop Live,HSBC Starstruck Pit,800,800,264,45,cloudy,8,Tuesday,89,367,1
+2025-02-10 17:32,PPop Live,Level 3,9000,7900,1963,48,cloudy,7,Wednesday,88,2129,0
+2025-02-10 17:33,PPop Live,Fan Zone Left,2500,2400,77,20,rainy,8,Thursday,87,246,0
+2025-02-10 17:34,PPop Live,East Block 1,3000,2900,333,35,cloudy,7,Thursday,86,485,0
+2025-02-10 17:35,PPop Live,Level 1,7000,6800,2564,32,rainy,7,Thursday,85,2602,0
+2025-02-10 17:36,PPop Live,Level 3,9000,7900,2192,54,cloudy,10,Wednesday,84,2382,0
+2025-02-10 17:37,PPop Live,Level 2,8000,7200,1359,54,rainy,8,Friday,83,1453,0
+2025-02-10 17:38,PPop Live,Level 1,7000,6800,1186,38,cloudy,10,Friday,82,1217,0
+2025-02-10 17:39,PPop Live,West Block,4000,3500,487,38,clear,7,Friday,81,667,0
+2025-02-10 17:40,PPop Live,East Block 1,3000,2900,28,60,rainy,9,Thursday,80,161,0
+2025-02-10 17:41,PPop Live,Level 3,9000,7900,2345,39,cloudy,8,Saturday,79,2432,0
+2025-02-10 17:42,PPop Live,Level 2,8000,7200,1686,46,rainy,7,Thursday,78,1781,0
+2025-02-10 17:43,PPop Live,Level 1,7000,6800,575,44,rainy,9,Tuesday,77,756,0
+2025-02-10 17:44,PPop Live,East Block 1,3000,2900,1075,69,clear,10,Thursday,76,1179,0
+2025-02-10 17:45,PPop Live,East Block 1,3000,2900,582,80,clear,10,Saturday,75,673,0
+2025-02-10 17:46,PPop Live,Terrace A,2000,1800,507,29,clear,7,Tuesday,74,706,0
+2025-02-10 17:47,PPop Live,Level 3,9000,7900,678,47,rainy,7,Wednesday,73,725,0
+2025-02-10 17:48,PPop Live,Level 3,9000,7900,2774,78,cloudy,10,Monday,72,2922,0
+2025-02-10 17:49,PPop Live,Terrace A,2000,1800,149,59,clear,8,Wednesday,71,292,0
+2025-02-10 17:50,PPop Live,West Block,4000,3500,337,82,cloudy,7,Tuesday,70,459,0
+2025-02-10 17:51,PPop Live,Level 2,8000,7200,1692,32,rainy,10,Wednesday,69,1881,0
+2025-02-10 17:52,PPop Live,West Block 1,3000,2900,771,41,clear,10,Saturday,68,896,0
+2025-02-10 17:53,PPop Live,Fan Zone Left,2500,2400,344,5,rainy,9,Wednesday,67,500,0
+2025-02-10 17:54,PPop Live,East Block,4000,3600,38,59,rainy,9,Sunday,66,212,0
+2025-02-10 17:55,PPop Live,East Block 1,3000,2900,1182,61,cloudy,10,Sunday,65,1269,1
+2025-02-10 17:56,PPop Live,Terrace A,2000,1800,899,44,clear,7,Thursday,64,1070,1
+2025-02-10 17:57,PPop Live,East Block 1,3000,2900,513,39,rainy,10,Sunday,63,586,0
+2025-02-10 17:58,PPop Live,Level 3,9000,7900,4510,11,rainy,9,Tuesday,62,4691,1
+2025-02-10 17:59,PPop Live,West Block,4000,3500,1672,31,clear,10,Monday,61,1853,1
+2025-02-10 18:00,PPop Live,Terrace B,2000,1800,601,45,clear,7,Tuesday,60,775,0
+2025-02-10 18:01,PPop Live,VIP,1500,1500,732,37,clear,8,Monday,59,806,1
+2025-02-10 18:02,PPop Live,VIP Tables,200,180,68,44,clear,10,Saturday,58,200,3
+2025-02-10 18:03,PPop Live,West Block,4000,3500,1813,17,clear,9,Thursday,57,1915,1
+2025-02-10 18:04,PPop Live,West Block 1,3000,2900,1599,52,clear,7,Monday,56,1675,1
+2025-02-10 18:05,PPop Live,Terrace A,2000,1800,273,77,clear,9,Saturday,55,453,0
+2025-02-10 18:06,PPop Live,Terrace B,2000,1800,586,40,cloudy,7,Sunday,54,690,0
+2025-02-10 18:07,PPop Live,Level 2,8000,7200,2740,46,rainy,7,Saturday,53,2902,0
+2025-02-10 18:08,PPop Live,Level 2,8000,7200,3585,53,clear,8,Sunday,52,3651,1
+2025-02-10 18:09,PPop Live,Level 3,9000,7900,507,52,rainy,8,Monday,51,640,0
+2025-02-10 18:10,PPop Live,VIP Tables,200,180,104,44,cloudy,9,Sunday,50,200,3
+2025-02-10 18:11,PPop Live,Level 3,9000,7900,1840,44,cloudy,7,Saturday,49,2033,0
+2025-02-10 18:12,PPop Live,VIP Tables,200,180,98,46,rainy,9,Tuesday,48,200,3
+2025-02-10 18:13,PPop Live,Level 1,7000,6800,4525,50,clear,10,Saturday,47,4591,1
+2025-02-10 18:14,PPop Live,VIP,1500,1500,415,79,clear,10,Saturday,46,561,0
+2025-02-10 18:15,PPop Live,Terrace A,2000,1800,145,50,clear,9,Friday,45,306,0
+2025-02-10 18:16,PPop Live,Terrace A,2000,1800,1116,8,cloudy,10,Friday,44,1257,1
+2025-02-10 18:17,PPop Live,Level 2,8000,7200,3454,93,cloudy,10,Saturday,43,3583,1
+2025-02-10 18:18,PPop Live,Fan Zone Left,2500,2400,1072,79,rainy,8,Tuesday,42,1173,1
+2025-02-10 18:19,PPop Live,Fan Zone Right,2500,2400,146,20,cloudy,9,Friday,41,241,0
+2025-02-10 18:20,PPop Live,West Block 1,3000,2900,1378,48,rainy,10,Monday,40,1570,1
+2025-02-10 18:21,PPop Live,HSBC Starstruck Pit,800,800,399,33,rainy,8,Friday,39,503,1
+2025-02-10 18:22,PPop Live,Level 1,7000,6800,3451,63,cloudy,9,Wednesday,38,3588,1
+2025-02-10 18:23,PPop Live,Level 2,8000,7200,2614,24,clear,9,Friday,37,2777,0
+2025-02-10 18:24,PPop Live,West Block 1,3000,2900,1492,25,rainy,9,Wednesday,36,1525,1
+2025-02-10 18:25,PPop Live,Fan Zone Right,2500,2400,1479,96,rainy,9,Thursday,35,1581,1
+2025-02-10 18:26,PPop Live,Level 2,8000,7200,2057,51,cloudy,7,Sunday,34,2201,0
+2025-02-10 18:27,PPop Live,East Block,4000,3600,241,43,rainy,8,Thursday,33,368,0
+2025-02-10 18:28,PPop Live,West Block 1,3000,2900,581,14,clear,9,Thursday,32,681,0
+2025-02-10 18:29,PPop Live,HSBC Starstruck Pit,800,800,505,45,cloudy,8,Sunday,31,645,2
+2025-02-10 18:30,PPop Live,West Block,4000,3500,1529,50,cloudy,9,Monday,30,1723,1
+2025-02-10 18:31,PPop Live,Terrace B,2000,1800,1331,40,clear,9,Thursday,29,1445,2
+2025-02-10 18:32,PPop Live,West Block 1,3000,2900,218,29,rainy,8,Saturday,28,387,0
+2025-02-10 18:33,PPop Live,East Block 1,3000,2900,812,40,cloudy,9,Tuesday,27,899,0
+2025-02-10 18:34,PPop Live,VIP,1500,1500,412,53,clear,10,Thursday,26,488,0
+2025-02-10 18:35,PPop Live,VIP Tables,200,180,140,40,clear,10,Tuesday,25,160,2
+2025-02-10 18:36,PPop Live,East Block 1,3000,2900,802,72,clear,9,Sunday,24,837,0
+2025-02-10 18:37,PPop Live,Level 1,7000,6800,3749,41,rainy,9,Wednesday,23,3932,1
+2025-02-10 18:38,PPop Live,Terrace A,2000,1800,1437,40,clear,8,Tuesday,22,1460,2
+2025-02-10 18:39,PPop Live,Level 3,9000,7900,6118,75,cloudy,8,Monday,21,6300,2
+2025-02-10 18:40,PPop Live,Level 2,8000,7200,4176,67,cloudy,7,Wednesday,20,4326,1
+2025-02-10 18:41,PPop Live,Level 3,9000,7900,2797,31,clear,10,Wednesday,19,2825,0
+2025-02-10 18:42,PPop Live,Terrace B,2000,1800,972,49,clear,10,Sunday,18,1167,1
+2025-02-10 18:43,PPop Live,VIP Tables,200,180,72,5,clear,7,Sunday,17,200,3
+2025-02-10 18:44,PPop Live,Fan Zone Left,2500,2400,7,59,cloudy,10,Friday,16,149,0
+2025-02-10 18:45,PPop Live,Level 3,9000,7900,4842,63,cloudy,10,Saturday,15,5024,1
+2025-02-10 18:46,PPop Live,West Block,4000,3500,629,68,rainy,9,Thursday,14,768,0
+2025-02-10 18:47,PPop Live,HSBC Starstruck Pit,800,800,258,73,rainy,7,Saturday,13,346,1
+2025-02-10 18:48,PPop Live,Level 2,8000,7200,3571,57,cloudy,9,Tuesday,12,3767,1
+2025-02-10 18:49,PPop Live,East Block,4000,3600,1096,48,clear,10,Saturday,11,1169,0
+2025-02-10 18:50,PPop Live,Terrace B,2000,1800,1636,56,cloudy,7,Saturday,10,1717,2
+2025-02-10 18:51,PPop Live,Level 3,9000,7900,3859,60,cloudy,10,Tuesday,9,3926,1
+2025-02-10 18:52,PPop Live,Terrace A,2000,1800,143,5,rainy,9,Thursday,8,300,0
+2025-02-10 18:53,PPop Live,VIP Tables,200,180,160,63,cloudy,9,Sunday,7,200,3
+2025-02-10 18:54,PPop Live,Fan Zone Left,2500,2400,362,71,rainy,8,Monday,6,419,0
+2025-02-10 18:55,PPop Live,Fan Zone Right,2500,2400,287,15,cloudy,7,Tuesday,5,346,0
+2025-02-10 18:56,PPop Live,Level 3,9000,7900,3160,56,rainy,9,Friday,4,3289,0
+2025-02-10 18:57,PPop Live,Level 1,7000,6800,3697,17,clear,7,Friday,3,3787,1
+2025-02-10 18:58,PPop Live,West Block 1,3000,2900,2462,31,cloudy,10,Friday,2,2586,2
+2025-02-10 18:59,PPop Live,VIP,1500,1500,637,43,rainy,8,Wednesday,1,676,1
+2025-02-10 19:00,PPop Live,East Block,4000,3600,3565,32,clear,9,Sunday,0,3598,2
+2025-02-10 19:01,PPop Live,Level 3,9000,7900,6896,36,cloudy,10,Monday,0,7071,2
+2025-02-10 19:02,PPop Live,East Block 1,3000,2900,2264,34,clear,8,Sunday,0,2418,2
+2025-02-10 19:03,PPop Live,East Block 1,3000,2900,201,67,cloudy,8,Thursday,0,260,0
+2025-02-10 19:04,PPop Live,Level 3,9000,7900,337,29,rainy,10,Saturday,0,368,0
+2025-02-10 19:05,PPop Live,HSBC Starstruck Pit,800,800,109,64,cloudy,7,Friday,0,173,0
+2025-02-10 19:06,PPop Live,East Block,4000,3600,3335,39,clear,8,Tuesday,0,3446,2
+2025-02-10 19:07,PPop Live,West Block,4000,3500,1901,61,rainy,9,Saturday,0,1971,1
+2025-02-10 19:08,PPop Live,East Block 1,3000,2900,2027,73,rainy,9,Monday,0,2174,2
+2025-02-10 19:09,PPop Live,West Block 1,3000,2900,784,63,clear,7,Tuesday,0,948,0
+2025-02-10 19:10,PPop Live,Level 3,9000,7900,130,38,rainy,8,Tuesday,0,268,0
+2025-02-10 19:11,PPop Live,Fan Zone Right,2500,2400,1811,43,cloudy,8,Saturday,0,1967,2
+2025-02-10 19:12,PPop Live,Level 3,9000,7900,5590,58,cloudy,9,Monday,0,5658,1
+2025-02-10 19:13,PPop Live,West Block,4000,3500,2270,51,clear,7,Monday,0,2301,1
+2025-02-10 19:14,PPop Live,West Block 1,3000,2900,2806,33,rainy,9,Wednesday,0,2927,3
+2025-02-10 19:15,PPop Live,East Block,4000,3600,1109,45,cloudy,7,Friday,0,1241,0
+2025-02-10 19:16,PPop Live,Terrace A,2000,1800,1784,58,cloudy,8,Monday,0,1826,3
+2025-02-10 19:17,PPop Live,Fan Zone Right,2500,2400,1058,57,clear,10,Saturday,0,1128,1
+2025-02-10 19:18,PPop Live,Level 3,9000,7900,5323,74,cloudy,8,Friday,0,5406,1
+2025-02-10 19:19,PPop Live,East Block 1,3000,2900,2433,32,rainy,7,Saturday,0,2519,2
+2025-02-10 19:20,PPop Live,VIP,1500,1500,1295,76,clear,10,Thursday,0,1365,3
+2025-02-10 19:21,PPop Live,Level 1,7000,6800,1573,50,rainy,8,Wednesday,0,1613,0
+2025-02-10 19:22,PPop Live,Fan Zone Left,2500,2400,342,54,clear,10,Saturday,0,422,0
+2025-02-10 19:23,PPop Live,VIP Tables,200,180,96,41,clear,7,Friday,0,200,3
+2025-02-10 19:24,PPop Live,Level 2,8000,7200,4919,67,clear,8,Thursday,0,4988,1
+2025-02-10 19:25,PPop Live,Fan Zone Right,2500,2400,1393,36,cloudy,8,Wednesday,0,1540,1
+2025-02-10 19:26,PPop Live,VIP,1500,1500,1,44,clear,8,Wednesday,0,95,0
+2025-02-10 19:27,PPop Live,East Block 1,3000,2900,264,89,cloudy,10,Saturday,0,411,0
+2025-02-10 19:28,PPop Live,Fan Zone Left,2500,2400,1725,48,cloudy,9,Wednesday,0,1866,2
+2025-02-10 19:29,PPop Live,Terrace B,2000,1800,1458,20,rainy,8,Wednesday,0,1557,2
+2025-02-10 19:30,PPop Live,Terrace B,2000,1800,810,47,clear,9,Monday,0,917,1
+2025-02-10 19:31,PPop Live,HSBC Starstruck Pit,800,800,785,56,cloudy,7,Sunday,0,800,3
+2025-02-10 19:32,PPop Live,Fan Zone Right,2500,2400,737,68,clear,9,Tuesday,0,880,0
+2025-02-10 19:33,PPop Live,VIP,1500,1500,112,47,rainy,9,Saturday,0,304,0
+2025-02-10 19:34,PPop Live,Level 2,8000,7200,760,28,clear,8,Thursday,0,897,0
+2025-02-10 19:35,PPop Live,Level 2,8000,7200,4219,44,rainy,7,Sunday,0,4246,1
+2025-02-10 19:36,PPop Live,East Block,4000,3600,2182,54,rainy,7,Monday,0,2281,1
+2025-02-10 19:37,PPop Live,Level 1,7000,6800,6381,46,cloudy,8,Thursday,0,6521,3
+2025-02-10 19:38,PPop Live,VIP,1500,1500,1149,32,clear,9,Friday,0,1295,2
+2025-02-10 19:39,PPop Live,Fan Zone Left,2500,2400,133,80,rainy,7,Saturday,0,215,0
+2025-02-10 19:40,PPop Live,West Block,4000,3500,441,66,clear,10,Wednesday,0,524,0
+2025-02-10 19:41,PPop Live,HSBC Starstruck Pit,800,800,494,42,cloudy,7,Wednesday,0,688,2
+2025-02-10 19:42,PPop Live,HSBC Starstruck Pit,800,800,207,79,cloudy,7,Wednesday,0,237,0
+2025-02-10 19:43,PPop Live,HSBC Starstruck Pit,800,800,631,53,rainy,9,Friday,0,769,3
+2025-02-10 19:44,PPop Live,Level 2,8000,7200,2295,86,rainy,7,Tuesday,0,2334,0
+2025-02-10 19:45,PPop Live,VIP Tables,200,180,164,71,clear,7,Sunday,0,200,3
+2025-02-10 19:46,PPop Live,HSBC Starstruck Pit,800,800,243,61,cloudy,10,Sunday,0,407,1
+2025-02-10 19:47,PPop Live,HSBC Starstruck Pit,800,800,696,61,cloudy,7,Monday,0,742,3
+2025-02-10 19:48,PPop Live,East Block 1,3000,2900,2335,55,cloudy,8,Sunday,0,2379,2
+2025-02-10 19:49,PPop Live,VIP,1500,1500,843,22,clear,9,Sunday,0,975,1
+2025-02-10 19:50,PPop Live,Terrace A,2000,1800,279,53,clear,7,Sunday,0,424,0
+2025-02-10 19:51,PPop Live,VIP Tables,200,180,68,57,rainy,10,Monday,0,200,3
+2025-02-10 19:52,PPop Live,Terrace B,2000,1800,372,77,clear,8,Thursday,0,483,0
+2025-02-10 19:53,PPop Live,Level 2,8000,7200,2988,48,rainy,10,Friday,0,3140,0
+2025-02-10 19:54,PPop Live,Terrace A,2000,1800,1331,47,rainy,8,Saturday,0,1446,2
+2025-02-10 19:55,PPop Live,East Block,4000,3600,2563,55,rainy,7,Friday,0,2708,1
+2025-02-10 19:56,PPop Live,VIP,1500,1500,61,74,clear,9,Wednesday,0,84,0
+2025-02-10 19:57,PPop Live,East Block 1,3000,2900,804,34,clear,8,Monday,0,850,0
+2025-02-10 19:58,PPop Live,East Block,4000,3600,2877,50,cloudy,9,Monday,0,2910,2
+2025-02-10 19:59,PPop Live,Fan Zone Left,2500,2400,980,71,cloudy,7,Friday,0,1164,1
+2025-02-10 20:00,PPop Live,VIP,1500,1500,31,25,rainy,10,Monday,0,224,0
+2025-02-10 20:01,PPop Live,Level 1,7000,6800,2246,60,rainy,8,Wednesday,0,2281,0
+2025-02-10 20:02,PPop Live,West Block,4000,3500,559,60,rainy,7,Thursday,0,621,0
+2025-02-10 20:03,PPop Live,West Block 1,3000,2900,926,28,cloudy,9,Thursday,0,1077,0
+2025-02-10 20:04,PPop Live,VIP Tables,200,180,10,35,cloudy,8,Thursday,0,63,0
+2025-02-10 20:05,PPop Live,West Block 1,3000,2900,1731,55,clear,8,Tuesday,0,1853,1
+2025-02-10 20:06,PPop Live,East Block,4000,3600,1151,43,rainy,7,Friday,0,1213,0
+2025-02-10 20:07,PPop Live,Fan Zone Right,2500,2400,2027,43,clear,7,Tuesday,0,2096,2
+2025-02-10 20:08,PPop Live,Terrace B,2000,1800,362,27,cloudy,8,Saturday,0,451,0
+2025-02-10 20:09,PPop Live,HSBC Starstruck Pit,800,800,138,73,rainy,10,Wednesday,0,167,0
+2025-02-10 20:10,PPop Live,Level 2,8000,7200,3905,13,rainy,7,Monday,0,4086,1
+2025-02-10 20:11,PPop Live,Level 1,7000,6800,4294,22,clear,8,Thursday,0,4320,1
+2025-02-10 20:12,PPop Live,Terrace B,2000,1800,90,57,cloudy,8,Wednesday,0,197,0
+2025-02-10 20:13,PPop Live,West Block,4000,3500,1754,54,clear,7,Sunday,0,1920,1
+2025-02-10 20:14,PPop Live,Level 1,7000,6800,5450,38,rainy,8,Saturday,0,5563,2
+2025-02-10 20:15,PPop Live,East Block,4000,3600,1802,63,clear,10,Tuesday,0,1883,1
+2025-02-10 20:16,PPop Live,Level 2,8000,7200,5279,56,clear,9,Tuesday,0,5311,1
+2025-02-10 20:17,PPop Live,Fan Zone Left,2500,2400,1097,65,clear,8,Monday,0,1247,1
+2025-02-10 20:18,PPop Live,HSBC Starstruck Pit,800,800,175,28,rainy,7,Friday,0,267,0
+2025-02-10 20:19,PPop Live,East Block,4000,3600,1113,55,cloudy,9,Wednesday,0,1255,0
+2025-02-10 20:20,PPop Live,West Block 1,3000,2900,936,67,clear,8,Wednesday,0,1066,0
+2025-02-10 20:21,PPop Live,VIP Tables,200,180,5,79,cloudy,10,Tuesday,0,56,0
+2025-02-10 20:22,PPop Live,HSBC Starstruck Pit,800,800,15,5,clear,8,Saturday,0,106,0
+2025-02-10 20:23,PPop Live,VIP Tables,200,180,177,29,rainy,9,Thursday,0,200,3
+2025-02-10 20:24,PPop Live,East Block,4000,3600,162,68,cloudy,8,Wednesday,0,265,0
+2025-02-10 20:25,PPop Live,Fan Zone Left,2500,2400,1018,46,rainy,8,Wednesday,0,1080,1
+2025-02-10 20:26,PPop Live,Level 3,9000,7900,7864,76,cloudy,10,Sunday,0,7923,2
+2025-02-10 20:27,PPop Live,Level 2,8000,7200,3135,63,clear,7,Thursday,0,3242,1
+2025-02-10 20:28,PPop Live,Level 1,7000,6800,1834,51,rainy,7,Saturday,0,1990,0
+2025-02-10 20:29,PPop Live,Terrace A,2000,1800,761,54,cloudy,9,Sunday,0,894,1
+2025-02-10 20:30,PPop Live,HSBC Starstruck Pit,800,800,273,49,rainy,7,Monday,0,326,1
+2025-02-10 20:31,PPop Live,Level 2,8000,7200,3338,31,clear,10,Saturday,0,3456,1
+2025-02-10 20:32,PPop Live,Terrace B,2000,1800,29,61,clear,7,Tuesday,0,50,0
+2025-02-10 20:33,PPop Live,East Block 1,3000,2900,2895,43,rainy,8,Thursday,0,3000,3
+2025-02-10 20:34,PPop Live,HSBC Starstruck Pit,800,800,528,22,clear,8,Sunday,0,567,2
+2025-02-10 20:35,PPop Live,Terrace B,2000,1800,1279,90,clear,10,Thursday,0,1300,1
+2025-02-10 20:36,PPop Live,East Block,4000,3600,1488,25,cloudy,9,Wednesday,0,1633,1
+2025-02-10 20:37,PPop Live,West Block,4000,3500,1180,21,rainy,7,Thursday,0,1271,0
+2025-02-10 20:38,PPop Live,VIP,1500,1500,13,27,rainy,7,Tuesday,0,36,0
+2025-02-10 20:39,PPop Live,West Block 1,3000,2900,1455,44,cloudy,10,Wednesday,0,1642,1
+2025-02-10 20:40,PPop Live,Level 3,9000,7900,408,42,cloudy,10,Saturday,0,498,0
+2025-02-10 20:41,PPop Live,Level 3,9000,7900,5636,49,clear,8,Wednesday,0,5725,1
+2025-02-10 20:42,PPop Live,Terrace B,2000,1800,270,71,clear,8,Monday,0,361,0
+2025-02-10 20:43,PPop Live,VIP Tables,200,180,51,77,rainy,9,Sunday,0,93,1
+2025-02-10 20:44,PPop Live,East Block,4000,3600,675,65,clear,10,Monday,0,703,0
+2025-02-10 20:45,PPop Live,Fan Zone Right,2500,2400,586,55,rainy,10,Tuesday,0,697,0
+2025-02-10 20:46,PPop Live,Level 3,9000,7900,4894,72,rainy,7,Thursday,0,5063,1
+2025-02-10 20:47,PPop Live,East Block 1,3000,2900,1466,65,cloudy,7,Friday,0,1591,1
+2025-02-10 20:48,PPop Live,West Block,4000,3500,2840,58,cloudy,8,Thursday,0,2870,2
+2025-02-10 20:49,PPop Live,West Block,4000,3500,326,20,rainy,10,Tuesday,0,483,0
+2025-02-10 20:50,PPop Live,East Block 1,3000,2900,774,47,clear,10,Wednesday,0,869,0
+2025-02-10 20:51,PPop Live,Level 1,7000,6800,774,55,rainy,9,Tuesday,0,828,0
+2025-02-10 20:52,PPop Live,Fan Zone Right,2500,2400,1722,37,rainy,8,Tuesday,0,1779,2
+2025-02-10 20:53,PPop Live,Terrace A,2000,1800,1061,29,clear,8,Wednesday,0,1083,1
+2025-02-10 20:54,PPop Live,Terrace B,2000,1800,891,89,clear,8,Sunday,0,1007,1
+2025-02-10 20:55,PPop Live,VIP Tables,200,180,119,33,cloudy,8,Friday,0,200,3
+2025-02-10 20:56,PPop Live,Terrace B,2000,1800,458,17,cloudy,7,Saturday,0,539,0
+2025-02-10 20:57,PPop Live,VIP Tables,200,180,86,55,cloudy,7,Sunday,0,200,3
+2025-02-10 20:58,PPop Live,Level 3,9000,7900,385,46,cloudy,7,Wednesday,0,534,0
+2025-02-10 20:59,PPop Live,VIP Tables,200,180,75,21,cloudy,10,Saturday,0,150,2
+2025-02-10 21:00,PPop Live,Level 2,8000,7200,7103,72,clear,10,Tuesday,0,7239,3
+2025-02-10 21:01,PPop Live,Level 2,8000,7200,5586,30,cloudy,10,Sunday,0,5643,2
+2025-02-10 21:02,PPop Live,Level 2,8000,7200,923,44,cloudy,10,Monday,0,949,0
+2025-02-10 21:03,PPop Live,West Block,4000,3500,1447,33,clear,8,Thursday,0,1514,0
+2025-02-10 21:04,PPop Live,Terrace A,2000,1800,253,39,rainy,7,Friday,0,373,0
+2025-02-10 21:05,PPop Live,Terrace B,2000,1800,203,20,rainy,8,Saturday,0,376,0
+2025-02-10 21:06,PPop Live,Fan Zone Left,2500,2400,736,44,cloudy,8,Sunday,0,759,0
+2025-02-10 21:07,PPop Live,East Block 1,3000,2900,1527,66,rainy,9,Saturday,0,1683,1
+2025-02-10 21:08,PPop Live,Terrace B,2000,1800,1679,25,clear,10,Monday,0,1839,3
+2025-02-10 21:09,PPop Live,East Block 1,3000,2900,1236,57,rainy,10,Tuesday,0,1268,1
+2025-02-10 21:10,PPop Live,Terrace B,2000,1800,95,42,rainy,7,Wednesday,0,221,0
+2025-02-10 21:11,PPop Live,VIP,1500,1500,531,64,cloudy,8,Sunday,0,562,0
+2025-02-10 21:12,PPop Live,Terrace A,2000,1800,26,83,cloudy,7,Thursday,0,57,0
+2025-02-10 21:13,PPop Live,Terrace A,2000,1800,1275,52,rainy,10,Monday,0,1295,1
+2025-02-10 21:14,PPop Live,Terrace A,2000,1800,1419,92,rainy,7,Friday,0,1499,2
+2025-02-10 21:15,PPop Live,East Block 1,3000,2900,1621,90,rainy,9,Wednesday,0,1775,1
+2025-02-10 21:16,PPop Live,East Block,4000,3600,1719,54,cloudy,10,Thursday,0,1757,1
+2025-02-10 21:17,PPop Live,Terrace B,2000,1800,552,6,rainy,9,Sunday,0,603,0
+2025-02-10 21:18,PPop Live,VIP Tables,200,180,2,26,rainy,7,Saturday,0,43,0
+2025-02-10 21:19,PPop Live,Level 3,9000,7900,3281,15,rainy,8,Monday,0,3353,0
+2025-02-10 21:20,PPop Live,Level 3,9000,7900,1592,5,rainy,8,Friday,0,1740,0
+2025-02-10 21:21,PPop Live,HSBC Starstruck Pit,800,800,91,59,rainy,8,Tuesday,0,239,0
+2025-02-10 21:22,PPop Live,East Block 1,3000,2900,1439,58,clear,7,Monday,0,1626,1
+2025-02-10 21:23,PPop Live,West Block 1,3000,2900,1912,43,cloudy,10,Thursday,0,2102,2
+2025-02-10 21:24,PPop Live,VIP Tables,200,180,143,91,clear,10,Thursday,0,180,3
+2025-02-10 21:25,PPop Live,Level 2,8000,7200,5223,31,rainy,9,Tuesday,0,5244,1
+2025-02-10 21:26,PPop Live,Terrace B,2000,1800,355,49,rainy,8,Monday,0,518,0
+2025-02-10 21:27,PPop Live,Level 2,8000,7200,4841,51,clear,8,Tuesday,0,4983,1
+2025-02-10 21:28,PPop Live,VIP,1500,1500,776,44,clear,8,Thursday,0,847,1
+2025-02-10 21:29,PPop Live,Level 3,9000,7900,3809,37,cloudy,10,Saturday,0,3838,1
+2025-02-10 21:30,PPop Live,VIP Tables,200,180,156,60,rainy,10,Friday,0,200,3
+2025-02-10 21:31,PPop Live,VIP,1500,1500,283,38,clear,10,Monday,0,371,0
+2025-02-10 21:32,PPop Live,West Block 1,3000,2900,1204,66,cloudy,8,Tuesday,0,1337,1
+2025-02-10 21:33,PPop Live,East Block 1,3000,2900,891,33,cloudy,8,Wednesday,0,915,0
+2025-02-10 21:34,PPop Live,VIP Tables,200,180,157,35,cloudy,7,Saturday,0,188,3
+2025-02-10 21:35,PPop Live,VIP,1500,1500,551,52,rainy,7,Monday,0,634,1
+2025-02-10 21:36,PPop Live,Level 3,9000,7900,7777,47,clear,10,Monday,0,7847,2
+2025-02-10 21:37,PPop Live,VIP Tables,200,180,141,22,rainy,7,Sunday,0,164,2
+2025-02-10 21:38,PPop Live,HSBC Starstruck Pit,800,800,24,74,clear,8,Wednesday,0,65,0
+2025-02-10 21:39,PPop Live,Terrace B,2000,1800,1527,76,rainy,10,Saturday,0,1627,2
+2025-02-10 21:40,PPop Live,Fan Zone Right,2500,2400,1099,16,cloudy,9,Tuesday,0,1186,1
+2025-02-10 21:41,PPop Live,Level 2,8000,7200,4129,66,clear,7,Wednesday,0,4291,1
+2025-02-10 21:42,PPop Live,East Block 1,3000,2900,2331,65,cloudy,10,Tuesday,0,2408,2
+2025-02-10 21:43,PPop Live,VIP Tables,200,180,96,26,clear,8,Friday,0,145,2
+2025-02-10 21:44,PPop Live,Level 2,8000,7200,3181,26,clear,8,Monday,0,3286,1
+2025-02-10 21:45,PPop Live,East Block 1,3000,2900,2415,80,rainy,8,Tuesday,0,2558,2
+2025-02-10 21:46,PPop Live,Terrace A,2000,1800,174,49,clear,8,Tuesday,0,303,0
+2025-02-10 21:47,PPop Live,HSBC Starstruck Pit,800,800,127,23,clear,8,Saturday,0,293,0
+2025-02-10 21:48,PPop Live,HSBC Starstruck Pit,800,800,484,68,rainy,7,Wednesday,0,583,2
+2025-02-10 21:49,PPop Live,Fan Zone Right,2500,2400,1062,35,clear,9,Thursday,0,1138,1
+2025-02-10 21:50,PPop Live,Fan Zone Left,2500,2400,323,55,clear,10,Tuesday,0,496,0
+2025-02-10 21:51,PPop Live,VIP Tables,200,180,54,60,cloudy,8,Friday,0,82,1
+2025-02-10 21:52,PPop Live,Fan Zone Left,2500,2400,1636,36,cloudy,7,Sunday,0,1702,1
+2025-02-10 21:53,PPop Live,Fan Zone Left,2500,2400,1085,28,cloudy,10,Thursday,0,1248,1
+2025-02-10 21:54,PPop Live,West Block 1,3000,2900,799,83,clear,8,Monday,0,895,0
+2025-02-10 21:55,PPop Live,Level 1,7000,6800,1773,46,cloudy,9,Friday,0,1891,0
+2025-02-10 21:56,PPop Live,East Block 1,3000,2900,594,49,rainy,9,Tuesday,0,678,0
+2025-02-10 21:57,PPop Live,HSBC Starstruck Pit,800,800,649,45,clear,9,Wednesday,0,715,2
+2025-02-10 21:58,PPop Live,VIP Tables,200,180,151,61,clear,8,Thursday,0,200,3
+2025-02-10 21:59,PPop Live,East Block 1,3000,2900,342,49,cloudy,10,Friday,0,475,0
+2025-02-10 22:00,PPop Live,East Block,4000,3600,1133,61,rainy,10,Monday,0,1275,0
+2025-02-10 22:01,PPop Live,East Block 1,3000,2900,653,34,rainy,7,Monday,0,709,0
+2025-02-10 22:02,PPop Live,East Block,4000,3600,1869,43,rainy,7,Monday,0,2047,1
+2025-02-10 22:03,PPop Live,Terrace A,2000,1800,1291,9,rainy,10,Friday,0,1322,1
+2025-02-10 22:04,PPop Live,Level 2,8000,7200,3285,39,clear,9,Thursday,0,3368,1
+2025-02-10 22:05,PPop Live,HSBC Starstruck Pit,800,800,432,68,clear,10,Thursday,0,465,1
+2025-02-10 22:06,PPop Live,Terrace A,2000,1800,1219,55,clear,10,Saturday,0,1312,1
+2025-02-10 22:07,PPop Live,VIP Tables,200,180,50,40,cloudy,8,Wednesday,0,200,3
+2025-02-10 22:08,PPop Live,West Block 1,3000,2900,2893,42,cloudy,7,Saturday,0,2916,3
+2025-02-10 22:09,PPop Live,Terrace A,2000,1800,567,51,clear,9,Monday,0,587,0
+2025-02-10 22:10,PPop Live,West Block 1,3000,2900,2826,31,clear,8,Sunday,0,2865,3
+2025-02-10 22:11,PPop Live,East Block,4000,3600,2822,53,clear,10,Wednesday,0,2885,2
+2025-02-10 22:12,PPop Live,Fan Zone Right,2500,2400,682,63,clear,8,Friday,0,856,0
+2025-02-10 22:13,PPop Live,East Block,4000,3600,1486,27,rainy,10,Tuesday,0,1603,1
+2025-02-10 22:14,PPop Live,HSBC Starstruck Pit,800,800,72,47,cloudy,9,Wednesday,0,142,0
+2025-02-10 22:15,PPop Live,Level 3,9000,7900,6042,63,rainy,10,Monday,0,6084,1
+2025-02-10 22:16,PPop Live,Level 2,8000,7200,819,50,cloudy,10,Sunday,0,1016,0
+2025-02-10 22:17,PPop Live,Level 1,7000,6800,6797,72,cloudy,7,Saturday,0,6974,3
+2025-02-10 22:18,PPop Live,Level 1,7000,6800,4007,39,clear,9,Tuesday,0,4104,1
+2025-02-10 22:19,PPop Live,East Block,4000,3600,1540,26,rainy,7,Saturday,0,1712,1
+2025-02-10 22:20,PPop Live,Level 1,7000,6800,143,38,cloudy,9,Monday,0,190,0
+2025-02-10 22:21,PPop Live,Fan Zone Left,2500,2400,41,44,clear,7,Wednesday,0,113,0
+2025-02-10 22:22,PPop Live,VIP,1500,1500,732,41,cloudy,9,Tuesday,0,860,1
+2025-02-10 22:23,PPop Live,Fan Zone Right,2500,2400,992,46,cloudy,7,Sunday,0,1099,1
+2025-02-10 22:24,PPop Live,West Block 1,3000,2900,1194,49,clear,7,Thursday,0,1251,1
+2025-02-10 22:25,PPop Live,Fan Zone Left,2500,2400,1384,61,rainy,10,Friday,0,1489,1
+2025-02-10 22:26,PPop Live,East Block 1,3000,2900,1741,40,rainy,9,Tuesday,0,1848,1
+2025-02-10 22:27,PPop Live,Fan Zone Right,2500,2400,1107,65,clear,9,Monday,0,1143,1
+2025-02-10 22:28,PPop Live,Level 2,8000,7200,7078,36,rainy,8,Thursday,0,7168,2
+2025-02-10 22:29,PPop Live,East Block,4000,3600,2426,30,clear,10,Monday,0,2525,1
+2025-02-10 22:30,PPop Live,East Block 1,3000,2900,2501,73,clear,7,Wednesday,0,2562,2
+2025-02-10 22:31,PPop Live,West Block 1,3000,2900,2033,10,clear,8,Sunday,0,2139,2
+2025-02-10 22:32,PPop Live,Level 3,9000,7900,3809,30,cloudy,10,Saturday,0,3836,1
+2025-02-10 22:33,PPop Live,VIP Tables,200,180,114,21,clear,7,Saturday,0,200,3
+2025-02-10 22:34,PPop Live,Fan Zone Right,2500,2400,1978,39,rainy,8,Sunday,0,2094,2
+2025-02-10 22:35,PPop Live,HSBC Starstruck Pit,800,800,188,36,rainy,8,Thursday,0,367,1
+2025-02-10 22:36,PPop Live,Level 2,8000,7200,702,65,cloudy,7,Tuesday,0,762,0
+2025-02-10 22:37,PPop Live,Level 2,8000,7200,5246,57,clear,10,Sunday,0,5316,1
+2025-02-10 22:38,PPop Live,VIP,1500,1500,901,30,clear,9,Friday,0,1064,2
+2025-02-10 22:39,PPop Live,Fan Zone Left,2500,2400,469,41,rainy,10,Tuesday,0,551,0
+2025-02-10 22:40,PPop Live,VIP Tables,200,180,176,43,rainy,7,Monday,0,200,3
+2025-02-10 22:41,PPop Live,VIP Tables,200,180,164,46,clear,10,Sunday,0,200,3
+2025-02-10 22:42,PPop Live,Level 1,7000,6800,3306,43,clear,9,Saturday,0,3384,1
+2025-02-10 22:43,PPop Live,Fan Zone Left,2500,2400,1808,45,rainy,9,Wednesday,0,1856,2
+2025-02-10 22:44,PPop Live,East Block 1,3000,2900,1387,10,rainy,10,Sunday,0,1524,1
+2025-02-10 22:45,PPop Live,Fan Zone Right,2500,2400,2243,36,rainy,9,Tuesday,0,2383,3
+2025-02-10 22:46,PPop Live,Terrace A,2000,1800,385,31,clear,10,Thursday,0,498,0
+2025-02-10 22:47,PPop Live,Terrace B,2000,1800,976,58,cloudy,10,Saturday,0,1143,1
+2025-02-10 22:48,PPop Live,Fan Zone Left,2500,2400,919,61,clear,10,Thursday,0,1107,1
+2025-02-10 22:49,PPop Live,Terrace B,2000,1800,1402,43,rainy,10,Thursday,0,1587,2
+2025-02-10 22:50,PPop Live,Level 1,7000,6800,5383,61,rainy,9,Saturday,0,5440,2
+2025-02-10 22:51,PPop Live,Fan Zone Right,2500,2400,1689,23,cloudy,9,Tuesday,0,1855,2
+2025-02-10 22:52,PPop Live,West Block 1,3000,2900,815,15,clear,7,Wednesday,0,851,0
+2025-02-10 22:53,PPop Live,VIP,1500,1500,372,69,cloudy,7,Sunday,0,456,0
+2025-02-10 22:54,PPop Live,West Block 1,3000,2900,2085,14,clear,7,Saturday,0,2162,2
+2025-02-10 22:55,PPop Live,West Block 1,3000,2900,100,63,clear,9,Thursday,0,210,0
+2025-02-10 22:56,PPop Live,Terrace A,2000,1800,1757,40,clear,8,Saturday,0,1821,3
+2025-02-10 22:57,PPop Live,Fan Zone Right,2500,2400,1427,45,clear,7,Friday,0,1581,1
+2025-02-10 22:58,PPop Live,East Block,4000,3600,2720,76,cloudy,8,Saturday,0,2821,2
+2025-02-10 22:59,PPop Live,West Block 1,3000,2900,1264,5,rainy,7,Friday,0,1292,1
+2025-02-10 23:00,PPop Live,Level 3,9000,7900,7149,69,cloudy,7,Tuesday,0,7238,2
+2025-02-10 23:01,PPop Live,VIP Tables,200,180,146,19,rainy,7,Monday,0,200,3
+2025-02-10 23:02,PPop Live,Fan Zone Left,2500,2400,2396,44,rainy,7,Thursday,0,2500,3
+2025-02-10 23:03,PPop Live,West Block 1,3000,2900,2883,51,clear,7,Tuesday,0,2995,3
+2025-02-10 23:04,PPop Live,Fan Zone Right,2500,2400,2323,32,rainy,10,Thursday,0,2363,3
+2025-02-10 23:05,PPop Live,Terrace A,2000,1800,856,33,rainy,9,Tuesday,0,1053,1
+2025-02-10 23:06,PPop Live,East Block,4000,3600,1486,53,cloudy,10,Monday,0,1641,1
+2025-02-10 23:07,PPop Live,Terrace B,2000,1800,1424,38,clear,8,Saturday,0,1556,2
+2025-02-10 23:08,PPop Live,VIP Tables,200,180,146,59,rainy,9,Tuesday,0,200,3
+2025-02-10 23:09,PPop Live,Fan Zone Right,2500,2400,1723,65,clear,8,Saturday,0,1910,2
+2025-02-10 23:10,PPop Live,VIP Tables,200,180,118,23,cloudy,9,Thursday,0,200,3
+2025-02-10 23:11,PPop Live,Level 2,8000,7200,3620,39,clear,9,Sunday,0,3679,1
+2025-02-10 23:12,PPop Live,VIP,1500,1500,1401,54,clear,9,Thursday,0,1491,3
+2025-02-10 23:13,PPop Live,Terrace B,2000,1800,316,58,clear,9,Thursday,0,498,0
+2025-02-10 23:14,PPop Live,Fan Zone Right,2500,2400,957,40,clear,10,Wednesday,0,1060,1
+2025-02-10 23:15,PPop Live,Terrace A,2000,1800,1694,64,rainy,7,Sunday,0,1762,2
+2025-02-10 23:16,PPop Live,Level 3,9000,7900,7309,34,clear,8,Monday,0,7412,2
+2025-02-10 23:17,PPop Live,VIP Tables,200,180,57,58,rainy,7,Sunday,0,200,3
+2025-02-10 23:18,PPop Live,Fan Zone Right,2500,2400,1601,37,rainy,8,Thursday,0,1673,1
+2025-02-10 23:19,PPop Live,Terrace B,2000,1800,48,56,clear,10,Friday,0,113,0
+2025-02-10 23:20,PPop Live,HSBC Starstruck Pit,800,800,494,72,clear,7,Friday,0,668,2
+2025-02-10 23:21,PPop Live,Fan Zone Right,2500,2400,1897,27,cloudy,10,Wednesday,0,1961,2
+2025-02-10 23:22,PPop Live,VIP,1500,1500,738,65,clear,9,Sunday,0,919,1
+2025-02-10 23:23,PPop Live,HSBC Starstruck Pit,800,800,55,54,cloudy,8,Tuesday,0,109,0
+2025-02-10 23:24,PPop Live,East Block,4000,3600,2731,81,rainy,9,Friday,0,2757,1
+2025-02-10 23:25,PPop Live,Level 3,9000,7900,2228,67,cloudy,9,Friday,0,2304,0
+2025-02-10 23:26,PPop Live,Level 3,9000,7900,1455,71,cloudy,8,Monday,0,1542,0
+2025-02-10 23:27,PPop Live,HSBC Starstruck Pit,800,800,145,53,clear,8,Monday,0,342,1
+2025-02-10 23:28,PPop Live,VIP Tables,200,180,74,51,rainy,10,Thursday,0,127,1
+2025-02-10 23:29,PPop Live,Terrace A,2000,1800,1185,60,clear,10,Tuesday,0,1290,1
+2025-02-10 23:30,PPop Live,VIP,1500,1500,710,69,clear,10,Friday,0,777,1
+2025-02-10 23:31,PPop Live,Level 3,9000,7900,566,49,cloudy,9,Sunday,0,741,0
+2025-02-10 23:32,PPop Live,East Block 1,3000,2900,1283,92,cloudy,10,Saturday,0,1355,1
+2025-02-10 23:33,PPop Live,Level 3,9000,7900,1023,50,cloudy,8,Saturday,0,1142,0
+2025-02-10 23:34,PPop Live,Level 1,7000,6800,1478,93,cloudy,10,Sunday,0,1575,0
+2025-02-10 23:35,PPop Live,Fan Zone Left,2500,2400,2153,55,cloudy,7,Wednesday,0,2222,2
+2025-02-10 23:36,PPop Live,Level 3,9000,7900,4590,55,cloudy,7,Saturday,0,4636,1
+2025-02-10 23:37,PPop Live,Level 2,8000,7200,5328,14,rainy,10,Sunday,0,5501,1
+2025-02-10 23:38,PPop Live,HSBC Starstruck Pit,800,800,51,85,clear,10,Sunday,0,250,0
+2025-02-10 23:39,PPop Live,VIP Tables,200,180,149,51,rainy,10,Saturday,0,200,3
+2025-02-10 23:40,PPop Live,Level 1,7000,6800,4050,36,rainy,8,Tuesday,0,4103,1
+2025-02-10 23:41,PPop Live,Level 2,8000,7200,2004,67,cloudy,7,Wednesday,0,2198,0
+2025-02-10 23:42,PPop Live,VIP,1500,1500,187,35,cloudy,7,Thursday,0,258,0
+2025-02-10 23:43,PPop Live,Level 1,7000,6800,1889,57,clear,8,Sunday,0,1983,0
+2025-02-10 23:44,PPop Live,VIP,1500,1500,395,49,clear,10,Sunday,0,501,0
+2025-02-10 23:45,PPop Live,Level 1,7000,6800,3017,32,rainy,7,Sunday,0,3078,1
+2025-02-10 23:46,PPop Live,Level 1,7000,6800,6080,22,clear,10,Saturday,0,6182,2
+2025-02-10 23:47,PPop Live,Level 3,9000,7900,4787,37,clear,9,Tuesday,0,4944,1
+2025-02-10 23:48,PPop Live,East Block,4000,3600,381,86,cloudy,7,Saturday,0,553,0
+2025-02-10 23:49,PPop Live,Fan Zone Right,2500,2400,832,38,cloudy,8,Thursday,0,989,0
+2025-02-10 23:50,PPop Live,East Block,4000,3600,1437,32,rainy,9,Wednesday,0,1565,0
+2025-02-10 23:51,PPop Live,Level 2,8000,7200,5669,5,rainy,9,Thursday,0,5778,2
+2025-02-10 23:52,PPop Live,Level 2,8000,7200,6481,69,clear,10,Tuesday,0,6525,2
+2025-02-10 23:53,PPop Live,Fan Zone Right,2500,2400,2261,63,cloudy,7,Tuesday,0,2312,3
+2025-02-10 23:54,PPop Live,West Block,4000,3500,365,18,cloudy,10,Friday,0,491,0
+2025-02-10 23:55,PPop Live,VIP Tables,200,180,151,51,cloudy,7,Monday,0,183,3
+2025-02-10 23:56,PPop Live,Level 3,9000,7900,1107,11,rainy,8,Saturday,0,1234,0
+2025-02-10 23:57,PPop Live,East Block 1,3000,2900,2496,13,clear,10,Wednesday,0,2579,2
+2025-02-10 23:58,PPop Live,VIP Tables,200,180,79,66,clear,7,Wednesday,0,200,3
+2025-02-10 23:59,PPop Live,VIP Tables,200,180,87,48,rainy,7,Tuesday,0,200,3
+2025-02-11 00:00,PPop Live,Level 1,7000,6800,2830,31,rainy,8,Tuesday,0,2926,1
+2025-02-11 00:01,PPop Live,East Block,4000,3600,2587,61,clear,7,Wednesday,0,2701,1
+2025-02-11 00:02,PPop Live,East Block,4000,3600,1764,88,cloudy,10,Saturday,0,1909,1
+2025-02-11 00:03,PPop Live,East Block,4000,3600,2549,47,clear,9,Tuesday,0,2613,1
+2025-02-11 00:04,PPop Live,Terrace A,2000,1800,423,48,clear,10,Thursday,0,616,0
+2025-02-11 00:05,PPop Live,Terrace B,2000,1800,390,45,clear,7,Tuesday,0,457,0
+2025-02-11 00:06,PPop Live,Fan Zone Left,2500,2400,512,66,cloudy,7,Friday,0,557,0
+2025-02-11 00:07,PPop Live,Terrace B,2000,1800,1152,57,clear,10,Sunday,0,1295,1
+2025-02-11 00:08,PPop Live,VIP Tables,200,180,63,37,rainy,7,Saturday,0,122,1
+2025-02-11 00:09,PPop Live,East Block,4000,3600,1663,59,rainy,7,Saturday,0,1765,1
+2025-02-11 00:10,PPop Live,Terrace A,2000,1800,1229,20,clear,8,Tuesday,0,1313,1
+2025-02-11 00:11,PPop Live,West Block 1,3000,2900,317,59,clear,10,Wednesday,0,350,0
+2025-02-11 00:12,PPop Live,East Block 1,3000,2900,1272,26,rainy,10,Monday,0,1315,1
+2025-02-11 00:13,PPop Live,East Block 1,3000,2900,2262,59,clear,7,Tuesday,0,2381,2
+2025-02-11 00:14,PPop Live,HSBC Starstruck Pit,800,800,10,43,cloudy,8,Wednesday,0,195,0
+2025-02-11 00:15,PPop Live,Fan Zone Right,2500,2400,2056,39,rainy,9,Monday,0,2106,2
+2025-02-11 00:16,PPop Live,Fan Zone Left,2500,2400,218,97,clear,7,Friday,0,307,0
+2025-02-11 00:17,PPop Live,VIP Tables,200,180,76,55,rainy,10,Friday,0,112,1
+2025-02-11 00:18,PPop Live,West Block 1,3000,2900,2750,99,rainy,8,Saturday,0,2908,3
+2025-02-11 00:19,PPop Live,West Block 1,3000,2900,74,84,cloudy,9,Saturday,0,212,0
+2025-02-11 00:20,PPop Live,West Block 1,3000,2900,2830,45,cloudy,8,Sunday,0,2859,3
+2025-02-11 00:21,PPop Live,West Block,4000,3500,1929,57,rainy,8,Wednesday,0,2055,1
+2025-02-11 00:22,PPop Live,HSBC Starstruck Pit,800,800,318,70,clear,9,Saturday,0,447,1
+2025-02-11 00:23,PPop Live,East Block 1,3000,2900,721,58,rainy,9,Wednesday,0,904,0
+2025-02-11 00:24,PPop Live,Level 3,9000,7900,5747,49,clear,8,Friday,0,5775,1
+2025-02-11 00:25,PPop Live,VIP Tables,200,180,178,67,cloudy,8,Saturday,0,200,3
+2025-02-11 00:26,PPop Live,East Block 1,3000,2900,1491,40,cloudy,7,Sunday,0,1691,1
+2025-02-11 00:27,PPop Live,VIP Tables,200,180,7,46,rainy,10,Thursday,0,87,1
+2025-02-11 00:28,PPop Live,Level 3,9000,7900,5645,55,cloudy,8,Wednesday,0,5813,1
+2025-02-11 00:29,PPop Live,East Block 1,3000,2900,2378,72,rainy,8,Saturday,0,2400,2
+2025-02-11 00:30,PPop Live,West Block 1,3000,2900,1148,37,cloudy,7,Sunday,0,1187,0
+2025-02-11 00:31,PPop Live,East Block,4000,3600,2430,45,cloudy,9,Thursday,0,2570,1
+2025-02-11 00:32,PPop Live,West Block 1,3000,2900,1019,66,clear,10,Friday,0,1156,0
+2025-02-11 00:33,PPop Live,Fan Zone Left,2500,2400,1725,63,cloudy,9,Thursday,0,1789,2
+2025-02-11 00:34,PPop Live,East Block 1,3000,2900,1198,26,rainy,9,Monday,0,1270,1
+2025-02-11 00:35,PPop Live,Terrace A,2000,1800,1533,62,rainy,10,Monday,0,1717,2
+2025-02-11 00:36,PPop Live,VIP,1500,1500,119,73,cloudy,8,Friday,0,195,0
+2025-02-11 00:37,PPop Live,Level 1,7000,6800,3984,58,clear,9,Tuesday,0,4143,1
+2025-02-11 00:38,PPop Live,Terrace B,2000,1800,34,57,cloudy,10,Thursday,0,80,0
+2025-02-11 00:39,PPop Live,West Block,4000,3500,2475,45,rainy,8,Sunday,0,2648,1
+2025-02-11 00:40,PPop Live,East Block,4000,3600,564,74,rainy,7,Thursday,0,722,0
+2025-02-11 00:41,PPop Live,Fan Zone Right,2500,2400,1379,50,clear,10,Friday,0,1456,1
+2025-02-11 00:42,PPop Live,Level 3,9000,7900,1417,83,clear,8,Friday,0,1509,0
+2025-02-11 00:43,PPop Live,East Block,4000,3600,1393,16,cloudy,7,Sunday,0,1586,0
+2025-02-11 00:44,PPop Live,Level 1,7000,6800,1264,45,rainy,10,Thursday,0,1437,0
+2025-02-11 00:45,PPop Live,East Block,4000,3600,3333,74,cloudy,10,Friday,0,3421,2
+2025-02-11 00:46,PPop Live,East Block 1,3000,2900,1546,70,rainy,8,Monday,0,1641,1
+2025-02-11 00:47,PPop Live,East Block 1,3000,2900,2017,43,rainy,7,Saturday,0,2149,2
+2025-02-11 00:48,PPop Live,VIP Tables,200,180,72,81,rainy,7,Thursday,0,200,3
+2025-02-11 00:49,PPop Live,Level 2,8000,7200,2328,42,cloudy,7,Thursday,0,2423,0
+2025-02-11 00:50,PPop Live,Terrace A,2000,1800,823,35,cloudy,9,Tuesday,0,963,1
+2025-02-11 00:51,PPop Live,Level 3,9000,7900,6244,47,cloudy,7,Thursday,0,6376,2
+2025-02-11 00:52,PPop Live,HSBC Starstruck Pit,800,800,419,28,rainy,9,Sunday,0,549,1
+2025-02-11 00:53,PPop Live,HSBC Starstruck Pit,800,800,658,28,rainy,7,Friday,0,795,3
+2025-02-11 00:54,PPop Live,East Block 1,3000,2900,130,83,rainy,10,Thursday,0,299,0
+2025-02-11 00:55,PPop Live,Fan Zone Right,2500,2400,367,61,clear,7,Tuesday,0,488,0
+2025-02-11 00:56,PPop Live,VIP Tables,200,180,43,63,rainy,7,Monday,0,95,1
+2025-02-11 00:57,PPop Live,Level 2,8000,7200,5600,36,cloudy,7,Friday,0,5670,2
+2025-02-11 00:58,PPop Live,Terrace A,2000,1800,501,61,cloudy,8,Sunday,0,602,0
+2025-02-11 00:59,PPop Live,Fan Zone Right,2500,2400,875,46,cloudy,8,Wednesday,0,1037,1
+2025-02-11 01:00,PPop Live,West Block 1,3000,2900,528,46,cloudy,9,Wednesday,0,711,0
+2025-02-11 01:01,PPop Live,VIP Tables,200,180,144,60,rainy,10,Thursday,0,200,3
+2025-02-11 01:02,PPop Live,East Block,4000,3600,709,37,cloudy,7,Wednesday,0,854,0
+2025-02-11 01:03,PPop Live,Level 1,7000,6800,4698,39,clear,8,Monday,0,4808,1
+2025-02-11 01:04,PPop Live,Terrace A,2000,1800,487,60,rainy,10,Monday,0,521,0
+2025-02-11 01:05,PPop Live,Level 1,7000,6800,55,44,cloudy,9,Wednesday,0,138,0
+2025-02-11 01:06,PPop Live,Level 1,7000,6800,2016,74,clear,9,Tuesday,0,2143,0
+2025-02-11 01:07,PPop Live,Level 3,9000,7900,6612,52,clear,8,Saturday,0,6711,2
+2025-02-11 01:08,PPop Live,Level 2,8000,7200,4197,74,cloudy,10,Tuesday,0,4240,1
+2025-02-11 01:09,PPop Live,VIP Tables,200,180,108,40,clear,8,Sunday,0,145,2
+2025-02-11 01:10,PPop Live,VIP,1500,1500,1045,52,rainy,8,Saturday,0,1197,2
+2025-02-11 01:11,PPop Live,Terrace B,2000,1800,448,27,cloudy,8,Monday,0,566,0
+2025-02-11 01:12,PPop Live,West Block 1,3000,2900,1929,60,clear,10,Monday,0,2073,1
+2025-02-11 01:13,PPop Live,Terrace B,2000,1800,270,34,cloudy,10,Thursday,0,389,0
+2025-02-11 01:14,PPop Live,West Block 1,3000,2900,1310,34,clear,10,Thursday,0,1400,1
+2025-02-11 01:15,PPop Live,West Block,4000,3500,213,62,clear,8,Friday,0,404,0
+2025-02-11 01:16,PPop Live,East Block 1,3000,2900,2801,41,cloudy,10,Monday,0,2912,3
+2025-02-11 01:17,PPop Live,East Block,4000,3600,2104,33,clear,9,Friday,0,2166,1
+2025-02-11 01:18,PPop Live,West Block 1,3000,2900,1372,35,cloudy,10,Thursday,0,1410,1
+2025-02-11 01:19,PPop Live,Fan Zone Right,2500,2400,1263,80,rainy,9,Monday,0,1343,1
+2025-02-11 01:20,PPop Live,Fan Zone Right,2500,2400,1129,44,rainy,10,Thursday,0,1190,1
+2025-02-11 01:21,PPop Live,Terrace A,2000,1800,1691,29,clear,10,Friday,0,1839,3
+2025-02-11 01:22,PPop Live,HSBC Starstruck Pit,800,800,489,52,rainy,7,Thursday,0,574,2
+2025-02-11 01:23,PPop Live,Fan Zone Left,2500,2400,1191,28,clear,10,Wednesday,0,1282,1
+2025-02-11 01:24,PPop Live,VIP Tables,200,180,154,87,cloudy,8,Thursday,0,200,3
+2025-02-11 01:25,PPop Live,Level 2,8000,7200,5690,76,clear,8,Wednesday,0,5723,2
+2025-02-11 01:26,PPop Live,Fan Zone Right,2500,2400,65,50,cloudy,9,Monday,0,141,0
+2025-02-11 01:27,PPop Live,West Block,4000,3500,3418,31,cloudy,10,Wednesday,0,3518,2
+2025-02-11 01:28,PPop Live,Level 2,8000,7200,2175,23,rainy,8,Sunday,0,2349,0
+2025-02-11 01:29,PPop Live,Level 1,7000,6800,350,58,clear,8,Wednesday,0,464,0
+2025-02-11 01:30,PPop Live,Fan Zone Right,2500,2400,2230,18,clear,7,Saturday,0,2425,3
+2025-02-11 01:31,PPop Live,Terrace A,2000,1800,29,84,rainy,10,Tuesday,0,114,0
+2025-02-11 01:32,PPop Live,East Block,4000,3600,453,76,rainy,7,Thursday,0,546,0
+2025-02-11 01:33,PPop Live,Level 3,9000,7900,1943,58,clear,10,Tuesday,0,2103,0
+2025-02-11 01:34,PPop Live,East Block,4000,3600,1804,69,rainy,8,Sunday,0,1863,1
+2025-02-11 01:35,PPop Live,HSBC Starstruck Pit,800,800,324,87,cloudy,10,Tuesday,0,495,1
+2025-02-11 01:36,PPop Live,Terrace A,2000,1800,150,92,rainy,10,Wednesday,0,344,0
+2025-02-11 01:37,PPop Live,Terrace B,2000,1800,0,40,clear,9,Monday,0,147,0
+2025-02-11 01:38,PPop Live,Level 2,8000,7200,5820,67,cloudy,8,Saturday,0,5848,2
+2025-02-11 01:39,PPop Live,Level 2,8000,7200,6163,42,cloudy,9,Monday,0,6285,2
+2025-02-11 01:40,PPop Live,West Block,4000,3500,1908,42,clear,10,Wednesday,0,1984,1
+2025-02-11 01:41,PPop Live,Terrace B,2000,1800,1118,33,cloudy,8,Friday,0,1144,1
+2025-02-11 01:42,PPop Live,Level 1,7000,6800,127,78,clear,7,Wednesday,0,228,0
+2025-02-11 01:43,PPop Live,VIP Tables,200,180,56,56,cloudy,7,Sunday,0,128,1
+2025-02-11 01:44,PPop Live,Level 2,8000,7200,543,37,cloudy,8,Sunday,0,687,0
+2025-02-11 01:45,PPop Live,Fan Zone Left,2500,2400,1169,53,clear,7,Monday,0,1344,1
+2025-02-11 01:46,PPop Live,East Block,4000,3600,3210,62,rainy,10,Sunday,0,3351,2
+2025-02-11 01:47,PPop Live,Level 3,9000,7900,7377,27,cloudy,8,Thursday,0,7427,2
+2025-02-11 01:48,PPop Live,West Block 1,3000,2900,2270,35,cloudy,7,Sunday,0,2420,2
+2025-02-11 01:49,PPop Live,VIP,1500,1500,579,26,rainy,10,Tuesday,0,759,1
+2025-02-11 01:50,PPop Live,Level 2,8000,7200,4068,69,cloudy,9,Wednesday,0,4231,1
+2025-02-11 01:51,PPop Live,Fan Zone Right,2500,2400,2157,59,rainy,8,Monday,0,2204,2
+2025-02-11 01:52,PPop Live,HSBC Starstruck Pit,800,800,495,67,rainy,10,Tuesday,0,649,2
+2025-02-11 01:53,PPop Live,Fan Zone Left,2500,2400,811,27,rainy,8,Sunday,0,968,0
+2025-02-11 01:54,PPop Live,Terrace B,2000,1800,647,31,rainy,10,Saturday,0,792,0
+2025-02-11 01:55,PPop Live,VIP Tables,200,180,41,72,cloudy,7,Friday,0,200,3
+2025-02-11 01:56,PPop Live,East Block,4000,3600,3045,68,rainy,8,Sunday,0,3221,2
+2025-02-11 01:57,PPop Live,East Block 1,3000,2900,2081,57,rainy,9,Saturday,0,2186,2
+2025-02-11 01:58,PPop Live,Level 3,9000,7900,1891,49,clear,8,Thursday,0,2074,0
+2025-02-11 01:59,PPop Live,VIP,1500,1500,759,82,rainy,8,Sunday,0,838,1
+2025-02-11 02:00,PPop Live,Level 2,8000,7200,5856,80,rainy,7,Wednesday,0,5992,2
+2025-02-11 02:01,PPop Live,VIP,1500,1500,295,37,cloudy,7,Monday,0,489,0
+2025-02-11 02:02,PPop Live,VIP,1500,1500,1248,48,clear,8,Friday,0,1338,2
+2025-02-11 02:03,PPop Live,West Block,4000,3500,507,40,rainy,10,Saturday,0,603,0
+2025-02-11 02:04,PPop Live,Fan Zone Left,2500,2400,2364,47,cloudy,8,Monday,0,2397,3
+2025-02-11 02:05,PPop Live,West Block,4000,3500,577,28,rainy,8,Friday,0,636,0
+2025-02-11 02:06,PPop Live,VIP Tables,200,180,38,24,clear,8,Saturday,0,189,3
+2025-02-11 02:07,PPop Live,Fan Zone Right,2500,2400,1324,36,cloudy,7,Monday,0,1415,1
+2025-02-11 02:08,PPop Live,VIP Tables,200,180,50,58,cloudy,7,Sunday,0,109,1
+2025-02-11 02:09,PPop Live,Level 1,7000,6800,1190,59,clear,7,Sunday,0,1224,0
+2025-02-11 02:10,PPop Live,HSBC Starstruck Pit,800,800,199,99,rainy,7,Tuesday,0,242,0
+2025-02-11 02:11,PPop Live,HSBC Starstruck Pit,800,800,562,71,clear,7,Saturday,0,713,2
+2025-02-11 02:12,PPop Live,VIP,1500,1500,1241,32,rainy,7,Monday,0,1422,3
+2025-02-11 02:13,PPop Live,Terrace A,2000,1800,536,39,cloudy,8,Friday,0,631,0
+2025-02-11 02:14,PPop Live,East Block,4000,3600,2437,46,clear,10,Wednesday,0,2528,1
+2025-02-11 02:15,PPop Live,VIP Tables,200,180,114,54,rainy,8,Wednesday,0,200,3
+2025-02-11 02:16,PPop Live,VIP,1500,1500,150,68,cloudy,7,Tuesday,0,263,0
+2025-02-11 02:17,PPop Live,West Block,4000,3500,2559,36,clear,8,Saturday,0,2685,1
+2025-02-11 02:18,PPop Live,Level 2,8000,7200,4074,50,rainy,8,Tuesday,0,4262,1
+2025-02-11 02:19,PPop Live,HSBC Starstruck Pit,800,800,618,69,rainy,8,Tuesday,0,777,3
+2025-02-11 02:20,PPop Live,HSBC Starstruck Pit,800,800,294,57,clear,10,Friday,0,491,1
+2025-02-11 02:21,PPop Live,HSBC Starstruck Pit,800,800,491,77,cloudy,7,Friday,0,527,1
+2025-02-11 02:22,PPop Live,Terrace A,2000,1800,1120,39,rainy,8,Sunday,0,1282,1
+2025-02-11 02:23,PPop Live,Level 3,9000,7900,6446,43,rainy,9,Sunday,0,6613,2
+2025-02-11 02:24,PPop Live,Terrace A,2000,1800,426,26,clear,8,Sunday,0,504,0
+2025-02-11 02:25,PPop Live,Level 3,9000,7900,5591,66,clear,8,Monday,0,5719,1
+2025-02-11 02:26,PPop Live,Level 1,7000,6800,5366,26,clear,9,Friday,0,5399,2
+2025-02-11 02:27,PPop Live,Level 2,8000,7200,6669,67,cloudy,9,Saturday,0,6772,2
+2025-02-11 02:28,PPop Live,VIP Tables,200,180,162,73,clear,9,Thursday,0,200,3
+2025-02-11 02:29,PPop Live,Terrace A,2000,1800,1416,57,cloudy,9,Monday,0,1572,2
+2025-02-11 02:30,PPop Live,Terrace B,2000,1800,891,55,clear,7,Thursday,0,983,1
+2025-02-11 02:31,PPop Live,Fan Zone Left,2500,2400,1294,57,clear,7,Thursday,0,1485,1
+2025-02-11 02:32,PPop Live,East Block,4000,3600,2194,90,clear,10,Friday,0,2268,1
+2025-02-11 02:33,PPop Live,Terrace A,2000,1800,876,71,clear,8,Thursday,0,1015,1
+2025-02-11 02:34,PPop Live,HSBC Starstruck Pit,800,800,440,49,cloudy,9,Wednesday,0,524,1
+2025-02-11 02:35,PPop Live,Level 2,8000,7200,6070,63,clear,10,Wednesday,0,6174,2
+2025-02-11 02:36,PPop Live,Terrace B,2000,1800,1345,55,clear,9,Friday,0,1466,2
+2025-02-11 02:37,PPop Live,Fan Zone Right,2500,2400,1660,32,rainy,9,Friday,0,1766,2
+2025-02-11 02:38,PPop Live,VIP,1500,1500,209,51,rainy,7,Saturday,0,282,0
+2025-02-11 02:39,PPop Live,VIP Tables,200,180,94,5,clear,10,Tuesday,0,181,3
+2025-02-11 02:40,PPop Live,VIP Tables,200,180,53,48,clear,9,Tuesday,0,200,3
+2025-02-11 02:41,PPop Live,HSBC Starstruck Pit,800,800,797,56,clear,10,Thursday,0,800,3
+2025-02-11 02:42,PPop Live,East Block 1,3000,2900,1182,30,cloudy,7,Tuesday,0,1239,1
+2025-02-11 02:43,PPop Live,West Block,4000,3500,2842,52,clear,7,Tuesday,0,2931,2
+2025-02-11 02:44,PPop Live,VIP Tables,200,180,139,33,clear,9,Saturday,0,200,3
+2025-02-11 02:45,PPop Live,Fan Zone Left,2500,2400,915,61,clear,9,Tuesday,0,1037,1
+2025-02-11 02:46,PPop Live,West Block,4000,3500,2093,18,rainy,7,Thursday,0,2124,1
+2025-02-11 02:47,PPop Live,West Block,4000,3500,46,41,clear,7,Thursday,0,117,0
+2025-02-11 02:48,PPop Live,Level 2,8000,7200,4380,51,rainy,8,Sunday,0,4488,1
+2025-02-11 02:49,PPop Live,Terrace A,2000,1800,920,35,cloudy,10,Monday,0,1091,1
+2025-02-11 02:50,PPop Live,Terrace A,2000,1800,1012,38,rainy,10,Saturday,0,1045,1
+2025-02-11 02:51,PPop Live,Terrace A,2000,1800,1611,38,rainy,8,Monday,0,1687,2
+2025-02-11 02:52,PPop Live,East Block,4000,3600,2706,30,rainy,8,Wednesday,0,2859,2
+2025-02-11 02:53,PPop Live,Level 3,9000,7900,2205,37,rainy,9,Monday,0,2398,0
+2025-02-11 02:54,PPop Live,Fan Zone Left,2500,2400,1474,41,cloudy,8,Wednesday,0,1615,1
+2025-02-11 02:55,PPop Live,Terrace B,2000,1800,1171,30,rainy,9,Wednesday,0,1337,1
+2025-02-11 02:56,PPop Live,Level 2,8000,7200,1473,76,cloudy,8,Thursday,0,1523,0
+2025-02-11 02:57,PPop Live,West Block,4000,3500,716,84,rainy,10,Wednesday,0,894,0
+2025-02-11 02:58,PPop Live,VIP,1500,1500,1052,13,rainy,10,Friday,0,1113,2
+2025-02-11 02:59,PPop Live,Level 1,7000,6800,3746,45,rainy,9,Friday,0,3930,1
+2025-02-11 03:00,PPop Live,VIP Tables,200,180,49,31,clear,8,Tuesday,0,169,2
+2025-02-11 03:01,PPop Live,Fan Zone Right,2500,2400,572,53,cloudy,10,Friday,0,631,0
+2025-02-11 03:02,PPop Live,VIP Tables,200,180,176,77,clear,9,Thursday,0,200,3
+2025-02-11 03:03,PPop Live,West Block 1,3000,2900,366,38,cloudy,7,Sunday,0,421,0
+2025-02-11 03:04,PPop Live,HSBC Starstruck Pit,800,800,13,49,clear,7,Wednesday,0,37,0
+2025-02-11 03:05,PPop Live,East Block,4000,3600,296,51,clear,9,Thursday,0,474,0
+2025-02-11 03:06,PPop Live,Level 2,8000,7200,2039,60,cloudy,9,Friday,0,2236,0
+2025-02-11 03:07,PPop Live,East Block,4000,3600,2878,50,clear,7,Tuesday,0,3059,2
+2025-02-11 03:08,PPop Live,Fan Zone Right,2500,2400,2106,57,cloudy,7,Thursday,0,2285,3
+2025-02-11 03:09,PPop Live,VIP Tables,200,180,27,46,clear,8,Thursday,0,200,3
+2025-02-11 03:10,PPop Live,VIP Tables,200,180,74,57,rainy,7,Saturday,0,200,3
+2025-02-11 03:11,PPop Live,Terrace A,2000,1800,1388,10,cloudy,9,Friday,0,1473,2
+2025-02-11 03:12,PPop Live,East Block,4000,3600,3228,65,clear,10,Saturday,0,3324,2
+2025-02-11 03:13,PPop Live,East Block 1,3000,2900,229,46,rainy,9,Friday,0,291,0
+2025-02-11 03:14,PPop Live,Terrace A,2000,1800,1025,57,cloudy,10,Monday,0,1111,1
+2025-02-11 03:15,PPop Live,East Block 1,3000,2900,1730,50,cloudy,7,Saturday,0,1824,1
+2025-02-11 03:16,PPop Live,Fan Zone Right,2500,2400,0,20,rainy,9,Tuesday,0,128,0
+2025-02-11 03:17,PPop Live,West Block 1,3000,2900,2676,32,clear,10,Monday,0,2723,3
+2025-02-11 03:18,PPop Live,VIP Tables,200,180,27,41,cloudy,7,Wednesday,0,133,1
+2025-02-11 03:19,PPop Live,Level 1,7000,6800,29,45,cloudy,7,Friday,0,99,0
+2025-02-11 03:20,PPop Live,East Block,4000,3600,663,56,clear,8,Monday,0,833,0
+2025-02-11 03:21,PPop Live,Terrace B,2000,1800,402,76,clear,9,Friday,0,571,0
+2025-02-11 03:22,PPop Live,Terrace A,2000,1800,826,18,clear,9,Tuesday,0,1012,1
+2025-02-11 03:23,PPop Live,Level 2,8000,7200,4666,11,cloudy,7,Wednesday,0,4815,1
+2025-02-11 03:24,PPop Live,Level 1,7000,6800,2502,41,cloudy,9,Wednesday,0,2693,0
+2025-02-11 03:25,PPop Live,Fan Zone Left,2500,2400,1340,85,rainy,8,Saturday,0,1420,1
+2025-02-11 03:26,PPop Live,West Block,4000,3500,3145,76,cloudy,8,Friday,0,3202,2
+2025-02-11 03:27,PPop Live,Terrace A,2000,1800,811,46,rainy,8,Saturday,0,842,1
+2025-02-11 03:28,PPop Live,Terrace A,2000,1800,653,63,clear,9,Friday,0,679,0
+2025-02-11 03:29,PPop Live,Terrace A,2000,1800,557,23,cloudy,7,Tuesday,0,619,0
+2025-02-11 03:30,PPop Live,HSBC Starstruck Pit,800,800,277,30,clear,9,Monday,0,442,1
+2025-02-11 03:31,PPop Live,Level 3,9000,7900,531,48,cloudy,8,Wednesday,0,727,0
+2025-02-11 03:32,PPop Live,Terrace A,2000,1800,982,38,cloudy,10,Thursday,0,1005,1
+2025-02-11 03:33,PPop Live,East Block 1,3000,2900,1579,50,clear,9,Thursday,0,1692,1
+2025-02-11 03:34,PPop Live,West Block 1,3000,2900,2658,60,rainy,10,Monday,0,2812,3
+2025-02-11 03:35,PPop Live,West Block,4000,3500,759,39,rainy,7,Sunday,0,947,0
+2025-02-11 03:36,PPop Live,Level 2,8000,7200,656,48,cloudy,9,Saturday,0,747,0
+2025-02-11 03:37,PPop Live,Level 2,8000,7200,6678,37,rainy,10,Saturday,0,6761,2
+2025-02-11 03:38,PPop Live,East Block 1,3000,2900,1485,89,rainy,8,Saturday,0,1570,1
+2025-02-11 03:39,PPop Live,West Block 1,3000,2900,1340,35,cloudy,9,Tuesday,0,1539,1
+2025-02-11 03:40,PPop Live,Fan Zone Right,2500,2400,461,47,clear,10,Saturday,0,524,0
+2025-02-11 03:41,PPop Live,Level 2,8000,7200,5861,20,cloudy,10,Sunday,0,6020,2
+2025-02-11 03:42,PPop Live,Level 2,8000,7200,6535,84,cloudy,9,Friday,0,6641,2
+2025-02-11 03:43,PPop Live,West Block,4000,3500,2601,71,clear,8,Saturday,0,2767,1
+2025-02-11 03:44,PPop Live,Level 3,9000,7900,6890,61,rainy,8,Friday,0,6997,2
+2025-02-11 03:45,PPop Live,VIP Tables,200,180,60,67,cloudy,7,Monday,0,149,2
+2025-02-11 03:46,PPop Live,VIP,1500,1500,1434,35,clear,7,Saturday,0,1500,3
+2025-02-11 03:47,PPop Live,Level 1,7000,6800,2869,42,clear,10,Thursday,0,2903,1
+2025-02-11 03:48,PPop Live,Level 3,9000,7900,7252,60,cloudy,8,Friday,0,7379,2
+2025-02-11 03:49,PPop Live,East Block,4000,3600,456,26,rainy,9,Saturday,0,482,0
+2025-02-11 03:50,PPop Live,Fan Zone Right,2500,2400,742,59,cloudy,10,Sunday,0,863,0
+2025-02-11 03:51,PPop Live,Level 3,9000,7900,1281,94,clear,10,Saturday,0,1321,0
+2025-02-11 03:52,PPop Live,Terrace A,2000,1800,317,77,rainy,7,Sunday,0,372,0
+2025-02-11 03:53,PPop Live,VIP,1500,1500,1237,117,cloudy,9,Tuesday,0,1291,2
+2025-02-11 03:54,PPop Live,Level 2,8000,7200,4394,65,clear,8,Saturday,0,4417,1
+2025-02-11 03:55,PPop Live,East Block 1,3000,2900,79,51,clear,10,Saturday,0,141,0
+2025-02-11 03:56,PPop Live,VIP Tables,200,180,172,45,clear,8,Monday,0,200,3
+2025-02-11 03:57,PPop Live,Level 3,9000,7900,573,34,rainy,9,Wednesday,0,748,0
+2025-02-11 03:58,PPop Live,East Block,4000,3600,1952,88,rainy,10,Wednesday,0,1976,1
+2025-02-11 03:59,PPop Live,Level 2,8000,7200,6936,23,cloudy,10,Friday,0,6980,2
+2025-02-11 04:00,PPop Live,Level 2,8000,7200,3720,44,rainy,10,Tuesday,0,3742,1
+2025-02-11 04:01,PPop Live,West Block 1,3000,2900,2676,26,clear,7,Monday,0,2774,3
+2025-02-11 04:02,PPop Live,Level 3,9000,7900,3713,54,rainy,7,Monday,0,3877,1
+2025-02-11 04:03,PPop Live,Level 2,8000,7200,6139,25,clear,8,Thursday,0,6282,2
+2025-02-11 04:04,PPop Live,Level 1,7000,6800,72,64,cloudy,8,Wednesday,0,219,0
+2025-02-11 04:05,PPop Live,Terrace A,2000,1800,619,54,rainy,9,Friday,0,773,0
+2025-02-11 04:06,PPop Live,VIP Tables,200,180,58,64,cloudy,8,Tuesday,0,160,2
+2025-02-11 04:07,PPop Live,Level 1,7000,6800,778,60,clear,10,Saturday,0,825,0
+2025-02-11 04:08,PPop Live,Terrace B,2000,1800,813,87,cloudy,9,Wednesday,0,961,1
+2025-02-11 04:09,PPop Live,Terrace A,2000,1800,1468,33,cloudy,10,Sunday,0,1580,2
+2025-02-11 04:10,PPop Live,East Block,4000,3600,1408,61,rainy,8,Thursday,0,1522,0
+2025-02-11 04:11,PPop Live,Level 3,9000,7900,2741,82,cloudy,8,Saturday,0,2871,0
+2025-02-11 04:12,PPop Live,West Block 1,3000,2900,2662,54,rainy,8,Wednesday,0,2792,3
+2025-02-11 04:13,PPop Live,West Block 1,3000,2900,1879,66,clear,7,Wednesday,0,2009,1
+2025-02-11 04:14,PPop Live,Terrace B,2000,1800,709,40,cloudy,7,Saturday,0,771,0
+2025-02-11 04:15,PPop Live,VIP,1500,1500,619,32,clear,10,Monday,0,697,1
+2025-02-11 04:16,PPop Live,Level 1,7000,6800,985,71,clear,7,Thursday,0,1117,0
+2025-02-11 04:17,PPop Live,Terrace A,2000,1800,248,57,clear,7,Friday,0,332,0
+2025-02-11 04:18,PPop Live,Terrace B,2000,1800,173,44,rainy,10,Wednesday,0,320,0
+2025-02-11 04:19,PPop Live,Terrace B,2000,1800,201,63,clear,7,Thursday,0,275,0
+2025-02-11 04:20,PPop Live,West Block,4000,3500,3086,52,rainy,8,Wednesday,0,3198,2
+2025-02-11 04:21,PPop Live,Level 2,8000,7200,560,39,clear,8,Thursday,0,757,0
+2025-02-11 04:22,PPop Live,Level 3,9000,7900,5541,30,rainy,10,Tuesday,0,5712,1
+2025-02-11 04:23,PPop Live,West Block,4000,3500,2504,33,clear,8,Saturday,0,2583,1
+2025-02-11 04:24,PPop Live,East Block 1,3000,2900,2082,46,cloudy,8,Thursday,0,2127,2
+2025-02-11 04:25,PPop Live,West Block 1,3000,2900,1327,78,rainy,7,Sunday,0,1454,1
+2025-02-11 04:26,PPop Live,Terrace A,2000,1800,1556,40,cloudy,9,Tuesday,0,1576,2
+2025-02-11 04:27,PPop Live,VIP Tables,200,180,119,53,cloudy,7,Saturday,0,200,3
+2025-02-11 04:28,PPop Live,Fan Zone Right,2500,2400,1694,21,clear,9,Friday,0,1797,2
+2025-02-11 04:29,PPop Live,Level 3,9000,7900,7417,81,rainy,9,Sunday,0,7610,2
+2025-02-11 04:30,PPop Live,East Block 1,3000,2900,2788,27,clear,9,Monday,0,2850,3
+2025-02-11 04:31,PPop Live,Level 3,9000,7900,5078,62,cloudy,9,Sunday,0,5261,1
+2025-02-11 04:32,PPop Live,HSBC Starstruck Pit,800,800,511,59,clear,8,Thursday,0,537,1
+2025-02-11 04:33,PPop Live,VIP Tables,200,180,62,61,rainy,9,Thursday,0,200,3
+2025-02-11 04:34,PPop Live,West Block,4000,3500,27,55,clear,9,Sunday,0,74,0
+2025-02-11 04:35,PPop Live,Terrace A,2000,1800,693,77,cloudy,7,Friday,0,802,1
+2025-02-11 04:36,PPop Live,Terrace A,2000,1800,647,38,rainy,7,Saturday,0,824,1
+2025-02-11 04:37,PPop Live,East Block,4000,3600,3401,74,rainy,7,Monday,0,3447,2
+2025-02-11 04:38,PPop Live,Level 3,9000,7900,861,47,rainy,9,Tuesday,0,985,0
+2025-02-11 04:39,PPop Live,West Block,4000,3500,2171,59,cloudy,7,Saturday,0,2363,1
+2025-02-11 04:40,PPop Live,VIP Tables,200,180,105,28,rainy,7,Monday,0,200,3
+2025-02-11 04:41,PPop Live,Fan Zone Right,2500,2400,922,70,cloudy,8,Saturday,0,1090,1
+2025-02-11 04:42,PPop Live,HSBC Starstruck Pit,800,800,538,92,rainy,8,Monday,0,698,2
+2025-02-11 04:43,PPop Live,Fan Zone Right,2500,2400,713,17,cloudy,7,Monday,0,782,0
+2025-02-11 04:44,PPop Live,Fan Zone Right,2500,2400,1794,64,cloudy,10,Sunday,0,1926,2
+2025-02-11 04:45,PPop Live,Fan Zone Right,2500,2400,1067,49,rainy,7,Friday,0,1257,1
+2025-02-11 04:46,PPop Live,VIP Tables,200,180,103,57,rainy,10,Friday,0,192,3
+2025-02-11 04:47,PPop Live,East Block,4000,3600,3288,95,clear,8,Wednesday,0,3358,2
+2025-02-11 04:48,PPop Live,East Block,4000,3600,2398,103,rainy,7,Wednesday,0,2474,1
+2025-02-11 04:49,PPop Live,Terrace A,2000,1800,42,54,clear,10,Wednesday,0,148,0
+2025-02-11 04:50,PPop Live,East Block 1,3000,2900,1648,11,cloudy,7,Thursday,0,1721,1
+2025-02-11 04:51,PPop Live,East Block,4000,3600,488,13,rainy,8,Sunday,0,611,0
+2025-02-11 04:52,PPop Live,East Block 1,3000,2900,2339,41,rainy,9,Friday,0,2431,2
+2025-02-11 04:53,PPop Live,HSBC Starstruck Pit,800,800,140,80,cloudy,9,Wednesday,0,217,0
+2025-02-11 04:54,PPop Live,Fan Zone Left,2500,2400,1020,30,rainy,7,Saturday,0,1125,1
+2025-02-11 04:55,PPop Live,Level 3,9000,7900,571,46,rainy,10,Monday,0,708,0
+2025-02-11 04:56,PPop Live,Terrace B,2000,1800,911,48,clear,8,Saturday,0,991,1
+2025-02-11 04:57,PPop Live,Level 1,7000,6800,1092,74,cloudy,9,Sunday,0,1272,0
+2025-02-11 04:58,PPop Live,VIP,1500,1500,566,29,rainy,8,Friday,0,743,1
+2025-02-11 04:59,PPop Live,East Block 1,3000,2900,2805,57,rainy,7,Saturday,0,2855,3
+2025-02-11 05:00,PPop Live,Terrace A,2000,1800,199,41,cloudy,7,Tuesday,0,348,0
+2025-02-11 05:01,PPop Live,Level 2,8000,7200,4899,58,cloudy,7,Monday,0,4998,1
+2025-02-11 05:02,PPop Live,West Block 1,3000,2900,2414,57,clear,7,Tuesday,0,2489,2
+2025-02-11 05:03,PPop Live,Terrace A,2000,1800,1212,44,rainy,9,Saturday,0,1384,1
+2025-02-11 05:04,PPop Live,Fan Zone Right,2500,2400,1748,57,clear,8,Sunday,0,1769,2
+2025-02-11 05:05,PPop Live,VIP Tables,200,180,135,37,clear,8,Monday,0,179,2
+2025-02-11 05:06,PPop Live,East Block 1,3000,2900,1135,61,cloudy,7,Tuesday,0,1236,1
+2025-02-11 05:07,PPop Live,East Block,4000,3600,2527,45,clear,9,Thursday,0,2577,1
+2025-02-11 05:08,PPop Live,Terrace B,2000,1800,453,20,cloudy,7,Thursday,0,539,0
+2025-02-11 05:09,PPop Live,Level 2,8000,7200,3740,86,rainy,8,Saturday,0,3936,1
+2025-02-11 05:10,PPop Live,Fan Zone Right,2500,2400,1893,96,clear,8,Wednesday,0,2002,2
+2025-02-11 05:11,PPop Live,East Block,4000,3600,170,33,clear,7,Tuesday,0,253,0
+2025-02-11 05:12,PPop Live,VIP Tables,200,180,28,40,cloudy,7,Sunday,0,148,2
+2025-02-11 05:13,PPop Live,Level 1,7000,6800,5306,29,cloudy,10,Monday,0,5366,2
+2025-02-11 05:14,PPop Live,Terrace B,2000,1800,113,20,rainy,8,Saturday,0,184,0
+2025-02-11 05:15,PPop Live,Level 2,8000,7200,4153,90,clear,7,Saturday,0,4270,1
+2025-02-11 05:16,PPop Live,West Block,4000,3500,1952,66,rainy,10,Thursday,0,2029,1
+2025-02-11 05:17,PPop Live,Level 1,7000,6800,6507,64,clear,7,Saturday,0,6574,3
+2025-02-11 05:18,PPop Live,Fan Zone Right,2500,2400,1900,47,rainy,9,Sunday,0,2077,2
+2025-02-11 05:19,PPop Live,VIP,1500,1500,1447,56,rainy,10,Saturday,0,1500,3
+2025-02-11 05:20,PPop Live,HSBC Starstruck Pit,800,800,781,63,clear,9,Thursday,0,800,3
+2025-02-11 05:21,PPop Live,HSBC Starstruck Pit,800,800,548,27,cloudy,8,Wednesday,0,612,2
+2025-02-11 05:22,PPop Live,Fan Zone Left,2500,2400,1506,42,clear,9,Sunday,0,1639,1
+2025-02-11 05:23,PPop Live,VIP Tables,200,180,129,53,rainy,9,Tuesday,0,152,2
+2025-02-11 05:24,PPop Live,Terrace A,2000,1800,900,63,clear,7,Saturday,0,994,1
+2025-02-11 05:25,PPop Live,Fan Zone Right,2500,2400,593,40,clear,8,Thursday,0,791,0
+2025-02-11 05:26,PPop Live,East Block 1,3000,2900,2035,84,rainy,7,Friday,0,2096,1
+2025-02-11 05:27,PPop Live,VIP Tables,200,180,123,37,clear,10,Sunday,0,200,3
+2025-02-11 05:28,PPop Live,Fan Zone Right,2500,2400,1632,31,cloudy,7,Wednesday,0,1671,1
+2025-02-11 05:29,PPop Live,Level 1,7000,6800,61,69,clear,7,Saturday,0,249,0
+2025-02-11 05:30,PPop Live,Fan Zone Right,2500,2400,718,69,cloudy,9,Friday,0,763,0
+2025-02-11 05:31,PPop Live,HSBC Starstruck Pit,800,800,277,41,cloudy,10,Sunday,0,425,1
+2025-02-11 05:32,PPop Live,VIP,1500,1500,744,39,clear,8,Thursday,0,920,1
+2025-02-11 05:33,PPop Live,East Block 1,3000,2900,24,35,cloudy,7,Friday,0,57,0
+2025-02-11 05:34,PPop Live,West Block,4000,3500,2719,40,cloudy,8,Wednesday,0,2823,2
+2025-02-11 05:35,PPop Live,HSBC Starstruck Pit,800,800,139,24,clear,9,Tuesday,0,178,0
+2025-02-11 05:36,PPop Live,HSBC Starstruck Pit,800,800,497,43,rainy,8,Friday,0,542,1
+2025-02-11 05:37,PPop Live,West Block 1,3000,2900,1492,33,cloudy,8,Saturday,0,1596,1
+2025-02-11 05:38,PPop Live,Level 3,9000,7900,2956,85,cloudy,8,Saturday,0,3132,0
+2025-02-11 05:39,PPop Live,Fan Zone Right,2500,2400,1419,68,cloudy,8,Saturday,0,1541,1
+2025-02-11 05:40,PPop Live,West Block 1,3000,2900,722,49,rainy,9,Sunday,0,792,0
+2025-02-11 05:41,PPop Live,East Block,4000,3600,2069,41,clear,10,Wednesday,0,2188,1
+2025-02-11 05:42,PPop Live,Fan Zone Right,2500,2400,626,76,rainy,8,Monday,0,720,0
+2025-02-11 05:43,PPop Live,Level 2,8000,7200,407,57,cloudy,7,Friday,0,527,0
+2025-02-11 05:44,PPop Live,HSBC Starstruck Pit,800,800,745,40,rainy,8,Saturday,0,800,3
+2025-02-11 05:45,PPop Live,East Block,4000,3600,2375,49,clear,9,Wednesday,0,2555,1
+2025-02-11 05:46,PPop Live,Level 3,9000,7900,2245,40,clear,7,Saturday,0,2311,0
+2025-02-11 05:47,PPop Live,Terrace B,2000,1800,56,26,clear,7,Tuesday,0,251,0
+2025-02-11 05:48,PPop Live,HSBC Starstruck Pit,800,800,771,56,clear,8,Monday,0,800,3
+2025-02-11 05:49,PPop Live,VIP,1500,1500,1016,47,rainy,8,Saturday,0,1140,2
+2025-02-11 05:50,PPop Live,HSBC Starstruck Pit,800,800,391,91,cloudy,10,Tuesday,0,513,1
+2025-02-11 05:51,PPop Live,HSBC Starstruck Pit,800,800,738,75,rainy,9,Monday,0,800,3
+2025-02-11 05:52,PPop Live,Terrace B,2000,1800,1770,82,rainy,8,Tuesday,0,1962,3
+2025-02-11 05:53,PPop Live,Level 3,9000,7900,1124,32,rainy,9,Wednesday,0,1168,0
+2025-02-11 05:54,PPop Live,VIP,1500,1500,149,63,clear,9,Tuesday,0,284,0
+2025-02-11 05:55,PPop Live,East Block,4000,3600,3059,44,clear,8,Sunday,0,3172,2
+2025-02-11 05:56,PPop Live,HSBC Starstruck Pit,800,800,485,40,clear,7,Thursday,0,589,2
+2025-02-11 05:57,PPop Live,Level 2,8000,7200,6757,48,cloudy,9,Thursday,0,6950,2
+2025-02-11 05:58,PPop Live,Level 1,7000,6800,5288,37,cloudy,7,Tuesday,0,5351,2
+2025-02-11 05:59,PPop Live,West Block,4000,3500,2185,51,clear,7,Saturday,0,2368,1
+2025-02-11 06:00,PPop Live,VIP Tables,200,180,95,51,clear,7,Monday,0,200,3
+2025-02-11 06:01,PPop Live,VIP,1500,1500,876,48,rainy,8,Wednesday,0,940,1
+2025-02-11 06:02,PPop Live,Terrace A,2000,1800,766,48,clear,10,Monday,0,855,1
+2025-02-11 06:03,PPop Live,Level 1,7000,6800,2721,65,rainy,9,Saturday,0,2856,1
+2025-02-11 06:04,PPop Live,Level 3,9000,7900,4636,61,rainy,8,Friday,0,4709,1
+2025-02-11 06:05,PPop Live,Fan Zone Right,2500,2400,1642,36,rainy,9,Thursday,0,1675,1
+2025-02-11 06:06,PPop Live,HSBC Starstruck Pit,800,800,556,32,cloudy,9,Thursday,0,616,2
+2025-02-11 06:07,PPop Live,Level 1,7000,6800,598,82,clear,10,Thursday,0,790,0
+2025-02-11 06:08,PPop Live,Terrace B,2000,1800,1294,53,clear,10,Saturday,0,1383,1
+2025-02-11 06:09,PPop Live,VIP,1500,1500,261,49,cloudy,9,Friday,0,438,0
+2025-02-11 06:10,PPop Live,East Block 1,3000,2900,2019,25,cloudy,10,Saturday,0,2057,1
+2025-02-11 06:11,PPop Live,VIP Tables,200,180,9,31,clear,10,Friday,0,78,0
+2025-02-11 06:12,PPop Live,East Block 1,3000,2900,1782,50,clear,9,Saturday,0,1879,1
+2025-02-11 06:13,PPop Live,Fan Zone Right,2500,2400,170,78,cloudy,10,Wednesday,0,253,0
+2025-02-11 06:14,PPop Live,Fan Zone Right,2500,2400,707,69,cloudy,10,Friday,0,779,0
+2025-02-11 06:15,PPop Live,Terrace B,2000,1800,751,68,clear,10,Tuesday,0,803,1
+2025-02-11 06:16,PPop Live,VIP,1500,1500,63,60,clear,7,Sunday,0,109,0
+2025-02-11 06:17,PPop Live,West Block 1,3000,2900,1332,25,cloudy,10,Thursday,0,1389,1
+2025-02-11 06:18,PPop Live,HSBC Starstruck Pit,800,800,189,28,cloudy,9,Friday,0,301,0
+2025-02-11 06:19,PPop Live,East Block 1,3000,2900,1591,53,clear,7,Tuesday,0,1654,1
+2025-02-11 06:20,PPop Live,HSBC Starstruck Pit,800,800,245,60,rainy,7,Wednesday,0,286,0
+2025-02-11 06:21,PPop Live,Fan Zone Left,2500,2400,2062,44,clear,9,Tuesday,0,2224,2
+2025-02-11 06:22,PPop Live,Terrace B,2000,1800,671,49,cloudy,8,Saturday,0,696,0
+2025-02-11 06:23,PPop Live,Terrace B,2000,1800,102,66,clear,8,Saturday,0,189,0
+2025-02-11 06:24,PPop Live,Fan Zone Left,2500,2400,87,57,clear,7,Thursday,0,177,0
+2025-02-11 06:25,PPop Live,Fan Zone Left,2500,2400,1481,48,clear,8,Saturday,0,1506,1
+2025-02-11 06:26,PPop Live,Level 2,8000,7200,2345,21,rainy,10,Wednesday,0,2385,0
+2025-02-11 06:27,PPop Live,West Block 1,3000,2900,934,45,rainy,8,Thursday,0,963,0
+2025-02-11 06:28,PPop Live,Level 1,7000,6800,4272,54,cloudy,8,Tuesday,0,4448,1
+2025-02-11 06:29,PPop Live,Level 3,9000,7900,1750,61,rainy,9,Wednesday,0,1934,0
+2025-02-11 06:30,PPop Live,Level 2,8000,7200,356,15,rainy,7,Wednesday,0,422,0
+2025-02-11 06:31,PPop Live,VIP,1500,1500,1347,68,cloudy,8,Tuesday,0,1439,3
+2025-02-11 06:32,PPop Live,Level 1,7000,6800,5192,47,rainy,9,Monday,0,5246,2
+2025-02-11 06:33,PPop Live,Level 2,8000,7200,4873,49,rainy,7,Sunday,0,5017,1
+2025-02-11 06:34,PPop Live,West Block,4000,3500,2850,29,clear,10,Friday,0,3038,2
+2025-02-11 06:35,PPop Live,Terrace B,2000,1800,1565,101,cloudy,7,Monday,0,1664,2
+2025-02-11 06:36,PPop Live,Terrace A,2000,1800,1373,24,clear,10,Monday,0,1474,2
+2025-02-11 06:37,PPop Live,Fan Zone Right,2500,2400,119,51,clear,8,Tuesday,0,207,0
+2025-02-11 06:38,PPop Live,Level 1,7000,6800,1232,77,cloudy,8,Thursday,0,1314,0
+2025-02-11 06:39,PPop Live,Terrace B,2000,1800,1055,25,rainy,9,Wednesday,0,1088,1
+2025-02-11 06:40,PPop Live,East Block 1,3000,2900,597,66,rainy,9,Friday,0,620,0
+2025-02-11 06:41,PPop Live,West Block,4000,3500,381,59,clear,10,Wednesday,0,537,0
+2025-02-11 06:42,PPop Live,West Block,4000,3500,3364,31,rainy,7,Monday,0,3501,2
+2025-02-11 06:43,PPop Live,East Block 1,3000,2900,2240,28,clear,8,Friday,0,2350,2
+2025-02-11 06:44,PPop Live,West Block,4000,3500,3157,23,cloudy,9,Friday,0,3353,2
+2025-02-11 06:45,PPop Live,VIP,1500,1500,871,43,rainy,10,Wednesday,0,1027,1
+2025-02-11 06:46,PPop Live,Terrace B,2000,1800,1325,60,rainy,9,Saturday,0,1408,2
+2025-02-11 06:47,PPop Live,Fan Zone Right,2500,2400,171,45,clear,9,Saturday,0,294,0
+2025-02-11 06:48,PPop Live,Fan Zone Right,2500,2400,506,34,rainy,7,Thursday,0,589,0
+2025-02-11 06:49,PPop Live,Fan Zone Left,2500,2400,1894,65,rainy,7,Friday,0,2028,2
+2025-02-11 06:50,PPop Live,Terrace A,2000,1800,513,31,rainy,9,Monday,0,681,0
+2025-02-11 06:51,PPop Live,HSBC Starstruck Pit,800,800,343,23,rainy,8,Wednesday,0,515,1
+2025-02-11 06:52,PPop Live,Fan Zone Left,2500,2400,2085,55,rainy,10,Thursday,0,2210,2
+2025-02-11 06:53,PPop Live,VIP Tables,200,180,30,65,cloudy,8,Saturday,0,169,2
+2025-02-11 06:54,PPop Live,Terrace A,2000,1800,1692,72,cloudy,10,Friday,0,1780,2
+2025-02-11 06:55,PPop Live,Terrace A,2000,1800,1589,55,clear,9,Tuesday,0,1696,2
+2025-02-11 06:56,PPop Live,Level 2,8000,7200,1484,64,rainy,9,Wednesday,0,1675,0
+2025-02-11 06:57,PPop Live,Level 2,8000,7200,100,50,clear,10,Sunday,0,287,0
+2025-02-11 06:58,PPop Live,Level 1,7000,6800,5990,31,rainy,7,Wednesday,0,6125,2
+2025-02-11 06:59,PPop Live,Level 2,8000,7200,3773,27,cloudy,9,Sunday,0,3940,1
+2025-02-11 07:00,PPop Live,West Block,4000,3500,1614,76,clear,10,Saturday,0,1679,1
+2025-02-11 07:01,PPop Live,Level 1,7000,6800,370,29,clear,10,Tuesday,0,497,0
+2025-02-11 07:02,PPop Live,Level 3,9000,7900,4422,52,cloudy,8,Tuesday,0,4620,1
+2025-02-11 07:03,PPop Live,Level 1,7000,6800,1015,23,cloudy,7,Monday,0,1156,0
+2025-02-11 07:04,PPop Live,West Block,4000,3500,2771,94,clear,7,Sunday,0,2810,2
+2025-02-11 07:05,PPop Live,VIP Tables,200,180,51,58,rainy,10,Friday,0,194,3
+2025-02-11 07:06,PPop Live,VIP Tables,200,180,151,51,cloudy,7,Wednesday,0,200,3
+2025-02-11 07:07,PPop Live,West Block,4000,3500,2039,61,rainy,9,Sunday,0,2234,1
+2025-02-11 07:08,PPop Live,Terrace A,2000,1800,1672,74,clear,7,Sunday,0,1824,3
+2025-02-11 07:09,PPop Live,Fan Zone Right,2500,2400,1503,71,clear,10,Monday,0,1590,1
+2025-02-11 07:10,PPop Live,West Block,4000,3500,456,31,cloudy,10,Friday,0,646,0
+2025-02-11 07:11,PPop Live,West Block 1,3000,2900,501,56,clear,10,Wednesday,0,528,0
+2025-02-11 07:12,PPop Live,VIP Tables,200,180,14,12,rainy,7,Friday,0,135,1
+2025-02-11 07:13,PPop Live,Level 2,8000,7200,1257,56,rainy,7,Tuesday,0,1362,0
+2025-02-11 07:14,PPop Live,Terrace A,2000,1800,781,35,rainy,8,Saturday,0,839,1
+2025-02-11 07:15,PPop Live,Terrace B,2000,1800,1605,20,rainy,9,Sunday,0,1692,2
+2025-02-11 07:16,PPop Live,East Block 1,3000,2900,1997,5,cloudy,7,Tuesday,0,2049,1
+2025-02-11 07:17,PPop Live,Level 1,7000,6800,2136,48,cloudy,8,Friday,0,2165,0
+2025-02-11 07:18,PPop Live,West Block,4000,3500,1239,66,rainy,9,Saturday,0,1271,0
+2025-02-11 07:19,PPop Live,West Block,4000,3500,2866,66,rainy,7,Wednesday,0,2918,2
+2025-02-11 07:20,PPop Live,Fan Zone Left,2500,2400,14,44,clear,10,Wednesday,0,112,0
+2025-02-11 07:21,PPop Live,West Block,4000,3500,187,38,cloudy,9,Friday,0,287,0
+2025-02-11 07:22,PPop Live,East Block,4000,3600,2130,76,cloudy,8,Monday,0,2269,1
+2025-02-11 07:23,PPop Live,Terrace A,2000,1800,1221,41,clear,7,Tuesday,0,1367,1
+2025-02-11 07:24,PPop Live,HSBC Starstruck Pit,800,800,514,69,rainy,7,Thursday,0,641,2
+2025-02-11 07:25,PPop Live,Fan Zone Right,2500,2400,438,38,cloudy,7,Wednesday,0,631,0
+2025-02-11 07:26,PPop Live,VIP Tables,200,180,153,52,rainy,7,Saturday,0,200,3
+2025-02-11 07:27,PPop Live,West Block 1,3000,2900,470,40,clear,9,Thursday,0,583,0
+2025-02-11 07:28,PPop Live,HSBC Starstruck Pit,800,800,700,46,cloudy,9,Monday,0,800,3
+2025-02-11 07:29,PPop Live,Fan Zone Left,2500,2400,369,37,rainy,10,Monday,0,415,0
+2025-02-11 07:30,PPop Live,West Block 1,3000,2900,1127,52,cloudy,7,Thursday,0,1305,1
+2025-02-11 07:31,PPop Live,Fan Zone Right,2500,2400,683,34,cloudy,7,Friday,0,857,0
+2025-02-11 07:32,PPop Live,West Block,4000,3500,57,68,clear,10,Friday,0,139,0
+2025-02-11 07:33,PPop Live,West Block 1,3000,2900,605,43,cloudy,7,Tuesday,0,676,0
+2025-02-11 07:34,PPop Live,East Block,4000,3600,342,7,cloudy,9,Wednesday,0,489,0
+2025-02-11 07:35,PPop Live,Terrace A,2000,1800,72,63,rainy,9,Thursday,0,251,0
+2025-02-11 07:36,PPop Live,VIP,1500,1500,27,61,cloudy,9,Friday,0,121,0
+2025-02-11 07:37,PPop Live,Terrace B,2000,1800,1725,82,cloudy,8,Monday,0,1839,3
+2025-02-11 07:38,PPop Live,Level 3,9000,7900,6833,27,clear,10,Wednesday,0,6871,2
+2025-02-11 07:39,PPop Live,East Block 1,3000,2900,447,55,clear,10,Wednesday,0,578,0
+2025-02-11 07:40,PPop Live,West Block,4000,3500,3421,54,rainy,9,Monday,0,3455,2
+2025-02-11 07:41,PPop Live,Level 1,7000,6800,4548,57,cloudy,7,Thursday,0,4582,1
+2025-02-11 07:42,PPop Live,Terrace A,2000,1800,1261,73,rainy,10,Monday,0,1439,2
+2025-02-11 07:43,PPop Live,HSBC Starstruck Pit,800,800,783,47,cloudy,7,Wednesday,0,800,3
+2025-02-11 07:44,PPop Live,West Block,4000,3500,290,46,clear,10,Thursday,0,348,0
+2025-02-11 07:45,PPop Live,Terrace A,2000,1800,810,27,cloudy,7,Monday,0,909,1
+2025-02-11 07:46,PPop Live,Terrace A,2000,1800,1143,9,rainy,9,Sunday,0,1271,1
+2025-02-11 07:47,PPop Live,East Block,4000,3600,1491,39,cloudy,9,Thursday,0,1592,0
+2025-02-11 07:48,PPop Live,West Block 1,3000,2900,1169,55,rainy,10,Sunday,0,1194,0
+2025-02-11 07:49,PPop Live,Level 3,9000,7900,5603,54,cloudy,10,Tuesday,0,5758,1
+2025-02-11 07:50,PPop Live,East Block,4000,3600,2340,56,rainy,8,Tuesday,0,2437,1
+2025-02-11 07:51,PPop Live,Level 3,9000,7900,6194,40,clear,7,Wednesday,0,6307,2
+2025-02-11 07:52,PPop Live,HSBC Starstruck Pit,800,800,428,35,clear,9,Friday,0,492,1
+2025-02-11 07:53,PPop Live,VIP,1500,1500,1288,52,rainy,9,Saturday,0,1467,3
+2025-02-11 07:54,PPop Live,East Block 1,3000,2900,1327,48,cloudy,10,Thursday,0,1488,1
+2025-02-11 07:55,PPop Live,East Block,4000,3600,718,37,clear,10,Saturday,0,832,0
+2025-02-11 07:56,PPop Live,Fan Zone Right,2500,2400,1996,51,cloudy,7,Saturday,0,2191,2
+2025-02-11 07:57,PPop Live,Fan Zone Right,2500,2400,200,25,clear,8,Thursday,0,283,0
+2025-02-11 07:58,PPop Live,Fan Zone Left,2500,2400,1333,83,rainy,8,Thursday,0,1498,1
+2025-02-11 07:59,PPop Live,HSBC Starstruck Pit,800,800,198,50,clear,10,Saturday,0,384,1
+2025-02-11 08:00,PPop Live,Fan Zone Left,2500,2400,78,64,rainy,9,Saturday,0,256,0
+2025-02-11 08:01,PPop Live,Level 2,8000,7200,181,34,clear,10,Monday,0,236,0
+2025-02-11 08:02,PPop Live,HSBC Starstruck Pit,800,800,774,78,clear,7,Sunday,0,800,3
+2025-02-11 08:03,PPop Live,Level 2,8000,7200,6126,58,cloudy,10,Tuesday,0,6150,2
+2025-02-11 08:04,PPop Live,Level 2,8000,7200,6322,49,rainy,9,Friday,0,6402,2
+2025-02-11 08:05,PPop Live,Fan Zone Left,2500,2400,807,51,cloudy,7,Wednesday,0,885,0
+2025-02-11 08:06,PPop Live,West Block,4000,3500,940,46,clear,7,Wednesday,0,1099,0
+2025-02-11 08:07,PPop Live,Terrace B,2000,1800,763,60,clear,8,Thursday,0,919,1
+2025-02-11 08:08,PPop Live,Level 3,9000,7900,783,54,cloudy,10,Monday,0,956,0
+2025-02-11 08:09,PPop Live,VIP,1500,1500,778,40,rainy,10,Tuesday,0,801,1
+2025-02-11 08:10,PPop Live,VIP,1500,1500,1442,43,rainy,7,Saturday,0,1500,3
+2025-02-11 08:11,PPop Live,Terrace B,2000,1800,1452,26,rainy,10,Friday,0,1636,2
+2025-02-11 08:12,PPop Live,Level 2,8000,7200,4366,91,rainy,7,Wednesday,0,4444,1
+2025-02-11 08:13,PPop Live,Fan Zone Left,2500,2400,1181,33,clear,10,Wednesday,0,1274,1
+2025-02-11 08:14,PPop Live,Level 1,7000,6800,1667,65,clear,10,Wednesday,0,1703,0
+2025-02-11 08:15,PPop Live,East Block,4000,3600,866,76,cloudy,8,Thursday,0,922,0
+2025-02-11 08:16,PPop Live,Level 2,8000,7200,1293,33,rainy,8,Monday,0,1344,0
+2025-02-11 08:17,PPop Live,Fan Zone Right,2500,2400,183,58,clear,10,Friday,0,303,0
+2025-02-11 08:18,PPop Live,West Block,4000,3500,2589,44,clear,10,Monday,0,2689,1
+2025-02-11 08:19,PPop Live,West Block 1,3000,2900,2112,64,cloudy,9,Wednesday,0,2154,2
+2025-02-11 08:20,PPop Live,HSBC Starstruck Pit,800,800,340,25,rainy,8,Tuesday,0,482,1
+2025-02-11 08:21,PPop Live,Terrace B,2000,1800,712,71,clear,10,Thursday,0,768,0
+2025-02-11 08:22,PPop Live,East Block,4000,3600,1126,70,cloudy,9,Wednesday,0,1147,0
+2025-02-11 08:23,PPop Live,West Block 1,3000,2900,569,39,clear,9,Thursday,0,762,0
+2025-02-11 08:24,PPop Live,Fan Zone Right,2500,2400,1257,90,clear,9,Saturday,0,1384,1
+2025-02-11 08:25,PPop Live,Terrace A,2000,1800,26,32,clear,8,Tuesday,0,74,0
+2025-02-11 08:26,PPop Live,Terrace B,2000,1800,1603,32,cloudy,10,Monday,0,1720,2
+2025-02-11 08:27,PPop Live,West Block 1,3000,2900,477,51,clear,10,Tuesday,0,548,0
+2025-02-11 08:28,PPop Live,VIP,1500,1500,359,52,rainy,8,Saturday,0,399,0
+2025-02-11 08:29,PPop Live,VIP Tables,200,180,88,59,cloudy,10,Thursday,0,117,1
+2025-02-11 08:30,PPop Live,East Block 1,3000,2900,1147,26,rainy,9,Wednesday,0,1271,1
+2025-02-11 08:31,PPop Live,Level 3,9000,7900,6910,55,cloudy,9,Sunday,0,7057,2
+2025-02-11 08:32,PPop Live,HSBC Starstruck Pit,800,800,255,79,clear,8,Wednesday,0,311,0
+2025-02-11 08:33,PPop Live,Level 2,8000,7200,3249,37,cloudy,8,Saturday,0,3304,1
+2025-02-11 08:34,PPop Live,East Block,4000,3600,3059,74,rainy,8,Friday,0,3179,2
+2025-02-11 08:35,PPop Live,VIP Tables,200,180,95,60,cloudy,7,Sunday,0,200,3
+2025-02-11 08:36,PPop Live,West Block,4000,3500,915,65,cloudy,7,Tuesday,0,1023,0
+2025-02-11 08:37,PPop Live,Fan Zone Right,2500,2400,1834,36,rainy,7,Thursday,0,1966,2
+2025-02-11 08:38,PPop Live,VIP Tables,200,180,15,8,clear,7,Sunday,0,94,1
+2025-02-11 08:39,PPop Live,VIP,1500,1500,1197,76,cloudy,7,Tuesday,0,1279,2
+2025-02-11 08:40,PPop Live,Terrace B,2000,1800,1450,55,clear,9,Monday,0,1497,2
+2025-02-11 08:41,PPop Live,Level 2,8000,7200,4066,5,cloudy,8,Saturday,0,4099,1
+2025-02-11 08:42,PPop Live,East Block,4000,3600,478,55,cloudy,7,Saturday,0,634,0
+2025-02-11 08:43,PPop Live,Terrace A,2000,1800,154,61,rainy,10,Tuesday,0,208,0
+2025-02-11 08:44,PPop Live,VIP,1500,1500,819,43,rainy,7,Sunday,0,988,1
+2025-02-11 08:45,PPop Live,Level 2,8000,7200,343,75,rainy,9,Tuesday,0,413,0
+2025-02-11 08:46,PPop Live,Fan Zone Right,2500,2400,1298,76,rainy,7,Monday,0,1329,1
+2025-02-11 08:47,PPop Live,East Block 1,3000,2900,935,92,clear,10,Sunday,0,977,0
+2025-02-11 08:48,PPop Live,Level 2,8000,7200,351,20,rainy,9,Monday,0,488,0
+2025-02-11 08:49,PPop Live,VIP Tables,200,180,164,81,cloudy,10,Friday,0,200,3
+2025-02-11 08:50,PPop Live,West Block,4000,3500,368,91,rainy,10,Saturday,0,416,0
+2025-02-11 08:51,PPop Live,Fan Zone Right,2500,2400,629,25,clear,10,Thursday,0,762,0
+2025-02-11 08:52,PPop Live,VIP Tables,200,180,78,74,cloudy,8,Wednesday,0,172,2
+2025-02-11 08:53,PPop Live,Level 3,9000,7900,769,57,clear,10,Monday,0,803,0
+2025-02-11 08:54,PPop Live,East Block 1,3000,2900,502,42,rainy,7,Sunday,0,610,0
+2025-02-11 08:55,PPop Live,VIP Tables,200,180,148,56,rainy,8,Sunday,0,200,3
+2025-02-11 08:56,PPop Live,Terrace A,2000,1800,353,42,rainy,10,Monday,0,541,0
+2025-02-11 08:57,PPop Live,Level 1,7000,6800,6740,72,clear,7,Wednesday,0,6805,3
+2025-02-11 08:58,PPop Live,West Block 1,3000,2900,2378,40,cloudy,7,Monday,0,2500,2
+2025-02-11 08:59,PPop Live,West Block 1,3000,2900,2265,37,cloudy,9,Tuesday,0,2373,2
+2025-02-11 09:00,PPop Live,East Block 1,3000,2900,1724,70,cloudy,8,Monday,0,1915,1
+2025-02-11 09:01,PPop Live,HSBC Starstruck Pit,800,800,565,64,clear,7,Saturday,0,588,2
+2025-02-11 09:02,PPop Live,Level 2,8000,7200,2475,44,cloudy,8,Tuesday,0,2597,0
+2025-02-11 09:03,PPop Live,West Block 1,3000,2900,2232,51,clear,7,Thursday,0,2317,2
+2025-02-11 09:04,PPop Live,VIP,1500,1500,1287,96,cloudy,10,Wednesday,0,1348,2
+2025-02-11 09:05,PPop Live,VIP,1500,1500,973,81,cloudy,10,Thursday,0,1015,1
+2025-02-11 09:06,PPop Live,West Block,4000,3500,989,74,cloudy,8,Thursday,0,1039,0
+2025-02-11 09:07,PPop Live,VIP Tables,200,180,175,52,cloudy,9,Wednesday,0,200,3
+2025-02-11 09:08,PPop Live,Fan Zone Right,2500,2400,448,85,rainy,9,Tuesday,0,496,0
+2025-02-11 09:09,PPop Live,Level 3,9000,7900,3655,68,clear,9,Thursday,0,3769,1
+2025-02-11 09:10,PPop Live,Terrace B,2000,1800,1438,11,rainy,8,Monday,0,1487,2
+2025-02-11 09:11,PPop Live,West Block 1,3000,2900,1067,65,cloudy,10,Thursday,0,1233,1
+2025-02-11 09:12,PPop Live,Terrace A,2000,1800,1142,55,clear,7,Sunday,0,1269,1
+2025-02-11 09:13,PPop Live,Fan Zone Right,2500,2400,1605,46,rainy,8,Wednesday,0,1749,1
+2025-02-11 09:14,PPop Live,VIP,1500,1500,906,56,rainy,8,Wednesday,0,963,1
+2025-02-11 09:15,PPop Live,West Block,4000,3500,3026,43,clear,7,Sunday,0,3092,2
+2025-02-11 09:16,PPop Live,Fan Zone Right,2500,2400,887,26,cloudy,7,Wednesday,0,1012,1
+2025-02-11 09:17,PPop Live,Fan Zone Right,2500,2400,864,38,cloudy,8,Wednesday,0,981,0
+2025-02-11 09:18,PPop Live,East Block 1,3000,2900,1010,63,clear,10,Monday,0,1141,0
+2025-02-11 09:19,PPop Live,VIP Tables,200,180,98,18,rainy,9,Sunday,0,189,3
+2025-02-11 09:20,PPop Live,Terrace B,2000,1800,54,75,clear,9,Sunday,0,241,0
+2025-02-11 09:21,PPop Live,East Block,4000,3600,2690,74,cloudy,8,Wednesday,0,2847,2
+2025-02-11 09:22,PPop Live,HSBC Starstruck Pit,800,800,477,7,cloudy,7,Friday,0,540,1
+2025-02-11 09:23,PPop Live,HSBC Starstruck Pit,800,800,439,40,rainy,10,Sunday,0,462,1
+2025-02-11 09:24,PPop Live,VIP,1500,1500,883,63,cloudy,7,Tuesday,0,958,1
+2025-02-11 09:25,PPop Live,West Block 1,3000,2900,2661,45,rainy,10,Tuesday,0,2753,3
+2025-02-11 09:26,PPop Live,Terrace A,2000,1800,128,41,cloudy,8,Sunday,0,309,0
+2025-02-11 09:27,PPop Live,Level 2,8000,7200,3187,12,rainy,9,Saturday,0,3272,1
+2025-02-11 09:28,PPop Live,Fan Zone Right,2500,2400,422,21,rainy,8,Tuesday,0,548,0
+2025-02-11 09:29,PPop Live,Terrace A,2000,1800,880,57,rainy,7,Thursday,0,903,1
+2025-02-11 09:30,PPop Live,HSBC Starstruck Pit,800,800,569,38,cloudy,8,Saturday,0,664,2
+2025-02-11 09:31,PPop Live,East Block,4000,3600,1918,45,clear,8,Saturday,0,2048,1
+2025-02-11 09:32,PPop Live,VIP Tables,200,180,127,39,rainy,10,Friday,0,200,3
+2025-02-11 09:33,PPop Live,Fan Zone Right,2500,2400,29,58,rainy,7,Tuesday,0,204,0
+2025-02-11 09:34,PPop Live,Terrace B,2000,1800,1137,37,cloudy,10,Monday,0,1178,1
+2025-02-11 09:35,PPop Live,Level 2,8000,7200,3415,77,cloudy,8,Wednesday,0,3479,1
+2025-02-11 09:36,PPop Live,VIP Tables,200,180,12,46,rainy,7,Tuesday,0,167,2
+2025-02-11 09:37,PPop Live,Fan Zone Left,2500,2400,1932,54,rainy,10,Saturday,0,2058,2
+2025-02-11 09:38,PPop Live,West Block,4000,3500,3372,61,clear,7,Sunday,0,3463,2
+2025-02-11 09:39,PPop Live,Level 2,8000,7200,3060,37,clear,7,Friday,0,3103,0

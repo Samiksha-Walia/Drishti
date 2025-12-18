@@ -4,7 +4,14 @@ opencv-python>=4.5.0
 numpy>=1.20.0
 matplotlib>=3.4.0
 flask>=2.0.0
+flask-cors
 werkzeug>=2.0.0
+torch
+torchvision
+ultralytics
+pandas
+scikit-learn
+joblib>=3.4.0
 # FastAPI dependencies
 fastapi>=0.68.0
 uvicorn>=0.15.0

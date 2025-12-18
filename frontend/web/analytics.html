@@ -38,7 +38,8 @@
                     <input type="text" placeholder="Search analytics...">
                 </div>
                 <div class="nav-actions">
-                    <button class="btn btn-outline-primary"><i class="bi bi-plus-lg"></i> New Alert</button>
+                    <button class="btn btn-outline-primary me-2" data-action="crowd-predict"><i class="bi bi-graph-up"></i> Crowd Prediction</button>
+                    <button id="analytics-new-btn" class="btn btn-outline-primary me-2" data-action="analytics-create"><i class="bi bi-plus-lg"></i> New Record</button>
                     <div class="notification-icon">
                         <i class="bi bi-bell-fill"></i>
                         <span class="badge">3</span>
@@ -70,7 +71,7 @@
                                     <i class="bi bi-people-fill"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>2,547</h3>
+                                    <h3 data-analytics-stat="visitors">0</h3>
                                     <p>Total Visitors</p>
                                 </div>
                             </div>
@@ -81,7 +82,7 @@
                                     <i class="bi bi-camera-video-fill"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>24</h3>
+                                    <h3 data-analytics-stat="cameras">0</h3>
                                     <p>Active Cameras</p>
                                 </div>
                             </div>
@@ -92,18 +93,19 @@
                                     <i class="bi bi-exclamation-triangle-fill"></i>
                                 </div>
                                 <div class="status-info">
-                                    <h3>18</h3>
-                                    <p>Incidents Today</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-3">
-                            <div class="status-card">
-                                <div class="status-icon bg-info">
-                                    <i class="bi bi-clock-history"></i>
+                                    <h3 data-analytics-stat="total_events">0</h3>
+                                    <p>Total Events</p>
                                 </div>
                                 <div class="status-info">
-                                    <h3>98.2%</h3>
+                                    <h3 data-analytics-stat="total_zones">0</h3>
+                                    <p>Active Zones</p>
+                                </div>
+                                <div class="status-info">
+                                    <h3 data-analytics-stat="avg_predicted">0</h3>
+                                    <p>Avg Predicted Crowd</p>
+                                </div>
+                                <div class="status-info">
+                                    <h3 data-analytics-stat="uptime">0%</h3>
                                     <p>System Uptime</p>
                                 </div>
                             </div>
@@ -115,100 +117,75 @@
                             <div class="card mb-4">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <h5 class="mb-0">Crowd Density Trends</h5>
-                                    <div class="btn-group">
-                                        <button class="btn btn-sm btn-outline-secondary">Day</button>
-                                        <button class="btn btn-sm btn-primary">Week</button>
-                                        <button class="btn btn-sm btn-outline-secondary">Month</button>
+                                    <div class="btn-group" data-trend-range="week">
+                                        <button class="btn btn-sm btn-outline-secondary" data-range="day">Day</button>
+                                        <button class="btn btn-sm btn-primary" data-range="week">Week</button>
+                                        <button class="btn btn-sm btn-outline-secondary" data-range="month">Month</button>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <!-- Chart placeholder -->
-                                    <div style="height: 300px; background: linear-gradient(to right, #1e3c72, #2a5298); border-radius: 8px; position: relative;">
-                                        <!-- Simulated chart lines -->
-                                        <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
-                                            <path d="M0,250 Q50,180 100,200 T200,150 T300,180 T400,120 T500,150 T600,100 T700,150" 
-                                                  fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"></path>
-                                            <path d="M0,280 Q50,250 100,260 T200,240 T300,260 T400,220 T500,240 T600,200 T700,220" 
-                                                  fill="none" stroke="rgba(46,204,113,0.8)" stroke-width="2"></path>
-                                        </svg>
-                                        <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-size: 12px;">
-                                            Mon | Tue | Wed | Thu | Fri | Sat | Sun
-                                        </div>
-                                        <div style="position: absolute; top: 10px; right: 10px; background-color: rgba(0,0,0,0.3); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px;">
-                                            <span style="color: rgba(255,255,255,0.5);">●</span> Main Entrance
-                                            <span style="color: rgba(46,204,113,0.8); margin-left: 10px;">●</span> Food Court
-                                        </div>
-                                    </div>
+                                <div class="card-body" data-chart="crowd-trends">
+  <!-- Chart will be rendered here by JavaScript -->
+</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Zone Predictions (Next 15 min)</h5>
+                                    <button class="btn btn-sm btn-outline-secondary" data-action="refresh-zones">
+                                        <i class="bi bi-arrow-clockwise"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body" id="zone-predictions">
+                                    <div class="text-center text-muted">Loading zone predictions...</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         <div class="col-md-4">
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <h5 class="mb-0">Incident Distribution</h5>
                                 </div>
-                                <div class="card-body">
-                                    <!-- Pie chart placeholder -->
-                                    <div style="height: 300px; position: relative; display: flex; align-items: center; justify-content: center;">
-                                        <div style="width: 200px; height: 200px; border-radius: 50%; background: conic-gradient(#dc3545 0% 25%, #ffc107 25% 55%, #17a2b8 55% 70%, #28a745 70% 100%);"></div>
-                                        <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; background-color: #343a40; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
-                                        <div style="position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-around;">
-                                            <div><span style="color: #dc3545;">●</span> Fire (25%)</div>
-                                            <div><span style="color: #ffc107;">●</span> Crowd (30%)</div>
-                                            <div><span style="color: #17a2b8;">●</span> Missing (15%)</div>
-                                            <div><span style="color: #28a745;">●</span> Other (30%)</div>
-                                        </div>
-                                    </div>
+                                <div class="card-body" data-chart="incident-pie">
+                                    <!-- Pie chart will be rendered here -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <div class="card mb-4">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Hotspot Analysis</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="images/image.png" class="img-fluid rounded" alt="Venue hotspot heatmap">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Analytics Records</h5>
+                                    <div>
+                                        <button id="analytics-refresh" class="btn btn-sm btn-outline-secondary me-2">
+                                            <span class="spinner-border spinner-border-sm d-none" role="status"></span>
+                                            <span class="label"><i class="bi bi-arrow-repeat me-1"></i>Refresh</span>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <h5 class="mb-0">AI Insights</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="ai-insight-item">
-                                        <div class="insight-icon bg-warning">
-                                            <i class="bi bi-lightbulb-fill"></i>
-                                        </div>
-                                        <div class="insight-content">
-                                            <h6>Crowd Bottleneck Prediction</h6>
-                                            <p>High probability of crowd bottleneck at Gate 2 between 2-4 PM based on historical patterns.</p>
-                                        </div>
-                                    </div>
-                                    <div class="ai-insight-item">
-                                        <div class="insight-icon bg-info">
-                                            <i class="bi bi-graph-up"></i>
-                                        </div>
-                                        <div class="insight-content">
-                                            <h6>Incident Correlation</h6>
-                                            <p>85% of fire incidents occurred in areas with poor ventilation. Recommend increased monitoring.</p>
-                                        </div>
-                                    </div>
-                                    <div class="ai-insight-item">
-                                        <div class="insight-icon bg-success">
-                                            <i class="bi bi-check-circle-fill"></i>
-                                        </div>
-                                        <div class="insight-content">
-                                            <h6>Response Time Improvement</h6>
-                                            <p>Average response time reduced by 23% this month due to optimized responder positioning.</p>
-                                        </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Venue</th>
+                                                    <th>Timestamp</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="analytics-table-body">
+                                                <tr>
+                                                    <td colspan="4" class="text-center text-muted py-4">
+                                                        <div class="spinner-border text-primary me-2" role="status"></div>
+                                                        Fetching analytics...
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -248,6 +225,7 @@
         });
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="firebase-config.js"></script>
     <script src="app.js"></script>
 </body>

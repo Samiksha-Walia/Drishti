@@ -24,7 +24,7 @@
                 <li class="active"><a href="settings.html"><i class="bi bi-gear-fill"></i> Settings</a></li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#"><i class="bi bi-question-circle-fill"></i> Help</a>
+               
                 <a href="#" id="logout-link"><i class="bi bi-box-arrow-right"></i> Logout</a>
             </div>
         </div>
@@ -33,12 +33,7 @@
         <div class="main-content">
             <!-- Top Navigation -->
             <div class="top-nav">
-                <div class="search-bar">
-                    <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search settings...">
-                </div>
-                <div class="nav-actions">
-                    <button class="btn btn-outline-primary"><i class="bi bi-cloud-upload"></i> Backup</button>
+                <div class="nav-actions ms-auto">
                     <div class="notification-icon">
                         <i class="bi bi-bell-fill"></i>
                         <span class="badge">1</span>
@@ -61,36 +56,7 @@
                 </div>
 
                 <div class="content-section">
-                    <h2 class="section-title">Configuration</h2>
                     
-                    <div class="row">
-                        <div class="col-md-3 mb-4">
-                            <div class="card settings-nav">
-                                <div class="list-group list-group-flush">
-                                    <a href="#profile" class="list-group-item list-group-item-action active">
-                                        <i class="bi bi-person-fill"></i> Profile
-                                    </a>
-                                    <a href="#notifications" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-bell-fill"></i> Notifications
-                                    </a>
-                                    <a href="#security" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-shield-lock-fill"></i> Security
-                                    </a>
-                                    <a href="#ai-settings" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-cpu-fill"></i> AI Settings
-                                    </a>
-                                    <a href="#camera-config" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-camera-fill"></i> Camera Configuration
-                                    </a>
-                                    <a href="#integrations" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-puzzle-fill"></i> Integrations
-                                    </a>
-                                    <a href="#system" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-gear-fill"></i> System
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         
                         <div class="col-md-9">
                             <div class="card mb-4" id="profile">
@@ -144,64 +110,7 @@
                                 </div>
                             </div>
                             
-                            <div class="card mb-4" id="ai-settings">
-                                <div class="card-header">
-                                    <h5 class="mb-0">AI Detection Settings</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <h6>Detection Thresholds</h6>
-                                        <div class="mb-3">
-                                            <label for="fireThreshold" class="form-label">Fire Detection Sensitivity (75%)</label>
-                                            <input type="range" class="form-range" min="0" max="100" value="75" id="fireThreshold">
-                                            <div class="d-flex justify-content-between">
-                                                <small>Low</small>
-                                                <small>High</small>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="crowdThreshold" class="form-label">Crowd Density Threshold (65%)</label>
-                                            <input type="range" class="form-range" min="0" max="100" value="65" id="crowdThreshold">
-                                            <div class="d-flex justify-content-between">
-                                                <small>Low</small>
-                                                <small>High</small>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="personThreshold" class="form-label">Person Recognition Confidence (80%)</label>
-                                            <input type="range" class="form-range" min="0" max="100" value="80" id="personThreshold">
-                                            <div class="d-flex justify-content-between">
-                                                <small>Low</small>
-                                                <small>High</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mb-4">
-                                        <h6>AI Model Selection</h6>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="radio" name="aiModel" id="modelStandard" checked>
-                                            <label class="form-check-label" for="modelStandard">
-                                                Standard (Balanced performance and accuracy)
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="radio" name="aiModel" id="modelHighPerformance">
-                                            <label class="form-check-label" for="modelHighPerformance">
-                                                High Performance (Faster but less accurate)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="aiModel" id="modelHighAccuracy">
-                                            <label class="form-check-label" for="modelHighAccuracy">
-                                                High Accuracy (More accurate but slower)
-                                            </label>
-                                        </div>
-                                    </div>
-                                    
-                                    <button type="button" class="btn btn-primary">Save AI Settings</button>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

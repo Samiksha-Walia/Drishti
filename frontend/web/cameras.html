@@ -64,7 +64,7 @@
                         <h1>Camera Analysis</h1>
                         <p class="text-muted">AI-assisted monitoring for all active feeds</p>
                     </div>
-                    <button class="btn btn-primary"><i class="bi bi-camera-video"></i> Live Monitor</button>
+                    <button class="btn btn-primary" data-action="live-monitor"><i class="bi bi-camera-video"></i> Live Monitor</button>
                 </div>
 
                 <div class="content-section live-feed-section">
@@ -192,7 +192,10 @@
                                     <button class="icon-button"><i class="bi bi-arrows-fullscreen"></i></button>
                                 </div>
                                 <div class="feed-preview">
-                                    <i class="bi bi-camera-video"></i>
+                                    <video autoplay loop muted playsinline class="w-100 h-100">
+                                        <source src="videos/cam1.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                                 <div class="feed-card-footer">
                                     <div>
@@ -213,15 +216,18 @@
                                     <button class="icon-button"><i class="bi bi-arrows-fullscreen"></i></button>
                                 </div>
                                 <div class="feed-preview">
-                                    <i class="bi bi-geo-alt"></i>
+                                    <video autoplay loop muted playsinline class="w-100 h-100">
+                                        <source src="videos/cam2.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                                 <div class="feed-card-footer">
                                     <div>
-                                        <h4>Parking Lot</h4>
+                                        <h4>Food Court</h4>
                                         <p>Zone B</p>
                                     </div>
                                     <div class="feed-stats">
-                                        <span><i class="bi bi-car-front"></i> 3</span>
+                                        <i class="bi bi-people-front"></i><span> 3</span>
                                         <span class="status-pill status-low">low</span>
                                     </div>
                                 </div>
@@ -234,15 +240,18 @@
                                     <button class="icon-button"><i class="bi bi-arrows-fullscreen"></i></button>
                                 </div>
                                 <div class="feed-preview">
-                                    <i class="bi bi-camera-video-off"></i>
+                                    <video autoplay loop muted playsinline class="w-100 h-100">
+                                        <source src="videos/cam4.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
                                 <div class="feed-card-footer">
                                     <div>
-                                        <h4>Reception</h4>
+                                        <h4>Parking Lot</h4>
                                         <p>Zone C</p>
                                     </div>
                                     <div class="feed-stats">
-                                        <span><i class="bi bi-people-fill"></i> 4</span>
+                                        <span><i class="bi bi-car-front"></i> 4</span>
                                         <span class="status-pill status-high">high</span>
                                     </div>
                                 </div>
@@ -652,6 +661,37 @@
             document.getElementById('camera-analysis-app')
         );
     </script>-->
+
+    <!-- Live Monitor Modal -->
+    <div class="modal fade" id="liveMonitorModal" tabindex="-1" aria-labelledby="liveMonitorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="liveMonitorModalLabel">Live Monitor - Webcam</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <video id="webcamVideo" width="640" height="480" autoplay muted style="border: 1px solid #dee2e6; border-radius: 8px;"></video>
+                        <canvas id="detectionCanvas" width="640" height="480" style="display: none;"></canvas>
+                    </div>
+                    <div class="mt-3">
+                        <h6>Detections</h6>
+                        <div id="detectionResults" class="row">
+                            <div class="col-md-6">
+                                <strong>People Count:</strong> <span id="peopleCount">0</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="stopMonitorBtn">Stop Monitor</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="firebase-config.js"></script>
     <script src="app.js"></script>

@@ -53,11 +53,12 @@ def analyze_frame(frame, conf_threshold=0.5):
     fire_smoke_preds = [] 
 
 
-    for result in fire_smoke_results: 
-        for box in result.boxes: 
-            cls = int(box.cls[0]) 
-            conf = float(box.conf[0]) 
-            label = result.names[cls]  # get class name (e.g. 'fire', 'smoke') 
+    for result in fire_smoke_results:
+        for box in result.boxes:
+            cls = int(box.cls[0])
+            conf = float(box.conf[0])
+            print(f'cls type: {type(cls)}, value: {cls}')
+            label = result.names[cls]
             x1, y1, x2, y2 = map(int, box.xyxy[0]) 
 
 
